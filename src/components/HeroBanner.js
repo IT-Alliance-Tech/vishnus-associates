@@ -1,138 +1,166 @@
-// components/HeroPremiumFinal.jsx
-import { 
-  FiPhone, 
-  FiArrowRight, 
-  FiTrendingUp, 
-  FiShield, 
-  FiBarChart2, 
-  FiLayers 
-} from "react-icons/fi";
+"use client";
+import { Phone, ArrowRight, TrendingUp, Shield, BarChart2, Layers } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function HeroBanner() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#F9FAFB] via-white to-[#F5F7FA]">
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-blue-50 via-white to-amber-50">
+      {/* Subtle background elements */}
+      <div className="absolute top-0 right-0 w-80 h-80 bg-blue-200 rounded-full filter blur-3xl opacity-30"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-200 rounded-full filter blur-3xl opacity-30"></div>
+      
+      {/* Geometric pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(#dbeafe_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
-      {/* LIGHT BACKGROUND ORBS – MATCHED EXACTLY WITH FINANCIAL GROWTH SECTION */}
-      <div className="absolute -top-28 -left-28 w-[420px] h-[420px] bg-[#AFC3FF] rounded-full blur-[200px] opacity-25" />
-      <div className="absolute -bottom-28 -right-28 w-[480px] h-[480px] bg-[#FFE9A6] rounded-full blur-[220px] opacity-25" />
-
-      {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
-
-        {/* LEFT */}
-        <div className="lg:col-span-7 space-y-8">
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
-            <span className="bg-gradient-to-r from-[#1A237E] via-[#3949AB] to-[#1A237E] text-transparent bg-clip-text">
-              Empowering Smarter Financial Decisions
-            </span>
-          </h1>
-
-          <p className="text-lg md:text-xl" style={{ color: "#616161" }}>
-            <span className="font-semibold" style={{ color: "#212121" }}>
-              Vishnu S & Associates
-            </span>{" "}
-            — Your trusted partner in audit, compliance, taxation & financial strategy.
-          </p>
-
-          {/* BUTTONS */}
-          <div className="flex flex-wrap gap-4">
-
-            {/* PRIMARY BUTTON */}
-            <a
-              href="#services"
-              className="px-7 py-3 rounded-full text-white font-semibold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition transform flex items-center gap-2"
-              style={{ backgroundColor: "#1A237E" }}
-            >
-              Explore Services
-              <FiArrowRight className="text-lg" />
-            </a>
-
-            {/* SECONDARY BUTTON */}
-            <a
-              href="tel:+910000000000"
-              className="px-7 py-3 rounded-full font-semibold bg-white hover:-translate-y-1 transition flex items-center gap-2"
-              style={{
-                borderColor: "#F9A825",
-                color: "#1A237E",
-                borderWidth: "2px"
-              }}
-            >
-              <FiPhone className="text-lg" />
-              Book Free Consultation
-            </a>
-
-          </div>
-        </div>
-
-        {/* RIGHT CARD */}
-        <div className="lg:col-span-5 relative">
-          <div
-            className="relative rounded-3xl shadow-2xl backdrop-blur-2xl p-10 flex flex-col gap-8 animate-premiumFloat"
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.7)",
-              borderColor: "rgba(255,255,255,0.4)",
-              borderWidth: "1px"
-            }}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left content */}
+          <motion.div 
+            className="space-y-10"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
           >
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full">
+                  Trusted Financial Experts Since 2005
+                </span>
+              </motion.div>
+              
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+                <span className="text-slate-900">Empowering Smarter </span>
+                <span className="text-blue-600">
+                  Financial Decisions
+                </span>
+              </h1>
+            </div>
 
-            <div className="absolute inset-0 rounded-3xl pointer-events-none"
-              style={{
-                borderColor: "rgba(255,255,255,0.5)",
-                borderWidth: "1px",
-                boxShadow: "0 0 60px rgba(0,0,0,0.04)"
-              }}
-            />
+            <motion.p 
+              className="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <span className="font-bold text-slate-900">Vishnu S & Associates</span> — Your trusted partner in audit, compliance, taxation & financial strategy.
+            </motion.p>
 
-            <FeatureRow
-              icon={<FiBarChart2 />}
-              title="Financial Excellence"
-              subtitle="Precision-driven insights for superior financial performance"
-              color="text-[#1A237E]"
-            />
+            <motion.div 
+              className="flex flex-wrap gap-4 pt-4"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <motion.a
+                href="#services"
+                className="px-8 py-4 rounded-xl text-white font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 group"
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Explore Services
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </motion.a>
 
-            <FeatureRow
-              icon={<FiShield />}
-              title="Legal Compliances"
-              subtitle="End-to-end regulatory compliance with accuracy"
-              color="text-[#3949AB]"
-            />
+              <motion.a
+                href="tel:+910000000000"
+                className="px-8 py-4 rounded-xl font-semibold bg-white text-blue-700 hover:bg-blue-50 transition-all flex items-center gap-3 shadow-sm border border-blue-200 group"
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Phone className="w-5 h-5 text-blue-600" />
+                <span>Book Free Consultation</span>
+              </motion.a>
+            </motion.div>
+          </motion.div>
 
-            <FeatureRow
-              icon={<FiTrendingUp />}
-              title="Strategic Insights"
-              subtitle="Smarter decision-making backed by analytics"
-              color="text-[#F9A825]"
-            />
+          {/* Right content - Feature showcase */}
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <div className="relative bg-white rounded-2xl border border-blue-100 shadow-xl overflow-hidden">
+              {/* Decorative header */}
+              <div className="h-2 bg-gradient-to-r from-blue-500 to-amber-400"></div>
+              
+              <div className="p-8">
+                <div className="grid grid-cols-2 gap-6">
+                  <FeatureItem
+                    icon={<BarChart2 className="w-6 h-6" />}
+                    title="Financial Excellence"
+                    subtitle="Precision insights"
+                    bgColor="bg-blue-50"
+                    iconColor="text-blue-600"
+                  />
 
-            <FeatureRow
-              icon={<FiLayers />}
-              title="Growth Support"
-              subtitle="Comprehensive advisory to scale your business"
-              color="text-[#616161]"
-            />
-          </div>
+                  <FeatureItem
+                    icon={<Shield className="w-6 h-6" />}
+                    title="Legal Compliances"
+                    subtitle="Full compliance"
+                    bgColor="bg-amber-50"
+                    iconColor="text-amber-600"
+                  />
+
+                  <FeatureItem
+                    icon={<TrendingUp className="w-6 h-6" />}
+                    title="Strategic Insights"
+                    subtitle="Data-driven"
+                    bgColor="bg-emerald-50"
+                    iconColor="text-emerald-600"
+                  />
+
+                  <FeatureItem
+                    icon={<Layers className="w-6 h-6" />}
+                    title="Growth Support"
+                    subtitle="Scalable advice"
+                    bgColor="bg-violet-50"
+                    iconColor="text-violet-600"
+                  />
+                </div>
+                
+                {/* Stats section */}
+                <div className="mt-10 pt-8 border-t border-blue-100">
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <StatItem value="15+" label="Years Experience" />
+                    <StatItem value="500+" label="Clients Served" />
+                    <StatItem value="98%" label="Satisfaction" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
-
       </div>
     </section>
   );
 }
 
-/* FEATURE ROW COMPONENT */
-function FeatureRow({ icon, title, subtitle, color }) {
+function FeatureItem({ icon, title, subtitle, bgColor, iconColor }) {
   return (
-    <div className="flex items-start gap-4 group">
-      <div
-        className={`w-16 h-16 rounded-2xl bg-white shadow-xl flex items-center justify-center text-2xl ${color}
-          transition transform group-hover:scale-110 group-hover:rotate-3`}
-      >
+    <motion.div 
+      className={`rounded-xl p-5 ${bgColor} transition-all duration-300`}
+      whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.05)" }}
+    >
+      <div className={`w-12 h-12 rounded-lg ${iconColor} ${bgColor.replace('50', '100')} flex items-center justify-center mb-4`}>
         {icon}
       </div>
-      <div>
-        <h4 className="text-xl font-semibold" style={{ color: "#212121" }}>{title}</h4>
-        <p className="text-sm" style={{ color: "#616161" }}>{subtitle}</p>
-      </div>
+      <h3 className="font-bold text-slate-900 mb-1">{title}</h3>
+      <p className="text-sm text-slate-600">{subtitle}</p>
+    </motion.div>
+  );
+}
+
+function StatItem({ value, label }) {
+  return (
+    <div>
+      <div className="text-2xl font-bold text-blue-700">{value}</div>
+      <div className="text-sm text-slate-600 mt-1">{label}</div>
     </div>
   );
 }
