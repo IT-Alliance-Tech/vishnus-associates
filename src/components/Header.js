@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
@@ -18,15 +19,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
-          {/* Logo */}
+          {/* Logo (wrapped with Link to home) */}
           <div className="flex-shrink-0 flex items-center">
-            <div className="flex items-center space-x-2">
+            <Link href="/" aria-label="Go to homepage" className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center">
                 <span className="text-indigo-900 font-bold text-lg">V</span>
               </div>
-              <span className="text-xl font-bold text-white">
-                      Vishnu S & Associates</span>
-            </div>
+              <span className="text-xl font-bold text-white">Vishnu S & Associates</span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -64,6 +64,7 @@ export default function Header() {
               type="button"
               className="text-indigo-200 hover:text-white p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>

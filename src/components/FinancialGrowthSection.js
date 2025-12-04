@@ -4,11 +4,12 @@ import { CheckCircle, Award, TrendingUp, Users, Lightbulb, Target } from "lucide
 
 export default function FinancialGrowthSection() {
   return (
-    <section className="relative w-full py-24 overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-indigo-200 rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-amber-200 rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
+    <section className="relative w-full py-24 overflow-hidden bg-white">
+      {/* Subtle pattern background */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6">
@@ -20,8 +21,6 @@ export default function FinancialGrowthSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          
-          
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
             Your Financial Growth <span className="text-indigo-600">Partners</span>
           </h2>
@@ -33,7 +32,7 @@ export default function FinancialGrowthSection() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Left Column - Features */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -83,9 +82,16 @@ export default function FinancialGrowthSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-start items-center"
           >
-            <div className="bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0.95, scale: 1.02 }}
+              whileInView={{ opacity: 1, scale: 1.08 }}
+              whileHover={{ scale: 1.12 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-3xl p-8 shadow-2xl relative overflow-hidden"
+            >
               {/* Decorative elements */}
               <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full"></div>
               <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full"></div>
@@ -126,7 +132,7 @@ export default function FinancialGrowthSection() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Right Column - Stats */}
