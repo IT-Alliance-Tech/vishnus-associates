@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export default function FooterProfessional() {
@@ -9,7 +10,7 @@ export default function FooterProfessional() {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           
-          {/* Company Info - 5 columns */}
+          {/* Company Info */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-3 mb-6">
               <div className="bg-gray-100 h-10 w-10 rounded-lg shadow-md"></div>
@@ -39,43 +40,73 @@ export default function FooterProfessional() {
             </div>
           </div>
           
-          {/* Services - 3 columns */}
+          {/* Services */}
           <div className="md:col-span-3">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">Services</h3>
             
             <ul className="space-y-3">
-              {["Book Keeping & Compliance","Auditing & Assurance","Tax Services","Legal Matters","Startup Advisory"].map((service, idx) => (
+              {[
+                "Book Keeping & Compliance",
+                "Auditing & Assurance",
+                "Tax Services",
+                "Legal Matters",
+                "Startup Advisory"
+              ].map((service, idx) => (
                 <li key={idx}>
-                  <a 
-                    href="#" 
-                    className="text-gray-800 hover:text-blue-600 transition hover:underline"
-                  >
+                  <span className="text-gray-800 hover:text-blue-600 transition cursor-pointer hover:underline">
                     {service}
-                  </a>
+                  </span>
                 </li>
               ))}
             </ul>
           </div>
           
-          {/* Quick Links - 2 columns */}
+          {/* Quick Links - Company */}
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">Company</h3>
             
             <ul className="space-y-3">
-              {["Home","About Us","Services","Contact"].map((link, idx) => (
-                <li key={idx}>
-                  <a 
-                    href="#" 
-                    className="text-gray-800 hover:text-blue-600 transition hover:underline"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+
+              <li>
+                <Link 
+                  href="/" 
+                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
+                >
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <Link 
+                  href="/about" 
+                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
+                >
+                  About Us
+                </Link>
+              </li>
+
+              <li>
+                <Link 
+                  href="/services" 
+                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
+                >
+                  Services
+                </Link>
+              </li>
+
+              <li>
+                <Link 
+                  href="/contact" 
+                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
+                >
+                  Contact
+                </Link>
+              </li>
+
             </ul>
           </div>
           
-          {/* Social & Legal - 2 columns */}
+          {/* Social & Legal */}
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">Connect</h3>
             
@@ -92,19 +123,28 @@ export default function FooterProfessional() {
             </div>
             
             <h3 className="text-lg font-semibold text-gray-900 mb-6">Legal</h3>
+
             <ul className="space-y-3">
-              {["Privacy Policy","Terms of Service"].map((item, idx) => (
-                <li key={idx}>
-                  <a 
-                    href="#" 
-                    className="text-gray-800 hover:text-blue-600 transition hover:underline"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link 
+                  href="/privacy-policy" 
+                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+
+              <li>
+                <Link 
+                  href="/terms" 
+                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
+                >
+                  Terms of Service
+                </Link>
+              </li>
             </ul>
           </div>
+
         </div>
         
         {/* Divider */}
