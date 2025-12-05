@@ -4,11 +4,12 @@ import { CheckCircle, Award, TrendingUp, Users, Lightbulb, Target } from "lucide
 
 export default function FinancialGrowthSection() {
   return (
-    <section className="relative w-full py-24 overflow-hidden bg-white">
-      {/* Subtle pattern background */}
+    <section className="relative w-full py-24 overflow-hidden bg-slate-900">
+      {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.2) 0%, transparent 30%), 
+                            radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.2) 0%, transparent 30%)`,
         }}></div>
       </div>
 
@@ -21,39 +22,44 @@ export default function FinancialGrowthSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Your Financial Growth <span className="text-indigo-600">Partners</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/20 rounded-full text-indigo-300 text-sm font-medium mb-4 border border-indigo-500/30">
+            <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
+            <span>FINANCIAL GROWTH PARTNERS</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Your Financial Growth <span className="text-indigo-400">Partners</span>
           </h2>
           
-          <p className="text-xl text-slate-700 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             We combine deep expertise with practical insights to deliver tailored CA solutions 
             that ensure compliance, efficiency, and long-term growth for your business.
           </p>
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Features */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="space-y-8"
+            className="space-y-6"
           >
             {[
               { 
-                icon: <Users className="w-6 h-6" />, 
+                icon: <Users className="w-6 h-6 text-slate-800" />, 
                 title: "Client-First Approach", 
                 desc: "Your success is our top priority with personalized solutions" 
               },
               { 
-                icon: <Lightbulb className="w-6 h-6" />, 
+                icon: <Lightbulb className="w-6 h-6 text-slate-800" />, 
                 title: "Deep Domain Expertise", 
                 desc: "Specialized knowledge across diverse industries and sectors" 
               },
               { 
-                icon: <Target className="w-6 h-6" />, 
+                icon: <Target className="w-6 h-6 text-slate-800" />, 
                 title: "Quality Commitment", 
                 desc: "Excellence guaranteed in every engagement and deliverable" 
               }
@@ -61,15 +67,17 @@ export default function FinancialGrowthSection() {
               <motion.div
                 key={i}
                 whileHover={{ y: -5 }}
-                className="bg-white p-6 rounded-2xl border border-slate-200 shadow-lg"
+                className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-700"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center flex-shrink-0">
+                  {/* Icon Box - Highlighted */}
+                  <div className="w-12 h-12 rounded-xl bg-white text-slate-800 flex items-center justify-center flex-shrink-0 border border-gray-200 shadow-sm">
                     {item.icon}
                   </div>
+
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                    <p className="text-slate-600">{item.desc}</p>
+                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-slate-400">{item.desc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -82,106 +90,88 @@ export default function FinancialGrowthSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col justify-start items-center"
+            className="lg:col-span-2"
           >
-            <motion.div
-              initial={{ opacity: 0.95, scale: 1.02 }}
-              whileInView={{ opacity: 1, scale: 1.08 }}
-              whileHover={{ scale: 1.12 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-3xl p-8 shadow-2xl relative overflow-hidden"
-            >
-              {/* Decorative elements */}
-              <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full"></div>
-              
-              <div className="relative z-10">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <TrendingUp className="w-8 h-8 text-white" />
+            <div className="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-3xl p-8 border border-indigo-500/20 h-full">
+              <div className="flex flex-col md:flex-row gap-8">
+                <div className="md:w-2/5">
+
+                  {/* Icon Box - Highlighted */}
+                  <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center mb-6 border border-gray-200 shadow-sm">
+                    <TrendingUp className="w-8 h-8 text-slate-800" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Professional Services</h3>
-                  <p className="text-indigo-200 mt-2">Comprehensive financial solutions</p>
+
+                  <h3 className="text-2xl font-bold text-white mb-4">Professional Services</h3>
+                  <p className="text-slate-300 mb-6">
+                    Comprehensive financial solutions tailored to your business needs.
+                  </p>
+                  
+                  <div className="mt-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      {/* Icon Box - Highlighted */}
+                      <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center border border-gray-200 shadow-sm">
+                        <Lightbulb className="w-4 h-4 text-slate-800" />
+                      </div>
+
+                      <h4 className="text-lg font-bold text-amber-300">Why Choose Us?</h4>
+                    </div>
+                    <p className="text-slate-400 text-sm">
+                      Proven track record of delivering exceptional financial solutions tailored to your unique business needs.
+                    </p>
+                  </div>
                 </div>
                 
-                <div className="space-y-5">
-                  {[
-                    { label: "Chartered Accountancy", tag: "Certified" },
-                    { label: "Tax Advisory", tag: "Expert" },
-                    { label: "Business Consulting", tag: "Specialized" },
-                    { label: "Startup Support", tag: "Focused" }
-                  ].map((service, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 * i }}
-                      whileHover={{ x: 10 }}
-                      className="flex items-center justify-between p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20"
-                    >
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-indigo-200" />
-                        <span className="font-medium text-white">{service.label}</span>
-                      </div>
-                      <span className="text-xs px-3 py-1 rounded-full bg-white/20 text-indigo-100">
-                        {service.tag}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
+                <div className="md:w-3/5">
+                  <div className="space-y-4">
+                    {[
+                      { label: "Chartered Accountancy", tag: "Certified" },
+                      { label: "Tax Advisory", tag: "Expert" },
+                      { label: "Business Consulting", tag: "Specialized" },
+                      { label: "Startup Support", tag: "Focused" }
+                    ].map((service, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 * i }}
+                        whileHover={{ x: 10 }}
+                        className="flex items-center justify-between p-4 rounded-xl bg-slate-800/50 border border-slate-700"
+                      >
+                        <div className="flex items-center gap-3">
+                          {/* Icon Box - Highlighted */}
+                          <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center border border-gray-200 shadow-sm">
+                            <CheckCircle className="w-4 h-4 text-slate-800" />
+                          </div>
 
-          {/* Right Column - Stats */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-8"
-          >
-            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg h-full">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Our Impact</h3>
-              
-              <div className="space-y-8">
-                {[
-                  { value: "15+", label: "Years of Experience", icon: <Award className="w-6 h-6" /> },
-                  { value: "500+", label: "Clients Served", icon: <Users className="w-6 h-6" /> },
-                  { value: "98%", label: "Client Satisfaction", icon: <Target className="w-6 h-6" /> }
-                ].map((stat, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{ scale: 1.03 }}
-                    className="flex items-center gap-5 p-4 rounded-xl bg-gradient-to-r from-slate-50 to-slate-100 border border-slate-200"
-                  >
-                    <div className="w-14 h-14 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center flex-shrink-0">
-                      {stat.icon}
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-slate-900">{stat.value}</div>
-                      <div className="text-slate-600">{stat.label}</div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="mt-8 p-5 rounded-xl bg-gradient-to-r from-amber-100 to-amber-200 border border-amber-300"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-amber-200 text-amber-700 flex items-center justify-center">
-                    <Lightbulb className="w-5 h-5" />
+                          <span className="font-medium text-white">{service.label}</span>
+                        </div>
+                        <span className="text-xs px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                          {service.tag}
+                        </span>
+                      </motion.div>
+                    ))}
                   </div>
-                  <h4 className="text-lg font-bold text-amber-900">Why Choose Us?</h4>
+                  
+                  <div className="mt-8 grid grid-cols-3 gap-4">
+                    {[
+                      { value: "15+", label: "Years" },
+                      { value: "500+", label: "Clients" },
+                      { value: "98%", label: "Satisfaction" }
+                    ].map((stat, i) => (
+                      <motion.div
+                        key={i}
+                        whileHover={{ scale: 1.05 }}
+                        className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700"
+                      >
+                        <div className="text-2xl font-bold text-white">{stat.value}</div>
+                        <div className="text-sm text-slate-400">{stat.label}</div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-amber-800 text-sm">
-                  Proven track record of delivering exceptional financial solutions tailored to your unique business needs.
-                </p>
-              </motion.div>
+
+              </div>
             </div>
           </motion.div>
         </div>

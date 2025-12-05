@@ -1,160 +1,116 @@
 "use client";
-import Link from "next/link";
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
-export default function FooterProfessional() {
+export default function ModernWaveFooter() {
   return (
-    <footer className="bg-white text-gray-900">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+    <footer className="relative bg-gray-900 text-gray-300">
+      {/* Wave Divider */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden -translate-y-1">
+        <svg
+          className="w-[150%] h-16 md:h-20"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            className="fill-current text-gray-800"
+          ></path>
+        </svg>
+      </div>
+
+      <div className="pt-20 pb-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           
-          {/* Company Info */}
-          <div className="md:col-span-5">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="bg-gray-100 h-10 w-10 rounded-lg shadow-md"></div>
-              <span className="text-xl font-bold text-gray-900">Vishnu S & Associates</span>
+          {/* Brand & Contact Section */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-10 w-10 rounded-lg flex items-center justify-center">
+                <div className="bg-white h-5 w-5 rounded transform rotate-45"></div>
+              </div>
+              <span className="text-xl font-bold text-white">Vishnu S & Associates</span>
             </div>
-            
-            <p className="text-gray-700 mb-6 max-w-md">
-              Delivering clarity and expert financial support through tax, audit, 
-              and business advisory services for clients across India.
+
+            <p className="text-gray-400 text-sm">
+              Expert financial solutions with 15+ years of experience serving clients across India. Trusted by 15,000+ satisfied customers.
             </p>
-            
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Mail size={18} className="text-blue-600 mt-1 shadow-sm" />
-                <span className="hover:text-blue-600 transition">info@vishnusassociates.com</span>
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <Mail className="text-white" size={18} />
+                <a href="mailto:info@vishnusassociates.com" className="text-white hover:text-blue-400 transition text-sm">
+                  info@vishnusassociates.com
+                </a>
               </div>
-              
-              <div className="flex items-start gap-3">
-                <Phone size={18} className="text-blue-600 mt-1 shadow-sm" />
-                <span className="hover:text-blue-600 transition">+91 XXXXX XXXXX</span>
+              <div className="flex items-center gap-3">
+                <Phone className="text-white" size={18} />
+                <a href="tel:+91XXXXX XXXXX" className="text-white hover:text-blue-400 transition text-sm">
+                  +91 XXXXX XXXXX
+                </a>
               </div>
-              
-              <div className="flex items-start gap-3">
-                <MapPin size={18} className="text-blue-600 mt-1 shadow-sm" />
-                <span className="hover:text-blue-600 transition">Pan-India Services</span>
+              <div className="flex items-center gap-3">
+                <MapPin className="text-white" size={18} />
+                <span className="text-white text-sm">Pan-India Services</span>
               </div>
             </div>
-          </div>
-          
-          {/* Services */}
-          <div className="md:col-span-3">
-            <h3 className="text-lg font-semibold text-gray-900 mb-6">Services</h3>
-            
-            <ul className="space-y-3">
-              {[
-                "Book Keeping & Compliance",
-                "Auditing & Assurance",
-                "Tax Services",
-                "Legal Matters",
-                "Startup Advisory"
-              ].map((service, idx) => (
-                <li key={idx}>
-                  <span className="text-gray-800 hover:text-blue-600 transition cursor-pointer hover:underline">
-                    {service}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Quick Links - Company */}
-          <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold text-gray-900 mb-6">Company</h3>
-            
-            <ul className="space-y-3">
 
-              <li>
-                <Link 
-                  href="/" 
-                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
-                >
-                  Home
-                </Link>
-              </li>
-
-              <li>
-                <Link 
-                  href="/about" 
-                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
-                >
-                  About Us
-                </Link>
-              </li>
-
-              <li>
-                <Link 
-                  href="/services" 
-                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
-                >
-                  Services
-                </Link>
-              </li>
-
-              <li>
-                <Link 
-                  href="/contact" 
-                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
-                >
-                  Contact
-                </Link>
-              </li>
-
-            </ul>
-          </div>
-          
-          {/* Social & Legal */}
-          <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold text-gray-900 mb-6">Connect</h3>
-            
-            <div className="flex gap-4 mb-8">
+            <div className="flex gap-3 mt-4">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
                 <a 
                   href="#" 
                   key={idx} 
-                  className="text-gray-700 hover:text-blue-600 transition shadow-md p-2 rounded-full hover:scale-110"
+                  className="bg-gray-800 hover:bg-blue-500 text-white p-2 rounded-lg transition"
                 >
-                  <Icon size={20} />
+                  <Icon size={16} />
                 </a>
               ))}
             </div>
-            
-            <h3 className="text-lg font-semibold text-gray-900 mb-6">Legal</h3>
-
-            <ul className="space-y-3">
-              <li>
-                <Link 
-                  href="/privacy-policy" 
-                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-
-              <li>
-                <Link 
-                  href="/terms" 
-                  className="text-gray-800 hover:text-blue-600 transition hover:underline"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-            </ul>
           </div>
 
+          {/* Services Section */}
+          <div>
+            <div className="bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-blue-500/30 transition duration-300">
+              <h3 className="text-xl font-bold text-white mb-4">Our Services</h3>
+              <ul className="space-y-2">
+                {[
+                  "Book Keeping", 
+                  "Auditing", 
+                  "Tax Services", 
+                  "Legal Matters", 
+                  "Startup Advisory", 
+                  "Compliance"
+                ].map((service, idx) => (
+                  <li 
+                    key={idx} 
+                    className="flex items-center gap-3 text-gray-300 hover:text-white cursor-pointer transition"
+                  >
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    {service}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-        
-        {/* Divider */}
-        <div className="border-t border-gray-300 my-12"></div>
-        
+
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">
+        <div className="pt-8 mt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm gap-3">
+          <div className="flex items-center gap-2">
+            <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-6 w-6 rounded-lg flex items-center justify-center">
+              <div className="bg-white h-3 w-3 rounded transform rotate-45"></div>
+            </div>
+            <span className="text-white font-medium">Vishnu S & Associates</span>
+          </div>
+
+          <p className="text-gray-500 text-center md:text-left">
             © 2025 Vishnu S & Associates. All rights reserved.
           </p>
+
+          <div className="flex flex-wrap justify-center md:justify-start gap-4">
+            <a href="/privacy-policy" className="text-gray-500 hover:text-gray-300 transition">Privacy Policy</a>
+            <a href="/terms" className="text-gray-500 hover:text-gray-300 transition">Terms of Service</a>
+            <a href="/sitemap" className="text-gray-500 hover:text-gray-300 transition">Sitemap</a>
+          </div>
         </div>
       </div>
     </footer>
