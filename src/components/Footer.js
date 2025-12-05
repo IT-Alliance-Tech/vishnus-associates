@@ -1,5 +1,6 @@
 "use client";
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import Link from "next/link";
 
 export default function ModernWaveFooter() {
   return (
@@ -67,30 +68,64 @@ export default function ModernWaveFooter() {
             </div>
           </div>
 
-          {/* Services Section */}
-          <div>
-            <div className="bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-blue-500/30 transition duration-300">
-              <h3 className="text-xl font-bold text-white mb-4">Our Services</h3>
-              <ul className="space-y-2">
-                {[
-                  "Book Keeping", 
-                  "Auditing", 
-                  "Tax Services", 
-                  "Legal Matters", 
-                  "Startup Advisory", 
-                  "Compliance"
-                ].map((service, idx) => (
-                  <li 
-                    key={idx} 
-                    className="flex items-center gap-3 text-gray-300 hover:text-white cursor-pointer transition"
-                  >
+          {/* One Single Card: Services + Quick Links */}
+          <div className="bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-blue-500/30 transition duration-300">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+              {/* Our Services */}
+              <div>
+                <h3 className="text-xl font-bold text-white mb-4">Our Services</h3>
+                <ul className="space-y-2">
+                  {[
+                    "Book Keeping", 
+                    "Auditing", 
+                    "Tax Services", 
+                    "Legal Matters", 
+                    "Startup Advisory", 
+                    "Compliance"
+                  ].map((service, idx) => (
+                    <li 
+                      key={idx} 
+                      className="flex items-center gap-3 text-gray-300 hover:text-white cursor-pointer transition"
+                    >
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      {service}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Quick Links - UPDATED with blue bullets */}
+              <div>
+                <h3 className="text-xl font-bold text-white mb-4">Quick Links</h3>
+                <ul className="space-y-2">
+                  
+                  <li className="flex items-center gap-3 text-gray-300 hover:text-white transition">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    {service}
+                    <Link href="/">Home</Link>
                   </li>
-                ))}
-              </ul>
+
+                  <li className="flex items-center gap-3 text-gray-300 hover:text-white transition">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <Link href="/about">About Us</Link>
+                  </li>
+
+                  <li className="flex items-center gap-3 text-gray-300 hover:text-white transition">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <Link href="/service">Services</Link>
+                  </li>
+
+                  <li className="flex items-center gap-3 text-gray-300 hover:text-white transition">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <Link href="/contact">Contact</Link>
+                  </li>
+
+                </ul>
+              </div>
+
             </div>
           </div>
+
         </div>
 
         {/* Bottom Bar */}
@@ -107,9 +142,9 @@ export default function ModernWaveFooter() {
           </p>
 
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
-            <a href="/privacy-policy" className="text-gray-500 hover:text-gray-300 transition">Privacy Policy</a>
-            <a href="/terms" className="text-gray-500 hover:text-gray-300 transition">Terms of Service</a>
-            <a href="/sitemap" className="text-gray-500 hover:text-gray-300 transition">Sitemap</a>
+            <Link href="/privacypolicy" className="text-gray-500 hover:text-gray-300 transition">Privacy Policy</Link>
+            <Link href="/termsandconditions" className="text-gray-500 hover:text-gray-300 transition">Terms of Service</Link>
+            <Link href="/sitemap" className="text-gray-500 hover:text-gray-300 transition">Sitemap</Link>
           </div>
         </div>
       </div>
