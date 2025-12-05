@@ -64,7 +64,7 @@ export default function AboutPage() {
         <div className="relative max-w-7xl mx-auto text-center">
           <div className="inline-block bg-white/90 px-6 py-5 rounded-md shadow-md backdrop-blur-sm">
             <motion.h1
-              className="text-4xl md:text-5xl font-bold text-blue-900 mb-3"
+              className="text-3xl md:text-4xl font-bold text-blue-900 mb-3"
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -73,7 +73,7 @@ export default function AboutPage() {
             </motion.h1>
 
             <motion.p
-              className="text-xl text-gray-700 max-w-3xl mx-auto"
+              className="text-lg text-gray-700 max-w-3xl mx-auto"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}

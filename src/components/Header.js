@@ -13,6 +13,13 @@ export default function PremiumHeader() {
     { name: "Contact", href: "/contact" },
   ];
 
+  // 👉 Calendly Popup Function
+  const openCalendly = () => {
+    Calendly.initPopupWidget({
+      url: "https://calendly.com/YOUR-USERNAME/YOUR-EVENT", // ← Replace this
+    });
+  };
+
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/60 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8">
@@ -42,7 +49,7 @@ export default function PremiumHeader() {
             ))}
           </nav>
 
-          {/* Buttons */}
+          {/* Desktop Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="/login"
@@ -50,12 +57,14 @@ export default function PremiumHeader() {
             >
               Login
             </a>
-            <a
-              href="/consultation"
+
+            {/* Calendly Popup Button */}
+            <button
+              onClick={openCalendly}
               className="px-6 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition"
             >
               Free Consultation
-            </a>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -91,13 +100,16 @@ export default function PremiumHeader() {
               Login
             </a>
 
-            <a
-              href="/consultation"
-              onClick={() => setOpen(false)}
+            {/* Mobile Calendly Button */}
+            <button
+              onClick={() => {
+                setOpen(false);
+                openCalendly();
+              }}
               className="w-full text-center py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition"
             >
               Free Consultation
-            </a>
+            </button>
           </nav>
         </div>
       )}

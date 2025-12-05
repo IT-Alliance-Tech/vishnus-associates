@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 // Load Poppins font with all necessary weights
@@ -26,9 +27,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} font-sans antialiased`}
-      >
+      <head>
+        {/* ✅ Calendly Script */}
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="afterInteractive"
+        />
+      </head>
+
+      <body className={`${poppins.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

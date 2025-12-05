@@ -31,12 +31,12 @@ function useCounter(target, duration = 1500) {
 
 export default function TrustExcellenceSection() {
   return (
-    <section className="relative py-24 bg-gradient-to-br from-indigo-50 to-cyan-50">
+    <section className="relative py-24 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-indigo-200 rounded-full filter blur-3xl opacity-30"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-72 h-72 bg-cyan-200 rounded-full filter blur-3xl opacity-30"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-100 rounded-full filter blur-3xl opacity-30"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-100 rounded-full filter blur-3xl opacity-30"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-6 relative">
@@ -77,74 +77,195 @@ export default function TrustExcellenceSection() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* New Dashboard Style Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0 }}
+            className="lg:col-span-2 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50"
+          >
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">Our Journey So Far</h3>
+                
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span className="font-medium text-slate-700">Years of Excellence</span>
+                      <span className="font-bold text-indigo-600">6+</span>
+                    </div>
+                    <div className="w-full bg-slate-200 rounded-full h-3">
+                      <motion.div 
+                        className="bg-gradient-to-r from-indigo-500 to-purple-500 h-3 rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, delay: 0.2 }}
+                      ></motion.div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span className="font-medium text-slate-700">Client Satisfaction</span>
+                      <span className="font-bold text-cyan-600">98%</span>
+                    </div>
+                    <div className="w-full bg-slate-200 rounded-full h-3">
+                      <motion.div 
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 h-3 rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "98%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, delay: 0.3 }}
+                      ></motion.div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span className="font-medium text-slate-700">Pan-India Reach</span>
+                      <span className="font-bold text-emerald-600">100%</span>
+                    </div>
+                    <div className="w-full bg-slate-200 rounded-full h-3">
+                      <motion.div 
+                        className="bg-gradient-to-r from-emerald-500 to-teal-500 h-3 rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, delay: 0.4 }}
+                      ></motion.div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex-1 flex items-center justify-center">
+                <div className="relative w-48 h-48">
+                  <motion.div 
+                    className="absolute inset-0 rounded-full border-8 border-indigo-200"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.1 }}
+                  ></motion.div>
+                  <motion.div 
+                    className="absolute inset-4 rounded-full border-8 border-cyan-200"
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  ></motion.div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="text-4xl font-bold text-slate-800">6+</div>
+                      <div className="text-lg font-medium text-slate-600">Years</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl p-8 text-white shadow-lg"
+          >
+            <h3 className="text-2xl font-bold mb-6">Key Metrics</h3>
+            
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold">500+</div>
+                  <div className="opacity-90">Clients Served</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold">100%</div>
+                  <div className="opacity-90">Pan-India Reach</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold">24/7</div>
+                  <div className="opacity-90">Support Available</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+        
+        {/* Animated Stats Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <StatCard 
             number={6} 
             suffix="+" 
             label="Years Experience" 
             delay={0} 
+            color="indigo"
             icon={
-              <div className="relative">
-                <div className="absolute inset-0 bg-indigo-200 rounded-full blur-md opacity-70"></div>
-                <div className="relative w-14 h-14 rounded-full bg-indigo-100 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             }
-            gradient="from-indigo-500 to-purple-500"
           />
           <StatCard 
             number={500} 
             suffix="+" 
             label="Clients Served" 
             delay={0.1} 
+            color="cyan"
             icon={
-              <div className="relative">
-                <div className="absolute inset-0 bg-cyan-200 rounded-full blur-md opacity-70"></div>
-                <div className="relative w-14 h-14 rounded-full bg-cyan-100 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
             }
-            gradient="from-cyan-500 to-blue-500"
           />
           <StatCard 
             number={100} 
             suffix="%" 
             label="Pan-India Reach" 
             delay={0.2} 
+            color="emerald"
             icon={
-              <div className="relative">
-                <div className="absolute inset-0 bg-emerald-200 rounded-full blur-md opacity-70"></div>
-                <div className="relative w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             }
-            gradient="from-emerald-500 to-teal-500"
           />
           <StatCard 
             number={24} 
             suffix="/7" 
             label="Support Available" 
             delay={0.3} 
+            color="amber"
             icon={
-              <div className="relative">
-                <div className="absolute inset-0 bg-amber-200 rounded-full blur-md opacity-70"></div>
-                <div className="relative w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                  </svg>
-                </div>
-              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+              </svg>
             }
-            gradient="from-amber-500 to-orange-500"
           />
         </div>
       </div>
@@ -152,8 +273,15 @@ export default function TrustExcellenceSection() {
   );
 }
 
-function StatCard({ number, suffix, label, delay, icon, gradient }) {
+function StatCard({ number, suffix, label, delay, color, icon }) {
   const count = useCounter(number);
+  
+  const colorClasses = {
+    indigo: "from-indigo-500 to-purple-500",
+    cyan: "from-cyan-500 to-blue-500",
+    emerald: "from-emerald-500 to-teal-500",
+    amber: "from-amber-500 to-orange-500"
+  };
   
   return (
     <motion.div
@@ -161,38 +289,15 @@ function StatCard({ number, suffix, label, delay, icon, gradient }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
-      className="group"
+      className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 text-center"
     >
-      <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 h-full relative overflow-hidden">
-        <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${gradient}`}></div>
-        
-        <div className="relative z-10">
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-6">
-              {icon}
-            </div>
-            
-            <div className="text-4xl font-bold mb-2">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-slate-600">
-                {count}
-                <span className="text-amber-500">{suffix}</span>
-              </span>
-            </div>
-            
-            <h3 className="text-lg font-semibold text-slate-800 mb-4">{label}</h3>
-            
-            <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
-              <motion.div 
-                className={`h-full bg-gradient-to-r ${gradient} rounded-full`}
-                initial={{ width: 0 }}
-                whileInView={{ width: `${Math.min(100, (count / (number === 24 ? 24 : number)) * 100)}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, delay }}
-              ></motion.div>
-            </div>
-          </div>
-        </div>
+      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br ${colorClasses[color]} mb-4 text-white`}>
+        {icon}
       </div>
+      <div className="text-3xl font-bold text-slate-800 mb-1">
+        {count}{suffix}
+      </div>
+      <div className="text-slate-600">{label}</div>
     </motion.div>
   );
 }
