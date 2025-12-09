@@ -1,5 +1,3 @@
-// Updated About Page with improved Purpose + Core Values icon background enhanced
-
 "use client";
 
 import Header from "@/components/Header";
@@ -37,20 +35,20 @@ export default function AboutPage() {
     },
   ];
 
-  // Footer color (same as Core Values front)
   const footerBlue = "#0F1F3D";
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <Header />
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION WITH FIX – added overlay for readability */}
       <motion.div
         className="relative py-24 md:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden mt-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
+        {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <Image
             src="/about.png"
@@ -61,34 +59,36 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="relative max-w-7xl mx-auto text-center">
-          <div className="inline-block bg-white/90 px-6 py-5 rounded-md shadow-md backdrop-blur-sm">
-            <motion.h1
-              className="text-3xl md:text-4xl font-bold text-blue-900 mb-3"
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              About Our Firm
-            </motion.h1>
+        {/* Dark Overlay (NEW ADDITION) */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-            <motion.p
-              className="text-lg text-gray-700 max-w-3xl mx-auto"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              Delivering exceptional financial services with integrity, expertise,
-              and personalized attention since our founding.
-            </motion.p>
-          </div>
+        {/* CONTENT */}
+        <div className="relative max-w-7xl mx-auto text-center">
+          <motion.h1
+            className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg mb-3"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            About Our Firm
+          </motion.h1>
+
+          <motion.p
+            className="text-base md:text-lg text-white/90 max-w-3xl mx-auto drop-shadow"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            Delivering exceptional financial services with integrity, expertise,
+            and personalized attention since our founding.
+          </motion.p>
         </div>
       </motion.div>
 
-      {/* PAGE CONTAINER */}
+      {/* PAGE CONTENT BELOW — UNTOUCHED */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
-        {/* ======================= CORE VALUES ======================= */}
+        {/* CORE VALUES SECTION */}
         <motion.section
           className="mb-24"
           initial={{ opacity: 0, y: 30 }}
@@ -105,7 +105,6 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* FIXED ICON BACKGROUND (PREMIUM STYLE) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {coreValues.map((value, index) => (
               <motion.div
@@ -142,7 +141,7 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* ======================= FOUNDER SECTION (UNCHANGED) ======================= */}
+        {/* FOUNDER SECTION */}
         <motion.section
           className="mb-24"
           initial={{ opacity: 0 }}
@@ -202,7 +201,7 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* ======================= PURPOSE / MISSION / VISION ======================= */}
+        {/* PURPOSE / MISSION / VISION SECTION */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -219,7 +218,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-
+            
             {/* Mission */}
             <div className="bg-white rounded-2xl shadow-xl p-10 border border-gray-100 hover:shadow-2xl transition duration-300 group">
               <div className="w-16 h-16 rounded-xl bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-105 transition">
@@ -235,7 +234,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* PURPOSE — UPDATED TO USE footerBlue BACKGROUND LIKE CORE VALUES */}
+            {/* Purpose */}
             <div
               className="rounded-2xl shadow-xl p-10 border border-blue-700 hover:shadow-2xl transition duration-300 group"
               style={{ background: footerBlue }}

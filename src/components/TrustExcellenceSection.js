@@ -289,15 +289,15 @@ function StatCard({ number, suffix, label, delay, color, icon }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
-      className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 text-center"
+      className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/50 text-center"
     >
-      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br ${colorClasses[color]} mb-4 text-white`}>
+      <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${colorClasses[color]} mb-3 text-white`}>
         {icon}
       </div>
-      <div className="text-3xl font-bold text-slate-800 mb-1">
+      <div className="text-2xl font-bold text-slate-800 mb-1">
         {count}{suffix}
       </div>
-      <div className="text-slate-600">{label}</div>
+      <div className="text-slate-600 text-sm">{label}</div>
     </motion.div>
   );
 }

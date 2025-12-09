@@ -91,11 +91,11 @@ export default function CoreServices() {
                 className="group"
               >
                 <div className="flex items-start">
-                  {/* ICON CONTAINER */}
+                  {/* ICON CONTAINER (REDUCED AGAIN) */}
                   <div className="flex-shrink-0 relative">
-                    <div className="absolute inset-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-500 blur-md opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                    <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
-                      <IconComponent className="w-8 h-8" />
+                    <div className="absolute inset-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-500 blur-md opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                    <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
+                      <IconComponent className="w-5 h-5" />
                     </div>
                   </div>
                   
