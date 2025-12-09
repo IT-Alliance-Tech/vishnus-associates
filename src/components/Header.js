@@ -13,11 +13,15 @@ export default function PremiumHeader() {
     { name: "Contact", href: "/contact" },
   ];
 
-  // 👉 Calendly Popup Function
+  // 👉 Final Calendly Popup Function with your real link
   const openCalendly = () => {
-    Calendly.initPopupWidget({
-      url: "https://calendly.com/YOUR-USERNAME/YOUR-EVENT", // ← Replace this
-    });
+    if (typeof window !== "undefined" && window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/gireeshma-italliancetech/30min",
+      });
+    } else {
+      console.error("Calendly script not loaded yet.");
+    }
   };
 
   return (
