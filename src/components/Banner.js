@@ -20,7 +20,7 @@ export default function CTASectionModern() {
               
               <div className="mt-10">
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="inline-block px-10 py-4 rounded-full text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   Get Started Today

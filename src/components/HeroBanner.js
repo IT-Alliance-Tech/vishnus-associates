@@ -8,16 +8,16 @@ export default function HeroBanner() {
       {/* Subtle background elements */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-blue-200 rounded-full filter blur-3xl opacity-30"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-200 rounded-full filter blur-3xl opacity-30"></div>
-      
+
       {/* Geometric pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#dbeafe_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Left content */}
           <motion.div 
-            className="space-y-10"
+            className="space-y-10 self-center"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -32,7 +32,7 @@ export default function HeroBanner() {
                   Trusted Financial Experts Since 2005
                 </span>
               </motion.div>
-              
+
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
                 <span className="text-slate-900">Empowering Smarter </span>
                 <span className="text-blue-600">
@@ -56,8 +56,9 @@ export default function HeroBanner() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
+              {/* UPDATED: Explore Services → Go to /services */}
               <motion.a
-                href="#services"
+                href="/service"
                 className="px-8 py-4 rounded-xl text-white font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 group"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
@@ -66,8 +67,9 @@ export default function HeroBanner() {
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </motion.a>
 
+              {/* UPDATED: Book Consultation → Scroll to header section */}
               <motion.a
-                href="tel:+910000000000"
+                href="#free-consultation"
                 className="px-8 py-4 rounded-xl font-semibold bg-white text-blue-700 hover:bg-blue-50 transition-all flex items-center gap-3 shadow-sm border border-blue-200 group"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
@@ -80,7 +82,7 @@ export default function HeroBanner() {
 
           {/* Right content - Feature showcase */}
           <motion.div 
-            className="relative"
+            className="relative self-center"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -88,9 +90,9 @@ export default function HeroBanner() {
             <div className="relative bg-white rounded-2xl border border-blue-100 shadow-xl overflow-hidden">
               {/* Decorative header */}
               <div className="h-2 bg-gradient-to-r from-blue-500 to-amber-400"></div>
-              
-              <div className="p-8">
-                <div className="grid grid-cols-2 gap-6">
+
+              <div className="p-6">
+                <div className="grid grid-cols-2 gap-4">
                   <FeatureItem
                     icon={<BarChart2 className="w-6 h-6" />}
                     title="Financial Excellence"
@@ -123,9 +125,8 @@ export default function HeroBanner() {
                     iconColor="text-violet-600"
                   />
                 </div>
-                
-                {/* Stats section */}
-                <div className="mt-10 pt-8 border-t border-blue-100">
+
+                <div className="mt-6 pt-6 border-t border-blue-100">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <StatItem value="15+" label="Years Experience" />
                     <StatItem value="500+" label="Clients Served" />
@@ -135,6 +136,7 @@ export default function HeroBanner() {
               </div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
@@ -144,14 +146,15 @@ export default function HeroBanner() {
 function FeatureItem({ icon, title, subtitle, bgColor, iconColor }) {
   return (
     <motion.div 
-      className={`rounded-xl p-5 ${bgColor} transition-all duration-300`}
+      className={`rounded-xl p-4 ${bgColor} transition-all duration-300`}
       whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.05)" }}
     >
-      <div className={`w-12 h-12 rounded-lg ${iconColor} ${bgColor.replace('50', '100')} flex items-center justify-center mb-4`}>
+      <div className={`w-12 h-12 rounded-lg ${iconColor} ${bgColor.replace('50', '100')} flex items-center justify-center mb-3`}>
         {icon}
       </div>
-      <h3 className="font-bold text-slate-900 mb-1">{title}</h3>
-      <p className="text-sm text-slate-600">{subtitle}</p>
+
+      <h3 className="font-semibold text-xs text-slate-900 mb-1">{title}</h3>
+      <p className="text-base font-medium text-slate-600">{subtitle}</p>
     </motion.div>
   );
 }
