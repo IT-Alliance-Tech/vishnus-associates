@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link"; // ← IMPORTANT
 
 export default function PremiumHeader() {
   const [open, setOpen] = useState(false);
@@ -12,17 +13,6 @@ export default function PremiumHeader() {
     { name: "Services", href: "/service" },
     { name: "Contact", href: "/contact" },
   ];
-
-  // 👉 Final Calendly Popup Function with your real link
-  const openCalendly = () => {
-    if (typeof window !== "undefined" && window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: "https://calendly.com/gireeshma-italliancetech/30min",
-      });
-    } else {
-      console.error("Calendly script not loaded yet.");
-    }
-  };
 
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/60 shadow-sm">
@@ -57,24 +47,23 @@ export default function PremiumHeader() {
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="/login"
-              className="px-5 py-2 border border-gray-300 text-gray-800 rounded-lg hover:bg-gray-100 transition"
+              className="px-5 py-2 border border-gray-300 text-gray-800 rounded-lg hover:bg-gray-100 transition cursor-pointer"
             >
               Login
             </a>
 
-            {/* Calendly Popup Button */}
-            <button
-              onClick={openCalendly}
-              className="px-6 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition"
-            >
-              Free Consultation
-            </button>
+            {/* Free Consultation with cursor-pointer */}
+            <Link href="/free-consultation">
+              <button className="px-6 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition cursor-pointer">
+                Free Consultation
+              </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 bg-gray-100 rounded-lg"
+            className="lg:hidden p-2 bg-gray-100 rounded-lg cursor-pointer"
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -90,7 +79,7 @@ export default function PremiumHeader() {
                 key={item.name}
                 onClick={() => setOpen(false)}
                 href={item.href}
-                className="py-3 text-gray-800 font-medium rounded-lg hover:bg-gray-100 transition"
+                className="py-3 text-gray-800 font-medium rounded-lg hover:bg-gray-100 transition cursor-pointer"
               >
                 {item.name}
               </a>
@@ -99,21 +88,17 @@ export default function PremiumHeader() {
             <a
               href="/login"
               onClick={() => setOpen(false)}
-              className="py-3 mt-2 border border-gray-300 text-center rounded-lg hover:bg-gray-100 transition"
+              className="py-3 mt-2 border border-gray-300 text-center rounded-lg hover:bg-gray-100 transition cursor-pointer"
             >
               Login
             </a>
 
-            {/* Mobile Calendly Button */}
-            <button
-              onClick={() => {
-                setOpen(false);
-                openCalendly();
-              }}
-              className="w-full text-center py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition"
-            >
-              Free Consultation
-            </button>
+            {/* Mobile Free Consultation with cursor-pointer */}
+            <Link href="/free-consultation" onClick={() => setOpen(false)}>
+              <button className="w-full text-center py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition cursor-pointer">
+                Free Consultation
+              </button>
+            </Link>
           </nav>
         </div>
       )}
