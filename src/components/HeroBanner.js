@@ -12,7 +12,8 @@ export default function HeroBanner() {
       {/* Geometric pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#dbeafe_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      {/* Added responsive pt-28 for mobile to move content down */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left content */}
@@ -23,15 +24,6 @@ export default function HeroBanner() {
             transition={{ duration: 0.7 }}
           >
             <div className="space-y-6">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full">
-                  Trusted Financial Experts Since 2005
-                </span>
-              </motion.div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
                 <span className="text-slate-900">Empowering Smarter </span>
@@ -56,7 +48,6 @@ export default function HeroBanner() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              {/* UPDATED: Explore Services → Go to /services */}
               <motion.a
                 href="/service"
                 className="px-8 py-4 rounded-xl text-white font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 group"
@@ -67,7 +58,6 @@ export default function HeroBanner() {
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </motion.a>
 
-              {/* UPDATED: Book Consultation → Scroll to header section */}
               <motion.a
                 href="#free-consultation"
                 className="px-8 py-4 rounded-xl font-semibold bg-white text-blue-700 hover:bg-blue-50 transition-all flex items-center gap-3 shadow-sm border border-blue-200 group"
@@ -88,7 +78,6 @@ export default function HeroBanner() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <div className="relative bg-white rounded-2xl border border-blue-100 shadow-xl overflow-hidden">
-              {/* Decorative header */}
               <div className="h-2 bg-gradient-to-r from-blue-500 to-amber-400"></div>
 
               <div className="p-6">
