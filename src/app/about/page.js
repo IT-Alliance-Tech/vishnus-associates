@@ -271,7 +271,7 @@ export default function AboutPage() {
         </motion.section>
       </div>
 
-      <Footer />
+            <Footer />
     </div>
   );
 }
