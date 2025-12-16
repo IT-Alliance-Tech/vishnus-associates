@@ -141,7 +141,7 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* FOUNDER SECTION */}
+             {/* FOUNDER SECTION */}
         <motion.section
           className="mb-24"
           initial={{ opacity: 0 }}
