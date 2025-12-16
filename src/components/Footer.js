@@ -33,26 +33,23 @@ export default function ModernWaveFooter() {
             </div>
 
             <p className="text-gray-400 text-sm">
-              Expert financial solutions with 15+ years of experience serving clients across India. Trusted by 15,000+ satisfied customers.
+              Expert financial solutions with 6+ years of experience serving clients across India. Trusted by 1000+ satisfied customers.
             </p>
 
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="text-white" size={18} />
                 <a href="mailto:info@vishnusassociates.com" className="text-white hover:text-blue-400 transition text-sm">
-                  info@vishnusassociates.com
+                  support@cavsa.in
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="text-white" size={18} />
                 <a href="tel:+91XXXXX XXXXX" className="text-white hover:text-blue-400 transition text-sm">
-                  +91 XXXXX XXXXX
+                  +91 9731208006
                 </a>
               </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="text-white" size={18} />
-                <span className="text-white text-sm">Pan-India Services</span>
-              </div>
+              
             </div>
 
             <div className="flex gap-3 mt-4">
