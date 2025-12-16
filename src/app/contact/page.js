@@ -1,17 +1,44 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Mail, Phone, Smartphone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, Smartphone, MapPin, Clock, Send, CheckCircle, XCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import bannerImg from "../../../public/contact1.png";
+
+// Simple Toast Component
+const Toast = ({ message, type, onClose }) => {
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      onClose();
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
+  return (
+    <div
+      className="flex items-center gap-3 px-6 py-4 rounded-lg shadow-lg mb-4"
+      style={{
+        background: type === "success" ? "#10b981" : "#ef4444",
+        color: "white",
+      }}
+    >
+      {type === "success" ? (
+        <CheckCircle className="w-5 h-5 flex-shrink-0" />
+      ) : (
+        <XCircle className="w-5 h-5 flex-shrink-0" />
+      )}
+      <span className="font-medium">{message}</span>
+    </div>
+  );
+};
 
 export default function ContactPage() {
   const cssVars = {
     "--brand-blue": "#0f1724",
-    "--brand-mid": "#0F1F3D",  // main brand blue
-    "--brand-gold": "#c8892b", // banner buttons will use this for visibility
+    "--brand-mid": "#0F1F3D",
+    "--brand-gold": "#c8892b",
     "--soft-cream": "#fff9f2",
     "--page-bg": "#fbfdff",
     backgroundColor: "var(--page-bg)",
@@ -19,19 +46,80 @@ export default function ContactPage() {
 
   const primaryButtonShadow = "0 8px 30px rgba(15,31,61,0.14)";
 
+  // ✅ POINTING TO API ROUTE
+  const GOOGLE_SCRIPT_URL = "/api/contact";
+
+  // ---------- FORM STATE ----------
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const showToast = (message, type) => {
+    setToast({ message, type });
+  };
+
+  const hideToast = () => {
+    setToast(null);
+  };
+
+  // ---------- FORM SUBMIT ----------
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.status === "success") {
+          showToast("Submission successful. Please try again.", "success");
+        // Clear form immediately after successful submission
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        showToast("Submission failed. Please try again.", "error");
+        showToast("Details Submitted Successfully!", "success");
+      }
+    } catch (err) {
+      showToast("Network error. Please try again.", "error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // ---------- RENDER ----------
   return (
     <div style={cssVars} className="w-full min-h-screen font-sans text-gray-700">
       <Header />
 
-      {/* Hero Section with Banner Image */}
+      {/* Hero Section */}
       <div className="relative py-32 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-90"
           style={{ backgroundImage: `url(${bannerImg.src})` }}
         ></div>
-
         <div className="absolute inset-0 bg-black/40"></div>
-
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -58,8 +146,7 @@ export default function ContactPage() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-xl text-blue-100 max-w-3xl mx-auto mb-10"
             >
-              We're here to help you navigate your financial journey with personalized
-              solutions and expert guidance.
+              We're here to help you navigate your financial journey with personalized solutions and expert guidance.
             </motion.p>
 
             <motion.div
@@ -68,20 +155,18 @@ export default function ContactPage() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="flex flex-wrap justify-center gap-4"
             >
-              {/* Banner Buttons with Gold color for Call Now */}
               <a
                 href="tel:+91XXXXXXXXXX"
-                className={`flex items-center gap-2 bg-[var(--brand-gold)] text-white px-6 py-3 rounded-lg border border-white/20 hover:bg-[#b37725] transition-all shadow-lg font-medium`}
+                className="flex items-center gap-2 bg-[var(--brand-gold)] text-white px-6 py-3 rounded-lg border border-white/20 hover:bg-[#b37725] transition-all shadow-lg font-medium"
                 style={{ boxShadow: primaryButtonShadow }}
               >
                 <Phone className="w-5 h-5" />
                 <span>Call Now</span>
               </a>
 
-              {/* Email Us button text changed to white */}
               <a
                 href="mailto:info@vishnusassociates.com"
-                className={`flex items-center gap-2 bg-transparent text-white px-6 py-3 rounded-lg border border-white/30 hover:bg-white/10 transition-all font-medium`}
+                className="flex items-center gap-2 bg-transparent text-white px-6 py-3 rounded-lg border border-white/30 hover:bg-white/10 transition-all font-medium"
               >
                 <Mail className="w-5 h-5" />
                 <span>Email Us</span>
@@ -92,6 +177,7 @@ export default function ContactPage() {
       </div>
 
       <main className="max-w-7xl mx-auto px-6 py-16">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -120,7 +206,7 @@ export default function ContactPage() {
               </h3>
 
               <div className="space-y-6">
-                {[
+                {[ 
                   { icon: <Mail className="w-5 h-5" />, title: "Email Us", content: "info@vishnusassociates.com", description: "For general inquiries and support" },
                   { icon: <Phone className="w-5 h-5" />, title: "Call Us", content: "+91 XXXXX XXXXX", description: "Mon-Fri, 9:00 AM - 6:00 PM" },
                   { icon: <Smartphone className="w-5 h-5" />, title: "WhatsApp", content: "+91 XXXXX XXXXX", description: "For quick responses" },
@@ -134,10 +220,7 @@ export default function ContactPage() {
                     transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
                     className="flex gap-4 p-4 rounded-xl hover:bg-blue-50/50 transition-all"
                   >
-                    <div
-                      className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-white"
-                      style={{ background: "var(--brand-mid)" }}
-                    >
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-white" style={{ background: "var(--brand-mid)" }}>
                       {item.icon}
                     </div>
                     <div>
@@ -148,31 +231,6 @@ export default function ContactPage() {
                   </motion.div>
                 ))}
               </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.5 }}
-                className="mt-8 p-5 rounded-xl border border-red-100 bg-red-50"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 p-2 bg-red-100 rounded-lg">
-                    <Phone className="w-4 h-4 text-red-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-red-800 mb-1">Emergency Support</h4>
-                    <p className="text-red-700 text-sm mb-3">
-                      Need urgent assistance? Our emergency line is available 24/7.
-                    </p>
-                    <a
-                      href="tel:+91XXXXXXXXXX"
-                      className={`inline-flex items-center gap-2 px-4 py-2 bg-white text-[var(--brand-mid)] rounded-lg hover:opacity-90 transition-all text-sm font-medium`}
-                    >
-                      Call Emergency Line
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
 
@@ -191,27 +249,27 @@ export default function ContactPage() {
                 <p className="text-gray-600 mt-2">We'll get back to you within 24 hours.</p>
               </div>
 
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                    <input type="text" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-white" placeholder="Enter your full name" />
+                    <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required className="w-full px-4 py-3 border border-gray-300 rounded-lg" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                    <input type="email" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-white" placeholder="Enter your email" />
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-3 border border-gray-300 rounded-lg" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                    <input type="tel" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-white" placeholder="Enter your phone number" />
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full px-4 py-3 border border-gray-300 rounded-lg" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Service Required</label>
-                    <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-white">
-                      <option>Select a service</option>
+                    <select name="service" value={formData.service} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                      <option value="">Select a service</option>
                       <option>Accounting & Compliance</option>
                       <option>Tax Filings</option>
                       <option>Audit & Assurance</option>
@@ -224,58 +282,56 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                  <textarea required rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-white" placeholder="Tell us about your requirements..."></textarea>
+                  <textarea name="message" value={formData.message} onChange={handleChange} required rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg" />
                 </div>
+
+                {/* Toast Notification above button */}
+                {toast && <Toast message={toast.message} type={toast.type} onClose={hideToast} />}
 
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className={`w-full flex items-center justify-center gap-2 py-4 px-6 rounded-lg font-semibold text-white shadow-lg`}
-                  style={{
-                    background: "var(--brand-mid)",
-                    boxShadow: primaryButtonShadow,
-                  }}
+                  disabled={loading}
+                  className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-lg font-semibold text-white shadow-lg"
+                  style={{ background: "var(--brand-mid)", boxShadow: primaryButtonShadow }}
                 >
                   <Send className="w-5 h-5" />
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </motion.button>
               </form>
-            </div>
 
-            {/* Why Choose Us */}
-            <div className="mt-12">
-              <h4 className="text-2xl font-bold mb-6" style={{ color: "var(--brand-blue)" }}>
-                Why Choose Our Services
-              </h4>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                {[
-                  { title: "Expert Team", desc: "Qualified CAs with 10+ years experience" },
-                  { title: "Quick Response", desc: "We respond to all inquiries within 24 hours" },
-                  { title: "Transparent Pricing", desc: "No hidden costs or surprise fees" },
-                  { title: "Pan-India Service", desc: "We serve clients across the country" },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
-                    className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex gap-4"
-                  >
-                    <div
-                      className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-white"
-                      style={{ background: "var(--brand-mid)" }}
+              {/* WHY CHOOSE US */}
+              <div className="mt-12">
+                <h4 className="text-2xl font-bold mb-6" style={{ color: "var(--brand-blue)" }}>
+                  Why Choose Our Services
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {[
+                    { title: "Expert Team", desc: "Qualified CAs with 10+ years experience" },
+                    { title: "Quick Response", desc: "We respond to all inquiries within 24 hours" },
+                    { title: "Transparent Pricing", desc: "No hidden costs or surprise fees" },
+                    { title: "Pan-India Service", desc: "We serve clients across the country" },
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
+                      className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex gap-4"
                     >
-                      <span className="font-bold text-sm">{index + 1}</span>
-                    </div>
-                    <div>
-                      <h5 className="font-semibold text-gray-900 mb-1">{item.title}</h5>
-                      <p className="text-gray-600 text-sm">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center text-white" style={{ background: "var(--brand-mid)" }}>
+                        <span className="font-bold text-sm">{index + 1}</span>
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-gray-900 mb-1">{item.title}</h5>
+                        <p className="text-gray-600 text-sm">{item.desc}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
+
             </div>
           </motion.div>
         </div>
