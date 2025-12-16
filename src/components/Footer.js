@@ -141,7 +141,7 @@ export default function ModernWaveFooter() {
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
             <Link href="/privacypolicy" className="text-gray-500 hover:text-gray-300 transition">Privacy Policy</Link>
             <Link href="/termsandconditions" className="text-gray-500 hover:text-gray-300 transition">Terms of Service</Link>
-            <Link href="/sitemap" className="text-gray-500 hover:text-gray-300 transition">Sitemap</Link>
+            
           </div>
         </div>
       </div>
