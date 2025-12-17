@@ -66,7 +66,7 @@ export default function HeroBanner() {
                 whileTap={{ scale: 0.98 }}
               >
                 <Phone className="w-5 h-5 text-blue-600" />
-                <span>Book Free Consultation</span>
+                <span>Book Consultation</span>
               </motion.a>
             </motion.div>
           </motion.div>
@@ -118,8 +118,8 @@ export default function HeroBanner() {
 
                 <div className="mt-6 pt-6 border-t border-blue-100">
                   <div className="grid grid-cols-3 gap-4 text-center">
-                    <StatItem value="15+" label="Years Experience" />
-                    <StatItem value="500+" label="Clients Served" />
+                    <StatItem value="6+" label="Years Experience" />
+                    <StatItem value="950+" label="Clients Served" />
                     <StatItem value="98%" label="Satisfaction" />
                   </div>
                 </div>
