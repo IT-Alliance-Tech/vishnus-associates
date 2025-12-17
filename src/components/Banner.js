@@ -36,7 +36,7 @@ export default function CTASectionModern() {
                   <Mail className="text-indigo-600" size={28} />
                 </div>
                 <h3 className="mt-4 text-xl font-semibold text-gray-900">Email Us</h3>
-                <p className="mt-2 text-gray-600">info@vishnusassociates.com</p>
+                <p className="mt-2 text-gray-600">support@cavsa.in</p>
               </div>
               
               {/* Call */}
@@ -45,7 +45,7 @@ export default function CTASectionModern() {
                   <Smartphone className="text-amber-600" size={28} />
                 </div>
                 <h3 className="mt-4 text-xl font-semibold text-gray-900">Call Us</h3>
-                <p className="mt-2 text-gray-600">+91 XXXXX XXXXX</p>
+                <p className="mt-2 text-gray-600">+91 9731208006</p>
               </div>
               
               {/* Direct Line */}
@@ -54,7 +54,7 @@ export default function CTASectionModern() {
                   <Phone className="text-purple-600" size={28} />
                 </div>
                 <h3 className="mt-4 text-xl font-semibold text-gray-900">Direct Line</h3>
-                <p className="mt-2 text-gray-600">+91 XXXXX XXXXX</p>
+                <p className="mt-2 text-gray-600">+91 9743991199</p>
               </div>
             </div>
             
