@@ -30,14 +30,15 @@ export default function TermsAndConditions() {
           <div
             className="absolute top-40 right-20 w-80 h-80 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"
             style={{ animationDelay: "2s" }}
-          />
+          ></div>
           <div
             className="absolute bottom-40 left-1/3 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"
             style={{ animationDelay: "4s" }}
-          />
+          ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6">
+
           {/* Page Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +53,7 @@ export default function TermsAndConditions() {
                 transition={{ duration: 0.8, type: "spring" }}
                 className="hidden md:block flex-shrink-0"
               >
-                {/* 🔽 ICON SIZE REDUCED (ONLY CHANGE) */}
+                {/* ✅ ONLY ICON SIZE REDUCED */}
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-xl flex items-center justify-center">
                   <FileText className="text-white" size={32} />
                 </div>
@@ -71,6 +72,7 @@ export default function TermsAndConditions() {
 
           {/* Layout */}
           <div className="flex flex-col lg:flex-row gap-8">
+
             {/* Sidebar */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -103,6 +105,7 @@ export default function TermsAndConditions() {
 
             {/* Main Content */}
             <div className="flex-1 space-y-8">
+
               <Section icon={FileText} title="Acceptance of Terms" number="01">
                 By accessing and using our website, you agree to abide by these terms
                 and conditions. If you do not agree, please refrain from using our services.
@@ -116,38 +119,47 @@ export default function TermsAndConditions() {
               <Section icon={Info} title="Accuracy of Information" number="03">
                 While we strive for accuracy, we do not guarantee the completeness,
                 accuracy, or reliability of the information on our website.
+                Users are encouraged to verify information independently.
               </Section>
 
               <Section icon={ShieldCheck} title="Client–Professional Relationship" number="04">
                 The information provided does not constitute professional advice.
+                No client–professional relationship is established by using this website.
               </Section>
 
               <Section icon={Lock} title="Data Protection & Privacy" number="05">
-                We collect minimal personal information and comply with applicable laws.
+                We collect minimal personal information for legitimate business purposes
+                and adhere to applicable data protection laws.
               </Section>
 
               <Section icon={Scale} title="Intellectual Property" number="06">
-                All content belongs to Vishnu S & Associates.
+                All content on this website, including text, images, and logos,
+                is the property of Vishnu S & Associates, Chartered Accountants.
               </Section>
 
               <Section icon={Scale} title="Limitation of Liability" number="07">
-                We are not liable for damages arising from usage.
+                Vishnu S & Associates shall not be liable for any direct, indirect,
+                or consequential damages arising from the use or inability to use
+                our website or services.
               </Section>
 
               <Section icon={Link2} title="Links to Third-Party Websites" number="08">
-                We are not responsible for third-party content.
+                Our website may contain links to third-party websites.
+                We are not responsible for their content or privacy practices.
               </Section>
 
               <Section icon={Edit} title="Modification of Terms" number="09">
-                Terms may be modified without prior notice.
+                We reserve the right to modify or update these terms at any time
+                without prior notice.
               </Section>
 
               <Section icon={Scale} title="Dispute Resolution" number="10">
-                Disputes shall be resolved through arbitration.
+                Any disputes arising from the use of this website shall be resolved
+                through arbitration.
               </Section>
 
               <Section icon={Phone} title="Contact Information" number="11">
-                Contact us at{" "}
+                For any inquiries regarding these terms, please contact us at{" "}
                 <a
                   href="mailto:support@cavsa.in"
                   className="font-semibold text-blue-600 hover:text-blue-700"
@@ -157,11 +169,14 @@ export default function TermsAndConditions() {
               </Section>
 
               <Section icon={RotateCcw} title="Refund Policy" number="12">
-                Refunds will not be issued.
+                We aim to ensure complete satisfaction with our services.
+                However, please note that refunds will not be issued.
               </Section>
 
+              {/* ✅ Pricing section WITHOUT pricing amount */}
               <Section icon={IndianRupee} title="Pricing" number="13">
-                Pricing ranges up to ₹2.5L depending on services.
+                Our pricing structure is designed to accommodate diverse client needs.
+                Service fees vary based on the scope, complexity, and nature of services provided.
               </Section>
 
               {/* Agreement Card */}
@@ -181,11 +196,13 @@ export default function TermsAndConditions() {
                       Agreement Acknowledgment
                     </h3>
                     <p className="text-slate-700 text-lg">
-                      By using our website, you acknowledge and agree to these terms.
+                      By using our website, you acknowledge that you have read,
+                      understood, and agreed to these Terms & Conditions.
                     </p>
                   </div>
                 </div>
               </motion.div>
+
             </div>
           </div>
         </div>
