@@ -65,7 +65,7 @@ export default function PrivacyPolicyPage() {
                 <Shield className="w-7 h-7" />
               </div>
               <h1 className="text-2xl font-bold mb-2 text-gray-900">Privacy Policy</h1>
-              <p className="text-gray-600 text-sm">Last updated: December 2024</p>
+                     <p className="text-gray-600 text-sm">Last updated: December 2024</p>
             </div>
 
             <nav className="space-y-2">
