@@ -18,7 +18,7 @@ const Toast = ({ message, type, onClose }) => {
 
   return (
     <div
-      className="flex items-center gap-3 px-6 py-4 rounded-lg shadow-lg mb-4"
+          className="flex items-center gap-3 px-6 py-4 rounded-lg shadow-lg mb-4"
       style={{
         background: type === "success" ? "#10b981" : "#ef4444",
         color: "white",
@@ -34,7 +34,7 @@ const Toast = ({ message, type, onClose }) => {
   );
 };
 
-export default function ContactPage() {
+   export default function ContactPage() {
   const cssVars = {
     "--brand-blue": "#0f1724",
     "--brand-mid": "#0F1F3D",
