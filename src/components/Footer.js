@@ -22,7 +22,7 @@ export default function ModernWaveFooter() {
 
       <div className="pt-20 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-          
+
           {/* Brand & Contact Section */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
@@ -33,30 +33,37 @@ export default function ModernWaveFooter() {
             </div>
 
             <p className="text-gray-400 text-sm">
-              Expert financial solutions with 6+ years of experience serving clients across India. Trusted by 1000+ satisfied customers.
+              Expert financial solutions with 6+ years of experience serving clients across India.
+              Trusted by 1000+ satisfied customers.
             </p>
 
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="text-white" size={18} />
-                <a href="mailto:info@vishnusassociates.com" className="text-white hover:text-blue-400 transition text-sm">
+                <a
+                  href="mailto:info@vishnusassociates.com"
+                  className="text-white hover:text-blue-400 transition text-sm"
+                >
                   support@cavsa.in
                 </a>
               </div>
+
               <div className="flex items-center gap-3">
                 <Phone className="text-white" size={18} />
-                <a href="tel:+91XXXXX XXXXX" className="text-white hover:text-blue-400 transition text-sm">
+                <a
+                  href="tel:+919731208006"
+                  className="text-white hover:text-blue-400 transition text-sm"
+                >
                   +91 9731208006
                 </a>
               </div>
-              
             </div>
 
             <div className="flex gap-3 mt-4">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
-                <a 
-                  href="#" 
-                  key={idx} 
+                <a
+                  href="#"
+                  key={idx}
                   className="bg-gray-800 hover:bg-blue-500 text-white p-2 rounded-lg transition"
                 >
                   <Icon size={16} />
@@ -65,7 +72,7 @@ export default function ModernWaveFooter() {
             </div>
           </div>
 
-          {/* One Single Card: Services + Quick Links */}
+          {/* Services + Quick Links Card */}
           <div className="bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-blue-500/30 transition duration-300">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
@@ -74,16 +81,16 @@ export default function ModernWaveFooter() {
                 <h3 className="text-xl font-bold text-white mb-4">Our Services</h3>
                 <ul className="space-y-2">
                   {[
-                    "Bookkeeping and compliance", 
-                    "Auditing and assurance", 
-                    "Tax Services", 
-                    "LegalMatters", 
-                    "Startup Advisory", 
-                    "virtual CFO"
+                    "Bookkeeping and compliance",
+                    "Auditing and assurance",
+                    "Tax Services",
+                    "Legal Matters",
+                    "Startup Advisory",
+                    "Virtual CFO",
                   ].map((service, idx) => (
-                    <li 
-                      key={idx} 
-                      className="flex items-center gap-3 text-gray-300 hover:text-white cursor-pointer transition"
+                    <li
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-300 hover:text-white transition"
                     >
                       <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                       {service}
@@ -92,11 +99,10 @@ export default function ModernWaveFooter() {
                 </ul>
               </div>
 
-              {/* Quick Links - UPDATED with blue bullets */}
+              {/* Quick Links (UPDATED) */}
               <div>
                 <h3 className="text-xl font-bold text-white mb-4">Quick Links</h3>
                 <ul className="space-y-2">
-                  
                   <li className="flex items-center gap-3 text-gray-300 hover:text-white transition">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                     <Link href="/">Home</Link>
@@ -117,6 +123,16 @@ export default function ModernWaveFooter() {
                     <Link href="/contact">Contact</Link>
                   </li>
 
+                  {/* Newly Added Here */}
+                  <li className="flex items-center gap-3 text-gray-300 hover:text-white transition">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <Link href="/privacypolicy">Privacy Policy</Link>
+                  </li>
+
+                  <li className="flex items-center gap-3 text-gray-300 hover:text-white transition">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <Link href="/termsandconditions">Terms of Service</Link>
+                  </li>
                 </ul>
               </div>
 
@@ -125,7 +141,7 @@ export default function ModernWaveFooter() {
 
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar (UPDATED – links removed) */}
         <div className="pt-8 mt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm gap-3">
           <div className="flex items-center gap-2">
             <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-6 w-6 rounded-lg flex items-center justify-center">
@@ -137,12 +153,6 @@ export default function ModernWaveFooter() {
           <p className="text-gray-500 text-center md:text-left">
             © 2025 Vishnu S & Associates. All rights reserved.
           </p>
-
-          <div className="flex flex-wrap justify-center md:justify-start gap-4">
-            <Link href="/privacypolicy" className="text-gray-500 hover:text-gray-300 transition">Privacy Policy</Link>
-            <Link href="/termsandconditions" className="text-gray-500 hover:text-gray-300 transition">Terms of Service</Link>
-            
-          </div>
         </div>
       </div>
     </footer>
