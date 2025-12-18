@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
       icon: FileText,
       title: "Information We Collect",
       content:
-        "Vishnu S & Associates, Chartered Accountants collects minimal personal data—including name, email, phone, and business details—strictly for legitimate purposes like service inquiries, client onboarding, and regulatory compliance.",
+            "Vishnu S & Associates, Chartered Accountants collects minimal personal data—including name, email, phone, and business details—strictly for legitimate purposes like service inquiries, client onboarding, and regulatory compliance.",
     },
     {
       icon: Eye,
