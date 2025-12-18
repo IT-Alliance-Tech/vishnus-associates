@@ -15,7 +15,7 @@ export default function CoreServices() {
       icon: BookOpen
     },
     { 
-           title: "Auditing & Assurance", 
+      title: "Auditing & Assurance", 
       desc: (
         <>
           Independent and systematic examination of financial records.Identifying anomalies with precision across large transactions.
@@ -27,7 +27,7 @@ export default function CoreServices() {
       title: "Tax Services", 
       desc: (
         <>
-          Expert guidance across personal and corporate taxation. Minimizing present and future tax liabilities effectively.
+          Expert guidance across personal and corporate taxation.Making compliance seamless and efficient. Minimizing present and future tax liabilities effectively.
         </>
       ),
       icon: FileText

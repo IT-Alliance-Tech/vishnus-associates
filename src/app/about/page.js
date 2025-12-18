@@ -141,66 +141,84 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-             {/* FOUNDER SECTION */}
-        <motion.section
-          className="mb-24"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+              {/* FOUNDER SECTION — CONTENT UPDATED */}
+        <motion.section className="mb-24">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <motion.div
-              className="lg:w-1/2"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="lg:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
                 A Message from Our Founder
               </h2>
 
               <div className="space-y-4 text-gray-700 mb-6">
                 <p>
-                  When I established this firm over two decades ago, my vision
-                  was to create a practice that would combine technical excellence
-                  with genuine care for our clients.
+                  Vishnu S founded Vishnu S & Associates with a strong vision to
+                  create a Chartered Accountancy firm that goes beyond routine
+                  compliance and becomes a trusted partner for business growth.
                 </p>
                 <p>
-                  Our team of dedicated professionals brings together diverse
-                  expertise in accounting, taxation, and advisory services.
+                  A qualified Chartered Accountant with a keen interest in
+                  automation and process improvement, he focuses on helping
+                  businesses improve efficiency, accuracy, and long-term value.
                 </p>
                 <p>
-                  As we continue to grow, we remain committed to the principles
-                  that have guided us from the beginning.
+                  Under his leadership, the firm has served startups, SMEs, and
+                  established organizations with integrity and personalized care.
                 </p>
               </div>
 
-              <div>
-                <p className="font-semibold text-blue-900">Robert Chen, CPA</p>
-                <p className="text-gray-600">Founder & Senior Partner</p>
-              </div>
-            </motion.div>
+              <p className="font-semibold text-blue-900">Vishnu S</p>
+              <p className="text-gray-600">Founder</p>
+            </div>
 
-            <motion.div
-              className="lg:w-1/2 flex justify-center"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-xl overflow-hidden shadow-lg border border-blue-100">
-                <Image
-                  src={founderImg}
-                  alt="Founder"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                />
+            <div className="lg:w-1/2 flex justify-center">
+              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-xl overflow-hidden shadow-lg">
+                <Image src={founderImg} alt="Founder" fill className="object-cover" />
               </div>
-            </motion.div>
+            </div>
           </div>
         </motion.section>
 
+        {/* GENERAL MANAGER SECTION — CONTENT UPDATED */}
+        <motion.section className="mb-24">
+          <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
+            <div className="lg:w-1/2">
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+                A Message from Our General Manager
+              </h2>
+
+              <div className="space-y-4 text-gray-700 mb-6">
+                <p>
+                  Srinivasaiah Setty brings over 35 years of experience as a Bank
+                  Manager, offering deep expertise in financial operations,
+                  regulatory compliance, and risk management.
+                </p>
+                <p>
+                  With a strong background in liaison and coordination services,
+                  he plays a key role in managing regulatory interactions and
+                  strengthening institutional relationships.
+                </p>
+                <p>
+                  As General Manager, he ensures operational discipline and
+                  supports the firm’s commitment to client-centric excellence.
+                </p>
+              </div>
+
+              <p className="font-semibold text-blue-900">Srinivasaiah Setty</p>
+              <p className="text-gray-600">General Manager</p>
+            </div>
+
+            <div className="lg:w-1/2 flex justify-center">
+              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src={founderImg}
+                  alt="General Manager"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </motion.section>
         {/* PURPOSE / MISSION / VISION SECTION */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}

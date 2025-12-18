@@ -156,16 +156,16 @@ const Toast = ({ message, type, onClose }) => {
               className="flex flex-wrap justify-center gap-4"
             >
               <a
-                href="tel:+91XXXXXXXXXX"
+                href="tel:+91 9731208006"
                 className="flex items-center gap-2 bg-[var(--brand-gold)] text-white px-6 py-3 rounded-lg border border-white/20 hover:bg-[#b37725] transition-all shadow-lg font-medium"
                 style={{ boxShadow: primaryButtonShadow }}
               >
                 <Phone className="w-5 h-5" />
-                <span>Call Now</span>
+                 <span>Call Now</span>
               </a>
-
+   
               <a
-                href="mailto:info@vishnusassociates.com"
+                href="mailto:support@cavsa.in"
                 className="flex items-center gap-2 bg-transparent text-white px-6 py-3 rounded-lg border border-white/30 hover:bg-white/10 transition-all font-medium"
               >
                 <Mail className="w-5 h-5" />
@@ -207,11 +207,10 @@ const Toast = ({ message, type, onClose }) => {
 
               <div className="space-y-6">
                 {[ 
-                  { icon: <Mail className="w-5 h-5" />, title: "Email Us", content: "info@vishnusassociates.com", description: "For general inquiries and support" },
-                  { icon: <Phone className="w-5 h-5" />, title: "Call Us", content: "+91 XXXXX XXXXX", description: "Mon-Fri, 9:00 AM - 6:00 PM" },
-                  { icon: <Smartphone className="w-5 h-5" />, title: "WhatsApp", content: "+91 XXXXX XXXXX", description: "For quick responses" },
-                  { icon: <MapPin className="w-5 h-5" />, title: "Visit Us", content: "Pan-India Services", description: "Serving clients across the nation" },
-                  { icon: <Clock className="w-5 h-5" />, title: "Business Hours", content: "Mon-Fri: 9AM-6PM", description: "Saturday: 9AM-2PM" },
+                  { icon: <Mail className="w-5 h-5" />, title: "Email Us", content: "support@cavsa.in", description: "For general inquiries and support" },
+                  { icon: <Phone className="w-5 h-5" />, title: "Call Us", content: "+91 9731208006", description: "Mon-Fri, 10:00AM-6:00PM" },
+                  { icon: <Smartphone className="w-5 h-5" />, title: "WhatsApp", content: "+91 9743991199", description: "For quick responses" },
+                  { icon: <Clock className="w-5 h-5" />, title: "Business Hours", content: "Mon-Fri: 10:00AM-6:00PM", description: "Saturday:10:00AM-6:00PM" },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -270,12 +269,12 @@ const Toast = ({ message, type, onClose }) => {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Service Required</label>
                     <select name="service" value={formData.service} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg">
                       <option value="">Select a service</option>
-                      <option>Accounting & Compliance</option>
-                      <option>Tax Filings</option>
-                      <option>Audit & Assurance</option>
-                      <option>Advisory Services</option>
-                      <option>Business Registration</option>
-                      <option>Financial Planning</option>
+                      <option>Bookkeeping and Compliance</option>
+                      <option>Auditing and Assurance</option>
+                      <option>Tax Services</option>
+                      <option>LegalMatters</option>
+                      <option>startup Advisory</option>
+                      <option>Virtual CFO</option>
                     </select>
                   </div>
                 </div>
