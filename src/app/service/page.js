@@ -212,7 +212,7 @@ export default function Service() {
                 </div>
                 <div className="absolute -top-6 -right-6 bg-white p-4 rounded-lg shadow-xl">
                   <div className="text-2xl font-bold text-purple-600">6+</div>
-                  <div className="text-sm text-gray-600">Years Exp.</div>
+                     <div className="text-sm text-gray-600">Years Exp.</div>
                 </div>
               </div>
             </div>
