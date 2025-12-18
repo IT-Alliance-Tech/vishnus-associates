@@ -176,7 +176,7 @@ export default function Service() {
                   Comprehensive accounting, auditing, tax, legal, and advisory services designed to propel your business forward with confidence.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/contact" className="group inline-flex items-center justify-center bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-indigo-700 transition shadow-lg hover:shadow-xl">
+                  <a href="/free-consultation" className="group inline-flex items-center justify-center bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-indigo-700 transition shadow-lg hover:shadow-xl">
                     Book Consultation
                     <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </a>
@@ -211,7 +211,7 @@ export default function Service() {
                   <div className="text-sm text-gray-600">Success Rate</div>
                 </div>
                 <div className="absolute -top-6 -right-6 bg-white p-4 rounded-lg shadow-xl">
-                  <div className="text-2xl font-bold text-purple-600">15+</div>
+                  <div className="text-2xl font-bold text-purple-600">6+</div>
                   <div className="text-sm text-gray-600">Years Exp.</div>
                 </div>
               </div>
@@ -345,14 +345,14 @@ export default function Service() {
                     
                     <div className="flex flex-col sm:flex-row gap-4 mb-10">
                       <a
-                        href="/contact"
+                        href="/free-consultation"
                         className="inline-flex items-center justify-center bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition shadow-lg"
                       >
                         Book Consultation
                         <FaArrowRight className="ml-2" />
                       </a>
                       <a
-                        href="tel:+1234567890"
+                        href="tel:+91 9731208006"
                         className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition"
                       >
                         <FaPhone className="mr-2" />
@@ -363,33 +363,53 @@ export default function Service() {
                     <div className="flex items-center gap-6 text-sm text-indigo-100">
                       <div className="flex items-center gap-2">
                         <FaEnvelope />
-                        <span>info@yourcompany.com</span>
+                        <span>support@cavsa.in</span>
                       </div>
                     </div>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
-                      <div className="text-3xl mb-2">🎯</div>
-                      <div className="text-lg font-semibold text-white mb-1">Precision</div>
-                      <div className="text-sm text-indigo-100">Expert Solutions</div>
-                    </div>
-                    <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
-                      <div className="text-3xl mb-2">⚡</div>
-                      <div className="text-lg font-semibold text-white mb-1">Speed</div>
-                      <div className="text-sm text-indigo-100">Fast Turnaround</div>
-                    </div>
-                    <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
-                      <div className="text-3xl mb-2">🤝</div>
-                      <div className="text-lg font-semibold text-white mb-1">Trust</div>
-                      <div className="text-sm text-indigo-100">Reliable Partner</div>
-                    </div>
-                    <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
-                      <div className="text-3xl mb-2">💼</div>
-                      <div className="text-lg font-semibold text-white mb-1">Professional</div>
-                      <div className="text-sm text-indigo-100">Certified Experts</div>
-                    </div>
-                  </div>
+  <div className="bg-white p-6 rounded-xl shadow-lg">
+    <div className="text-3xl mb-2">🎯</div>
+    <div className="text-lg font-semibold text-gray-900 mb-1">
+      Precision
+    </div>
+    <div className="text-sm text-gray-600">
+      Expert Solutions
+    </div>
+  </div>
+
+  <div className="bg-white p-6 rounded-xl shadow-lg">
+    <div className="text-3xl mb-2">⚡</div>
+    <div className="text-lg font-semibold text-gray-900 mb-1">
+      Speed
+    </div>
+    <div className="text-sm text-gray-600">
+      Fast Turnaround
+    </div>
+  </div>
+
+  <div className="bg-white p-6 rounded-xl shadow-lg">
+    <div className="text-3xl mb-2">🤝</div>
+    <div className="text-lg font-semibold text-gray-900 mb-1">
+      Trust
+    </div>
+    <div className="text-sm text-gray-600">
+      Reliable Partner
+    </div>
+  </div>
+
+  <div className="bg-white p-6 rounded-xl shadow-lg">
+    <div className="text-3xl mb-2">💼</div>
+    <div className="text-lg font-semibold text-gray-900 mb-1">
+      Professional
+    </div>
+    <div className="text-sm text-gray-600">
+      Certified Experts
+    </div>
+  </div>
+</div>
+
                 </div>
               </div>
             </div>
