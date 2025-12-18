@@ -74,12 +74,12 @@ export default function ModernWaveFooter() {
                 <h3 className="text-xl font-bold text-white mb-4">Our Services</h3>
                 <ul className="space-y-2">
                   {[
-                    "Book Keeping", 
-                    "Auditing", 
+                    "Bookkeeping and compliance", 
+                    "Auditing and assurance", 
                     "Tax Services", 
-                    "Legal Matters", 
+                    "LegalMatters", 
                     "Startup Advisory", 
-                    "Compliance"
+                    "virtual CFO"
                   ].map((service, idx) => (
                     <li 
                       key={idx} 
