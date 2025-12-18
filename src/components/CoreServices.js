@@ -5,33 +5,58 @@ import { motion } from "framer-motion";
 export default function CoreServices() {
   const services = [
     { 
-      title: "Book Keeping & Compliance", 
-      desc: "Precise bookkeeping with seamless GST, IT, and statutory compliance.",
+      title: "Bookkeeping & Compliance", 
+      desc: (
+        <>
+          Strategic bookkeeping solutions tailored to client needs.<br />
+          Ensuring accuracy, compliance, and long-term financial clarity.
+        </>
+      ),
       icon: BookOpen
     },
     { 
       title: "Auditing & Assurance", 
-      desc: "Independent & transparent audits ensuring clarity and reliability.",
+      desc: (
+        <>
+          Independent and systematic examination of financial records.Identifying anomalies with precision across large transactions.
+        </>
+      ),
       icon: Shield
     },
     { 
-      title: "Tax Advisory", 
-      desc: "Strategic tax planning and end-to-end filing support for businesses.",
+      title: "Tax Services", 
+      desc: (
+        <>
+          Expert guidance across personal and corporate taxation. Minimizing present and future tax liabilities effectively.
+        </>
+      ),
       icon: FileText
     },
     { 
-      title: "Legal & Corporate Matters", 
-      desc: "ROC filings, legal documentation, and corporate governance support.",
+      title: "Legal Matters", 
+      desc: (
+        <>
+          Legal and transition advisory under GST and income tax laws.Mitigating risks and delivering clarity through expert analysis.
+        </>
+      ),
       icon: Briefcase
     },
     { 
       title: "Startup Advisory", 
-      desc: "Complete assistance from registration to financial planning.",
+      desc: (
+        <>
+          End-to-end support to launch and scale startups smoothly.Turning entrepreneurial ideas into sustainable businesses.
+        </>
+      ),
       icon: Layers
     },
     { 
-      title: "Growth Strategy Consulting", 
-      desc: "Business scaling solutions backed by financial insights.",
+      title: "Virtual CFO", 
+      desc: (
+        <>
+          Strategic financial leadership without full-time commitment.Driving growth, stability, and long-term profitability.
+        </>
+      ),
       icon: TrendingUp
     },
   ];
@@ -91,7 +116,7 @@ export default function CoreServices() {
                 className="group"
               >
                 <div className="flex items-start">
-                  {/* ICON CONTAINER (REDUCED AGAIN) */}
+                  {/* ICON CONTAINER */}
                   <div className="flex-shrink-0 relative">
                     <div className="absolute inset-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-500 blur-md opacity-30 group-hover:opacity-50 transition-opacity"></div>
                     <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
@@ -110,7 +135,7 @@ export default function CoreServices() {
                     
                     <motion.a
                       whileHover={{ x: 5 }}
-                      href="/services"
+                      href="/service"
                       className="inline-flex items-center mt-4 text-indigo-600 font-semibold hover:text-indigo-800 transition-colors"
                     >
                       Know More
