@@ -15,7 +15,7 @@ export default function CoreServices() {
       icon: BookOpen
     },
     { 
-      title: "Auditing & Assurance", 
+           title: "Auditing & Assurance", 
       desc: (
         <>
           Independent and systematic examination of financial records.Identifying anomalies with precision across large transactions.
