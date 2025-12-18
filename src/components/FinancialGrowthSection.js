@@ -152,23 +152,6 @@ export default function FinancialGrowthSection() {
                       </motion.div>
                     ))}
                   </div>
-                  
-                  <div className="mt-8 grid grid-cols-3 gap-4">
-                    {[
-                      { value: "15+", label: "Years" },
-                      { value: "500+", label: "Clients" },
-                      { value: "98%", label: "Satisfaction" }
-                    ].map((stat, i) => (
-                      <motion.div
-                        key={i}
-                        whileHover={{ scale: 1.05 }}
-                        className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700"
-                      >
-                        <div className="text-2xl font-bold text-white">{stat.value}</div>
-                        <div className="text-sm text-slate-400">{stat.label}</div>
-                      </motion.div>
-                    ))}
-                  </div>
                 </div>
 
               </div>
