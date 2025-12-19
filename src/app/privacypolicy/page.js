@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
       icon: FileText,
       title: "Information We Collect",
       content:
-            "Vishnu S & Associates, Chartered Accountants collects minimal personal data—including name, email, phone, and business details—strictly for legitimate purposes like service inquiries, client onboarding, and regulatory compliance.",
+        "Vishnu S & Associates, Chartered Accountants collects minimal personal data—including name, email, phone, and business details—strictly for legitimate purposes like service inquiries, client onboarding, and regulatory compliance.",
     },
     {
       icon: Eye,
@@ -63,73 +63,79 @@ export default function PrivacyPolicyPage() {
     <>
       <Header />
 
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50">
-        <div className="max-w-6xl mx-auto px-4 py-20">
+      <section className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        <div className="max-w-6xl mx-auto px-4 pt-32 pb-24">
 
           {/* Page Heading */}
           <motion.div
-            initial={{ opacity: 0, y: -30 }}
+            initial={{ opacity: 0, y: -25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-14 mt-12 text-center"
+            className="text-center mb-16"
           >
-            <h1 className="text-2xl font-semibold text-blue-700">
+            <h1 className="text-3xl font-bold text-blue-700">
               Privacy Policy
             </h1>
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-sm text-gray-500 mt-2">
               Last updated: December 2024
             </p>
           </motion.div>
 
           {/* Policy Sections */}
-          <div className="space-y-12">
+          <div className="grid gap-10">
             {sections.map((section, index) => {
               const Icon = section.icon;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="grid md:grid-cols-[80px_1fr] gap-6 items-center"
                 >
-                  {/* Icon */}
-                  <div className="flex justify-center items-center">
-                    <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center shadow-sm">
-                      <Icon className="w-5 h-5 text-blue-600" />
-                    </div>
-                  </div>
+                  <div className="relative bg-white/70 backdrop-blur-lg border border-blue-100 rounded-2xl p-8 shadow-sm">
 
-                  {/* Content */}
-                  <div className="bg-white border border-blue-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <h2 className="text-lg font-semibold text-gray-900 mb-2">
-                      {index + 1}. {section.title}
-                    </h2>
-                    <p className="text-base text-gray-700 leading-relaxed">
-                      {section.content}
-                    </p>
+                    {/* Icon */}
+                    <div className="absolute -top-6 left-8 w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center shadow-md">
+                      <Icon className="w-5 h-5 text-white" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="pt-6">
+                      {/* ✅ Section heading size = 23px */}
+                      <p
+                        className="font-medium text-gray-900 mb-2"
+                        style={{ fontSize: "23px", lineHeight: "1.4" }}
+                      >
+                        {index + 1}. {section.title}
+                      </p>
+
+                      <p className="text-base text-gray-700 leading-relaxed">
+                        {section.content}
+                      </p>
+                    </div>
+
                   </div>
                 </motion.div>
               );
             })}
           </div>
 
-          {/* Bottom Highlight */}
+          {/* Bottom Callout */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mt-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white shadow-lg"
+            className="mt-24 border border-blue-200 rounded-3xl p-10 bg-white shadow-md"
           >
             <div className="flex items-start gap-4">
-              <Shield className="w-6 h-6 mt-1" />
+              <Shield className="w-6 h-6 text-blue-600 mt-1" />
               <div>
-                <h3 className="text-lg font-semibold mb-2">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Questions About Privacy?
                 </h3>
-                <p className="text-base text-blue-100 leading-relaxed">
+                <p className="text-base text-gray-700 leading-relaxed">
                   If you have any questions regarding our privacy practices or this policy,
                   please contact Vishnu S & Associates. We are committed to protecting your data.
                 </p>
@@ -138,7 +144,7 @@ export default function PrivacyPolicyPage() {
           </motion.div>
 
         </div>
-      </div>
+      </section>
 
       <Footer />
     </>
