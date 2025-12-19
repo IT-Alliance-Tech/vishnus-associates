@@ -116,9 +116,7 @@ export default function TermsAndConditionsPage() {
 
           {/* Heading (unchanged from last version) */}
           <div className="text-center mb-16">
-            <span className="inline-block text-sm font-semibold tracking-widest text-blue-600 uppercase mb-3">
-              Legal Information
-            </span>
+          
             <h1 className="text-4xl md:text-5xl font-bold text-blue-700 mb-4">
               Terms & Conditions
             </h1>
