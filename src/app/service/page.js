@@ -2,7 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import { BookOpen, FileCheck, DollarSign, Scale, Rocket, Target, Receipt, BarChart3, Wallet, CheckCircle, Search, FileText, CreditCard, Globe, FileSignature, Building, Gavel, Copyright, File, Users, TrendingUp, Mail } from "lucide-react";
+import Link from "next/link";
+import {
+  BookOpen, FileCheck, DollarSign, Scale, Rocket, Target,
+  Receipt, BarChart3, Wallet, CheckCircle, Search, FileText,
+  CreditCard, Globe, FileSignature, Building, Gavel, Copyright,
+  File, Users, TrendingUp
+} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -12,48 +18,48 @@ const services = [
     title: "Bookkeeping & COMPLIANCE",
     shortDesc: "Use of Comprehensive accounting solutions to ensure you are compliant.",
     icon: <BookOpen className="w-12 h-12" />,
-    sectionId: "accounting",
+    sectionId: "bookkeeping-compliance",
   },
   {
     id: 2,
     title: "Auditing",
     shortDesc: "Uncover the hidden anomalies buried in your financial transactions.",
     icon: <FileCheck className="w-12 h-12" />,
-    sectionId: "auditing",
+    sectionId: "auditing-assurance",
   },
   {
     id: 3,
     title: "Tax services",
     shortDesc: "We work with you to address all your tax needs to your best advantage.",
     icon: <DollarSign className="w-12 h-12" />,
-    sectionId: "tax",
+    sectionId: "tax-services",
   },
   {
     id: 4,
     title: "LEGAL Matters",
     shortDesc: "Resolve your legal issues.",
     icon: <Scale className="w-12 h-12" />,
-    sectionId: "legal",
+    sectionId: "legal-matters",
   },
   {
     id: 5,
     title: "Startup Advisory",
     shortDesc: "One stop – to setup and get your business venture going.",
     icon: <Rocket className="w-12 h-12" />,
-    sectionId: "startup",
+    sectionId: "startup-advisory",
   },
   {
     id: 6,
     title: "Virtual CFO",
     shortDesc: "We advise you at every stage of your business development.",
     icon: <Target className="w-12 h-12" />,
-    sectionId: "corporate",
+    sectionId: "virtual-cfo",
   },
 ];
-
 const detailedServices = [
   {
     id: 1,
+    sectionId: "bookkeeping-compliance",
     title: "Bookkeeping & Compliance",
     subtitle: "Your team needs tools to think strategically – We can help.",
     description: "Our collective experience gives us a wealth of knowledge to handle our clientele's needs.",
@@ -83,6 +89,7 @@ const detailedServices = [
   },
   {
     id: 2,
+    sectionId: "auditing-assurance",
     title: "Auditing",
     subtitle: "We assure a systematic and independent examination of your financial records.",
     description: "Our team is well qualified to efficiently audit your books and identify the anomalies and red flags that might be deeply buried in thousands of electronic transactions.",
@@ -117,6 +124,7 @@ const detailedServices = [
   },
   {
     id: 3,
+    sectionId: "tax-services",
     title: "Tax Services",
     subtitle: "We'll do all the complex tax navigation for you from personal to corporate, local to international.",
     description: "Our experienced tax team identifies key tax planning opportunities that minimize both your current and future tax liabilities.",
@@ -151,6 +159,7 @@ const detailedServices = [
   },
   {
     id: 4,
+    sectionId: "legal-matters",
     title: "Legal Matters",
     subtitle: "We address the risks, issues, and legal effect of a transaction.",
     description: "With the right knowledge base and a careful analysis of law and facts, our qualified professionals offer the following services:",
@@ -180,6 +189,7 @@ const detailedServices = [
   },
   {
     id: 5,
+    sectionId: "startup-advisory",
     title: "Startup Advisory",
     subtitle: "We help you start, run and grow your business with ease.",
     description: "We are committed to Startups, here are some of the many ways we help assist them fulfil their dreams and aspirations:",
@@ -219,6 +229,7 @@ const detailedServices = [
   },
   {
     id: 6,
+    sectionId: "virtual-cfo",
     title: "Virtual CFO",
     subtitle: "We'll work with you to maximise your Organisational Value.",
     description: "We assert that success of a business largely hinges on the effectiveness of top-level governance. Here are the different ways we can help you revitalize your company:",
@@ -256,48 +267,242 @@ export default function Service() {
       <Header />
 
       {/* HERO SECTION */}
-      <section className="pt-32 pb-20 px-6 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+      <section className="pt-32 pb-20 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <h1 className="text-5xl md:text-7xl font-light leading-tight mb-8">
-              With our <span className="font-bold text-blue-900">proactive approach</span> we think & plan ahead
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              for the benefit of our clients.
-            </p>
+          {/* Main Content */}
+          <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
+            {/* Left Side - Text */}
+            <div className="animate-fade-in-left">
+              <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-6 animate-fade-in">
+                <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
+                <span className="text-blue-700 text-sm font-medium">Chartered Accountants</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 animate-fade-in-up">
+                Your Trusted
+                <span className="block text-blue-600 mt-2">Financial Partner</span>
+              </h1>
+              
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 animate-fade-in-up animation-delay-200">
+                Professional accounting, taxation, and business advisory services designed to help your business thrive.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mb-8 animate-fade-in-up animation-delay-300">
+                <div className="flex items-center gap-2 bg-gray-50 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all hover:scale-105">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <span className="text-sm font-medium text-gray-700">6+ Years Experience</span>
+                </div>
+                <div className="flex items-center gap-2 bg-gray-50 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all hover:scale-105">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <span className="text-sm font-medium text-gray-700">1000+ Clients</span>
+                </div>
+                <div className="flex items-center gap-2 bg-gray-50 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all hover:scale-105">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <span className="text-sm font-medium text-gray-700">15+ Industries</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-400">
+                <Link href="/contact">
+                  <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 hover:scale-105">
+                    Get Started
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Side - Visual Element */}
+            <div className="relative animate-fade-in-right">
+              <div className="relative bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl p-12 shadow-2xl animate-float">
+                {/* Floating Cards */}
+                <div className="space-y-4">
+                  <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all animate-slide-in-right animation-delay-200">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <FileCheck className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-gray-500">Compliance</div>
+                        <div className="text-2xl font-bold text-gray-900">100%</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all animate-slide-in-right animation-delay-400">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                        <DollarSign className="w-6 h-6 text-green-600" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-gray-500">Tax Savings</div>
+                        <div className="text-2xl font-bold text-gray-900">Optimized</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all animate-slide-in-right animation-delay-600">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <Target className="w-6 h-6 text-purple-600" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-gray-500">Growth</div>
+                        <div className="text-2xl font-bold text-gray-900">Assured</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-400 rounded-full opacity-20 blur-2xl animate-pulse"></div>
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-300 rounded-full opacity-20 blur-2xl animate-pulse animation-delay-300"></div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-blue-100">
-              <BarChart3 className="w-12 h-12 text-blue-600 mb-4" />
-              <h3 className="font-bold text-lg mb-3">Data-Driven Insights</h3>
-              <p className="text-gray-600 text-sm">We look beyond spreadsheets to uncover hidden aspects that impact your bottom line.</p>
+          {/* Bottom Info Cards */}
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all hover:shadow-lg animate-fade-in-up animation-delay-500">
+              <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
+                <BookOpen className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Comprehensive Services</h3>
+              <p className="text-gray-600 leading-relaxed">From bookkeeping to auditing, tax planning to legal compliance - we cover all your financial needs.</p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-blue-100">
-              <Target className="w-12 h-12 text-blue-600 mb-4" />
-              <h3 className="font-bold text-lg mb-3">Strategic Planning</h3>
-              <p className="text-gray-600 text-sm">We analyze the present and future to understand every client's growth trajectory.</p>
+
+            <div className="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all hover:shadow-lg animate-fade-in-up animation-delay-600">
+              <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
+                <Users className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Expert Team</h3>
+              <p className="text-gray-600 leading-relaxed">Qualified Chartered Accountants with deep expertise across multiple industries and regulatory frameworks.</p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-blue-100">
-              <Users className="w-12 h-12 text-blue-600 mb-4" />
-              <h3 className="font-bold text-lg mb-3">Always Available</h3>
-              <p className="text-gray-600 text-sm">Ready to answer questions, strategize, and represent our clients at every turn.</p>
+
+            <div className="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all hover:shadow-lg animate-fade-in-up animation-delay-700">
+              <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
+                <Rocket className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Growth Focused</h3>
+              <p className="text-gray-600 leading-relaxed">Strategic advisory and Virtual CFO services to accelerate your business growth and maximize value.</p>
             </div>
-          </div>
-          
-          <div className="mt-16 space-y-6 text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <p>
-              We look beyond data and spreadsheets to uncover the hidden aspects that impact the bottom line profits of our clients. We analyze what's happening in the present and what may unfold in the future to understand every client's growth.
-            </p>
-            <p>
-              We are always available not only to answer questions and ease concerns but also to consult, strategize, and represent our clients at every turn. That commitment is in our firm's DNA.
-            </p>
-            <p>
-              We work across an array of sectors, from Real Estate to Jewellery and Manufacturing to Software. Our clients include Corporates, LLP's, Partnerships, Privately-held businesses, as well as Individuals, HUF's, Estates, and Trusts.
-            </p>
-            <p className="font-semibold">We look forward to working with you.</p>
           </div>
         </div>
+
+        <style jsx>{`
+          @keyframes fadeInLeft {
+            from {
+              opacity: 0;
+              transform: translateX(-30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes fadeInRight {
+            from {
+              opacity: 0;
+              transform: translateX(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          @keyframes slideInRight {
+            from {
+              opacity: 0;
+              transform: translateX(50px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes float {
+            0%, 100% {
+              transform: translateY(0px);
+            }
+            50% {
+              transform: translateY(-10px);
+            }
+          }
+
+          .animate-fade-in-left {
+            animation: fadeInLeft 0.8s ease-out;
+          }
+
+          .animate-fade-in-right {
+            animation: fadeInRight 0.8s ease-out;
+          }
+
+          .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+          }
+
+          .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+          }
+
+          .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+          }
+
+          .animate-float {
+            animation: float 3s ease-in-out infinite;
+          }
+
+          .animation-delay-200 {
+            animation-delay: 0.2s;
+          }
+
+          .animation-delay-300 {
+            animation-delay: 0.3s;
+          }
+
+          .animation-delay-400 {
+            animation-delay: 0.4s;
+          }
+
+          .animation-delay-500 {
+            animation-delay: 0.5s;
+          }
+
+          .animation-delay-600 {
+            animation-delay: 0.6s;
+          }
+
+          .animation-delay-700 {
+            animation-delay: 0.7s;
+          }
+        `}</style>
       </section>
 
       {/* SERVICES GRID */}
@@ -329,7 +534,7 @@ export default function Service() {
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto space-y-32">
           {detailedServices.map((service, idx) => (
-            <div key={service.id} id={service.id === 1 ? "accounting" : service.id === 2 ? "auditing" : service.id === 3 ? "tax" : service.id === 4 ? "legal" : service.id === 5 ? "startup" : "corporate"}>
+            <div key={service.id} id={service.sectionId}>
               {/* Title Section */}
               <div className="mb-12">
                 <h2 className="text-4xl font-bold mb-6">{service.title}</h2>
