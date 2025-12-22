@@ -97,13 +97,13 @@ export default function TrustExcellenceSection() {
                 </h3>
 
                 <div className="space-y-6">
-                  {/* Years */}
+                  {/* Audits Conducted */}
                   <div>
                     <div className="flex justify-between mb-2">
                       <span className="font-medium text-slate-700">
-                        Years of Excellence
+                        Number of Audits Conducted
                       </span>
-                      <span className="font-bold text-indigo-600">6+</span>
+                      <span className="font-bold text-indigo-600">100+</span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-3">
                       <motion.div
@@ -116,32 +116,34 @@ export default function TrustExcellenceSection() {
                     </div>
                   </div>
 
-                  {/* Satisfaction */}
+                  {/* Engagement */}
                   <div>
                     <div className="flex justify-between mb-2">
                       <span className="font-medium text-slate-700">
-                        Client Satisfaction
+                        Partner-Led Engagements
                       </span>
-                      <span className="font-bold text-cyan-600">98%</span>
+                      <span className="font-bold text-cyan-600">100%</span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-3">
                       <motion.div
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 h-3 rounded-full"
                         initial={{ width: 0 }}
-                        whileInView={{ width: "98%" }}
+                        whileInView={{ width: "100%" }}
                         viewport={{ once: true }}
                         transition={{ duration: 1.5 }}
                       />
                     </div>
                   </div>
 
-                  {/* Audits */}
+                  {/* Expertise */}
                   <div>
                     <div className="flex justify-between mb-2">
                       <span className="font-medium text-slate-700">
-                        Number of Audits Conducted
+                        Multi-Industry Expertise
                       </span>
-                      <span className="font-bold text-emerald-600">100+</span>
+                      <span className="font-bold text-emerald-600">
+                        Diverse Sectors
+                      </span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-3">
                       <motion.div
@@ -163,11 +165,11 @@ export default function TrustExcellenceSection() {
                   <div className="absolute inset-4 rounded-full border-8 border-cyan-200" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="text-4xl font-bold text-slate-800">
-                        6+
+                      <div className="text-3xl font-bold text-slate-800">
+                        Trusted
                       </div>
                       <div className="text-lg font-medium text-slate-600">
-                        Years
+                        Since 2018
                       </div>
                     </div>
                   </div>
@@ -196,40 +198,12 @@ export default function TrustExcellenceSection() {
           </motion.div>
         </div>
 
-        {/* Bottom Stats with Icons */}
+        {/* Bottom Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <StatCard
-            number={6}
-            suffix="+"
-            label="Years Experience"
-            delay={0}
-            color="indigo"
-            icon={<Clock className="w-6 h-6" />}
-          />
-          <StatCard
-            number={950}
-            suffix="+"
-            label="Clients Served"
-            delay={0.1}
-            color="cyan"
-            icon={<Users className="w-6 h-6" />}
-          />
-          <StatCard
-            number={100}
-            suffix="+"
-            label="Audits Conducted"
-            delay={0.2}
-            color="emerald"
-            icon={<FileCheck className="w-6 h-6" />}
-          />
-          <StatCard
-            number={24}
-            suffix="/7"
-            label="Support Available"
-            delay={0.3}
-            color="amber"
-            icon={<Headset className="w-6 h-6" />}
-          />
+          <StatCard number={28} suffix="+" label="Industry Sectors Served" delay={0} color="indigo" icon={<Clock className="w-6 h-6" />} />
+          <StatCard number={12} suffix="+" label="States Across India" delay={0.1} color="cyan" icon={<Users className="w-6 h-6" />} />
+          <StatCard number={99} suffix="%" label="Compliance Accuracy" delay={0.2} color="emerald" icon={<FileCheck className="w-6 h-6" />} />
+          <StatCard number={24} suffix="/7" label="Support Available" delay={0.3} color="amber" icon={<Headset className="w-6 h-6" />} />
         </div>
       </div>
     </section>
@@ -254,14 +228,11 @@ function StatCard({ number, suffix, label, delay, color, icon }) {
       transition={{ duration: 0.6, delay }}
       className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/50 text-center"
     >
-      <div
-        className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${colorClasses[color]} mb-3 text-white`}
-      >
+      <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${colorClasses[color]} mb-3 text-white`}>
         {icon}
       </div>
       <div className="text-2xl font-bold text-slate-800 mb-1">
-        {count}
-        {suffix}
+        {count}{suffix}
       </div>
       <div className="text-slate-600 text-sm">{label}</div>
     </motion.div>
