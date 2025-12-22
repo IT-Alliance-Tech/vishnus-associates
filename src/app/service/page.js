@@ -63,7 +63,7 @@ const detailedServices = [
     title: "Bookkeeping & Compliance",
     subtitle: "Your team needs tools to think strategically – We can help.",
     description: "Our collective experience gives us a wealth of knowledge to handle our clientele's needs.",
-    imageSrc: "/bookmark.png",
+    imageSrc: "/book.png",
     features: [
       {
         icon: <Receipt className="w-8 h-8" />,
@@ -93,7 +93,7 @@ const detailedServices = [
     title: "Auditing",
     subtitle: "We assure a systematic and independent examination of your financial records.",
     description: "Our team is well qualified to efficiently audit your books and identify the anomalies and red flags that might be deeply buried in thousands of electronic transactions.",
-    imageSrc: "/bookmark.png",
+    imageSrc: "/audit.png",
     features: [
       {
         icon: <Search className="w-8 h-8" />,
@@ -128,7 +128,7 @@ const detailedServices = [
     title: "Tax Services",
     subtitle: "We'll do all the complex tax navigation for you from personal to corporate, local to international.",
     description: "Our experienced tax team identifies key tax planning opportunities that minimize both your current and future tax liabilities.",
-    imageSrc: "/tax.png",
+    imageSrc: "/tax1.png",
     features: [
       {
         icon: <FileSignature className="w-8 h-8" />,
@@ -163,7 +163,7 @@ const detailedServices = [
     title: "Legal Matters",
     subtitle: "We address the risks, issues, and legal effect of a transaction.",
     description: "With the right knowledge base and a careful analysis of law and facts, our qualified professionals offer the following services:",
-    imageSrc: "/legal.png",
+    imageSrc: "/legal1.png",
     features: [
       {
         icon: <FileText className="w-8 h-8" />,
@@ -193,7 +193,7 @@ const detailedServices = [
     title: "Startup Advisory",
     subtitle: "We help you start, run and grow your business with ease.",
     description: "We are committed to Startups, here are some of the many ways we help assist them fulfil their dreams and aspirations:",
-    imageSrc: "/bookmark.png",
+    imageSrc: "/startup.png",
     features: [
       {
         icon: <Building className="w-8 h-8" />,
@@ -233,7 +233,7 @@ const detailedServices = [
     title: "Virtual CFO",
     subtitle: "We'll work with you to maximise your Organisational Value.",
     description: "We assert that success of a business largely hinges on the effectiveness of top-level governance. Here are the different ways we can help you revitalize your company:",
-    imageSrc: "/bookmark.png",
+    imageSrc: "/virtual.png",
     features: [
       {
         icon: <FileText className="w-8 h-8" />,
@@ -302,13 +302,7 @@ export default function Service() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-400">
-                <Link href="/contact">
-                  <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 hover:scale-105">
-                    Get Started
-                  </button>
-                </Link>
-              </div>
+              
             </div>
 
             {/* Right Side - Visual Element */}
