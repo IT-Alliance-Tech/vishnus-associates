@@ -294,7 +294,7 @@ export default function Service() {
                 </div>
                 <div className="flex items-center gap-2 bg-gray-50 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all hover:scale-105">
                   <CheckCircle className="w-5 h-5 text-green-600" />
-                  <span className="text-sm font-medium text-gray-700">1000+ Clients</span>
+                  <span className="text-sm font-medium text-gray-700">950+ Clients</span>
                 </div>
                 <div className="flex items-center gap-2 bg-gray-50 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all hover:scale-105">
                   <CheckCircle className="w-5 h-5 text-green-600" />

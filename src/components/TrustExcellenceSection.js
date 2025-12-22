@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Clock, Users, FileCheck, Headset } from "lucide-react";
 
-// Counter Hook
+/* ================= Counter Hook (UNCHANGED) ================= */
 function useCounter(target, duration = 1500) {
   const [count, setCount] = useState(0);
 
@@ -31,10 +31,11 @@ function useCounter(target, duration = 1500) {
   return count;
 }
 
+/* ================= MAIN COMPONENT ================= */
 export default function TrustExcellenceSection() {
   return (
     <section className="relative py-24 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
-      {/* Decorative elements */}
+      {/* Decorative Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-30" />
@@ -42,7 +43,7 @@ export default function TrustExcellenceSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative">
-        {/* Header */}
+        {/* ================= HEADER ================= */}
         <div className="text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -80,8 +81,8 @@ export default function TrustExcellenceSection() {
           </motion.p>
         </div>
 
-        {/* Dashboard Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        {/* ================= DASHBOARD ================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
           {/* Left Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -97,68 +98,24 @@ export default function TrustExcellenceSection() {
                 </h3>
 
                 <div className="space-y-6">
-                  {/* Audits Conducted */}
-                  <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="font-medium text-slate-700">
-                        Number of Audits Conducted
-                      </span>
-                      <span className="font-bold text-indigo-600">100+</span>
-                    </div>
-                    <div className="w-full bg-slate-200 rounded-full h-3">
-                      <motion.div
-                        className="bg-gradient-to-r from-indigo-500 to-purple-500 h-3 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "100%" }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.5 }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Engagement */}
-                  <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="font-medium text-slate-700">
-                        Partner-Led Engagements
-                      </span>
-                      <span className="font-bold text-cyan-600">100%</span>
-                    </div>
-                    <div className="w-full bg-slate-200 rounded-full h-3">
-                      <motion.div
-                        className="bg-gradient-to-r from-cyan-500 to-blue-500 h-3 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "100%" }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.5 }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Expertise */}
-                  <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="font-medium text-slate-700">
-                        Multi-Industry Expertise
-                      </span>
-                      <span className="font-bold text-emerald-600">
-                        Diverse Sectors
-                      </span>
-                    </div>
-                    <div className="w-full bg-slate-200 rounded-full h-3">
-                      <motion.div
-                        className="bg-gradient-to-r from-emerald-500 to-teal-500 h-3 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "100%" }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.5 }}
-                      />
-                    </div>
-                  </div>
+                  <Progress
+                    label="Number of Audits Conducted"
+                    value="100+"
+                    gradient="from-indigo-500 to-purple-500"
+                  />
+                  <Progress
+                    label="Partner-Led Engagements"
+                    value="100%"
+                    gradient="from-cyan-500 to-blue-500"
+                  />
+                  <Progress
+                    label="Multi-Industry Expertise"
+                    value="Diverse Sectors"
+                    gradient="from-emerald-500 to-teal-500"
+                  />
                 </div>
               </div>
 
-              {/* Circle Visual */}
               <div className="flex-1 flex items-center justify-center">
                 <div className="relative w-48 h-48">
                   <div className="absolute inset-0 rounded-full border-8 border-indigo-200" />
@@ -193,48 +150,74 @@ export default function TrustExcellenceSection() {
               <li>• Rigorous audit methodologies aligned with ICAI standards</li>
               <li>• Dedicated partner-level involvement in every engagement</li>
               <li>• Transparent reporting with actionable insights</li>
-              <li>• Strong focus on compliance, risk mitigation, and accuracy</li>
+              <li>• Strong focus on compliance and accuracy</li>
             </ul>
           </motion.div>
         </div>
 
-        {/* Bottom Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <StatCard number={28} suffix="+" label="Industry Sectors Served" delay={0} color="indigo" icon={<Clock className="w-6 h-6" />} />
-          <StatCard number={12} suffix="+" label="States Across India" delay={0.1} color="cyan" icon={<Users className="w-6 h-6" />} />
-          <StatCard number={99} suffix="%" label="Compliance Accuracy" delay={0.2} color="emerald" icon={<FileCheck className="w-6 h-6" />} />
-          <StatCard number={24} suffix="/7" label="Support Available" delay={0.3} color="amber" icon={<Headset className="w-6 h-6" />} />
+        {/* ================= TIMELINE (INTEGRATED, NO CARD LOOK) ================= */}
+        <div className="-mt-4 pt-10">
+          <h3 className="text-xl font-semibold text-center text-slate-800 mb-10">
+            Our Growth Timeline
+          </h3>
+
+          <div className="relative flex flex-col md:flex-row justify-between gap-12">
+            {/* Animated Line */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+              className="hidden md:block absolute top-6 left-0 w-full h-1 origin-left bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500"
+            />
+
+            {[
+              { year: "2020", desc: "Started with a team of 1" },
+              { year: "2021", desc: "Team of 5 (4× growth)" },
+              { year: "2023", desc: "Team of 13 (16× growth)" },
+              { year: "2024", desc: "New branch at Indiranagar" },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                className="relative flex flex-col items-center text-center min-w-[160px]"
+              >
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold shadow-md z-10">
+                  {item.year}
+                </div>
+
+                <div className="mt-4 text-sm text-slate-600 min-h-[48px] flex items-center">
+                  {item.desc}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function StatCard({ number, suffix, label, delay, color, icon }) {
-  const count = useCounter(number);
-
-  const colorClasses = {
-    indigo: "from-indigo-500 to-purple-500",
-    cyan: "from-cyan-500 to-blue-500",
-    emerald: "from-emerald-500 to-teal-500",
-    amber: "from-amber-500 to-orange-500",
-  };
-
+/* ================= HELPER COMPONENT ================= */
+function Progress({ label, value, gradient }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
-      className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/50 text-center"
-    >
-      <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${colorClasses[color]} mb-3 text-white`}>
-        {icon}
+    <div>
+      <div className="flex justify-between mb-2">
+        <span className="font-medium text-slate-700">{label}</span>
+        <span className="font-bold text-indigo-600">{value}</span>
       </div>
-      <div className="text-2xl font-bold text-slate-800 mb-1">
-        {count}{suffix}
+      <div className="w-full bg-slate-200 rounded-full h-3">
+        <motion.div
+          className={`h-3 rounded-full bg-gradient-to-r ${gradient}`}
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%" }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5 }}
+        />
       </div>
-      <div className="text-slate-600 text-sm">{label}</div>
-    </motion.div>
+    </div>
   );
 }
