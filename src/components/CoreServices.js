@@ -1,63 +1,82 @@
 "use client";
-import { BookOpen, Shield, FileText, Briefcase, Layers, TrendingUp } from "lucide-react";
+import {
+  BookOpen,
+  Shield,
+  FileText,
+  Briefcase,
+  Layers,
+  TrendingUp,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function CoreServices() {
   const services = [
-    { 
-      title: "Bookkeeping & Compliance", 
+    {
+      title: "Bookkeeping & Compliance",
+      link: "/service#bookkeeping-compliance",
       desc: (
         <>
           Strategic bookkeeping solutions tailored to client needs.<br />
           Ensuring accuracy, compliance, and long-term financial clarity.
         </>
       ),
-      icon: BookOpen
+      icon: BookOpen,
     },
-    { 
-      title: "Auditing & Assurance", 
+    {
+      title: "Auditing & Assurance",
+      link: "/service#auditing-assurance",
       desc: (
         <>
-          Independent and systematic examination of financial records.Identifying anomalies with precision across large transactions.
+          Independent and systematic examination of financial records.
+          Identifying anomalies with precision across large transactions.
         </>
       ),
-      icon: Shield
+      icon: Shield,
     },
-    { 
-      title: "Tax Services", 
+    {
+      title: "Tax Services",
+      link: "/service#tax-services",
       desc: (
         <>
-          Expert guidance across personal and corporate taxation.Making compliance seamless and efficient. Minimizing present and future tax liabilities effectively.
+          Expert guidance across personal and corporate taxation.
+          Making compliance seamless and efficient. Minimizing present
+          and future tax liabilities effectively.
         </>
       ),
-      icon: FileText
+      icon: FileText,
     },
-    { 
-      title: "Legal Matters", 
+    {
+      title: "Legal Matters",
+      link: "/service#legal-matters",
       desc: (
         <>
-          Legal and transition advisory under GST and income tax laws.Mitigating risks and delivering clarity through expert analysis.
+          Legal and transition advisory under GST and income tax laws.
+          Mitigating risks and delivering clarity through expert analysis.
         </>
       ),
-      icon: Briefcase
+      icon: Briefcase,
     },
-    { 
-      title: "Startup Advisory", 
+    {
+      title: "Startup Advisory",
+      link: "/service#startup-advisory",
       desc: (
         <>
-          End-to-end support to launch and scale startups smoothly.Turning entrepreneurial ideas into sustainable businesses.
+          End-to-end support to launch and scale startups smoothly.
+          Turning entrepreneurial ideas into sustainable businesses.
         </>
       ),
-      icon: Layers
+      icon: Layers,
     },
-    { 
-      title: "Virtual CFO", 
+    {
+      title: "Virtual CFO",
+      link: "/service#virtual-cfo",
       desc: (
         <>
-          Strategic financial leadership without full-time commitment.Driving growth, stability, and long-term profitability.
+          Strategic financial leadership without full-time commitment.
+          Driving growth, stability, and long-term profitability.
         </>
       ),
-      icon: TrendingUp
+      icon: TrendingUp,
     },
   ];
 
@@ -66,12 +85,12 @@ export default function CoreServices() {
       {/* Animated background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-full">
-             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
-             <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse animation-delay-2000"></div>
-             <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse animation-delay-4000"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse animation-delay-2000"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse animation-delay-4000"></div>
         </div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         {/* TITLE */}
         <div className="text-center mb-20">
@@ -80,7 +99,7 @@ export default function CoreServices() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl font-bold text-slate-800 mb-4"
+            className="text-4xl md:text-5xl font-bold text-slate-800 mb-4"
           >
             Our Core Services
           </motion.h2>
@@ -116,14 +135,14 @@ export default function CoreServices() {
                 className="group"
               >
                 <div className="flex items-start">
-                  {/* ICON CONTAINER */}
+                  {/* ICON */}
                   <div className="flex-shrink-0 relative">
                     <div className="absolute inset-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-500 blur-md opacity-30 group-hover:opacity-50 transition-opacity"></div>
                     <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
                       <IconComponent className="w-5 h-5" />
                     </div>
                   </div>
-                  
+
                   {/* CONTENT */}
                   <div className="ml-8">
                     <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-indigo-700 transition-colors">
@@ -132,15 +151,25 @@ export default function CoreServices() {
                     <p className="text-slate-600 leading-relaxed text-lg">
                       {s.desc}
                     </p>
-                    
+
                     <motion.a
                       whileHover={{ x: 5 }}
-                      href="/service"
+                      href={s.link}
                       className="inline-flex items-center mt-4 text-indigo-600 font-semibold hover:text-indigo-800 transition-colors"
                     >
                       Know More
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 5l7 7-7 7"
+                        ></path>
                       </svg>
                     </motion.a>
                   </div>
