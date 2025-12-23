@@ -81,12 +81,12 @@ export default function CoreServices() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50">
+    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-[#14598C]/5 via-[#14598C]/3 to-[#14598C]/5">
       {/* Animated background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse animation-delay-2000"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#14598C]/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-[#14598C]/25 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse animation-delay-2000"></div>
           <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse animation-delay-4000"></div>
         </div>
       </div>
@@ -117,7 +117,7 @@ export default function CoreServices() {
             whileInView={{ width: 96 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mt-6 rounded-full"
+            className="h-1 bg-gradient-to-r from-[#14598C] to-[#14598C] mx-auto mt-6 rounded-full"
           ></motion.div>
         </div>
 
@@ -137,15 +137,15 @@ export default function CoreServices() {
                 <div className="flex items-start">
                   {/* ICON */}
                   <div className="flex-shrink-0 relative">
-                    <div className="absolute inset-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-500 blur-md opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                    <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
+                    <div className="absolute inset-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-[#14598C]/40 to-[#14598C]/60 blur-md opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                    <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-[#14598C] to-[#1A6BA8] flex items-center justify-center text-white shadow-lg">
                       <IconComponent className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* CONTENT */}
                   <div className="ml-8">
-                    <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-indigo-700 transition-colors">
+                    <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-[#14598C] transition-colors">
                       {s.title}
                     </h3>
                     <p className="text-slate-600 leading-relaxed text-lg">
@@ -155,7 +155,7 @@ export default function CoreServices() {
                     <motion.a
                       whileHover={{ x: 5 }}
                       href={s.link}
-                      className="inline-flex items-center mt-4 text-indigo-600 font-semibold hover:text-indigo-800 transition-colors"
+                      className="inline-flex items-center mt-4 text-[#14598C] font-semibold hover:text-[#0F4066] transition-colors"
                     >
                       Know More
                       <svg

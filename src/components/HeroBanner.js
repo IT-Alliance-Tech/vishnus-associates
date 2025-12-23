@@ -27,7 +27,7 @@ export default function HeroBanner() {
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
                 <span className="text-slate-900">Empowering Smarter </span>
-                <span className="text-blue-600">
+                <span className="text-[#14598C]">
                   Financial Decisions
                 </span>
               </h1>
@@ -50,7 +50,7 @@ export default function HeroBanner() {
             >
               <motion.a
                 href="/service"
-                className="px-8 py-4 rounded-xl text-white font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 group"
+                className="px-8 py-4 rounded-xl text-white font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-3 bg-gradient-to-r from-[#14598C] to-[#1A6BA8] hover:from-[#0F4066] hover:to-[#14598C] group"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -61,11 +61,11 @@ export default function HeroBanner() {
               {/* ✅ Updated Link Here */}
               <motion.a
                 href="/free-consultation"
-                className="px-8 py-4 rounded-xl font-semibold bg-white text-blue-700 hover:bg-blue-50 transition-all flex items-center gap-3 shadow-sm border border-blue-200 group"
+                className="px-8 py-4 rounded-xl font-semibold bg-white text-[#14598C] hover:bg-[#14598C]/5 transition-all flex items-center gap-3 shadow-sm border border-[#14598C]/20 group"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Phone className="w-5 h-5 text-blue-600" />
+                <Phone className="w-5 h-5 text-[#14598C]" />
                 <span>Book Consultation</span>
               </motion.a>
             </motion.div>
@@ -79,7 +79,7 @@ export default function HeroBanner() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <div className="relative bg-white rounded-2xl border border-blue-100 shadow-xl overflow-hidden">
-              <div className="h-2 bg-gradient-to-r from-blue-500 to-amber-400"></div>
+              <div className="h-2 bg-gradient-to-r from-[#14598C] to-[#1A6BA8]"></div>
 
               <div className="p-6">
                 <div className="grid grid-cols-2 gap-4">
@@ -88,7 +88,7 @@ export default function HeroBanner() {
                     title="Financial Excellence"
                     subtitle="Precision insights"
                     bgColor="bg-blue-50"
-                    iconColor="text-blue-600"
+                    iconColor="text-[#14598C]"
                   />
 
                   <FeatureItem
@@ -152,7 +152,7 @@ function FeatureItem({ icon, title, subtitle, bgColor, iconColor }) {
 function StatItem({ value, label }) {
   return (
     <div>
-      <div className="text-2xl font-bold text-blue-700">{value}</div>
+      <div className="text-2xl font-bold text-[#14598C]">{value}</div>
       <div className="text-sm text-slate-600 mt-1">{label}</div>
     </div>
   );

@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
     <>
       <Header />
 
-      <section className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      <section className="min-h-screen bg-gradient-to-br from-[#14598C]/5 via-white to-[#14598C]/5">
         <div className="max-w-6xl mx-auto px-4 pt-32 pb-24">
 
           {/* Page Heading */}
@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="text-3xl font-bold text-blue-700">
+            <h1 className="text-3xl font-bold text-[#14598C]">
               Privacy Policy
             </h1>
             <p className="text-sm text-gray-500 mt-2">
@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
                   <div className="relative bg-white/70 backdrop-blur-lg border border-blue-100 rounded-2xl p-8 shadow-sm">
 
                     {/* Icon */}
-                    <div className="absolute -top-6 left-8 w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center shadow-md">
+                    <div className="absolute -top-6 left-8 w-12 h-12 rounded-xl bg-[#14598C] flex items-center justify-center shadow-md">
                       <Icon className="w-5 h-5 text-white" />
                     </div>
 
@@ -130,7 +130,7 @@ export default function PrivacyPolicyPage() {
             className="mt-24 border border-blue-200 rounded-3xl p-10 bg-white shadow-md"
           >
             <div className="flex items-start gap-4">
-              <Shield className="w-6 h-6 text-blue-600 mt-1" />
+              <Shield className="w-6 h-6 text-[#14598C] mt-1" />
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Questions About Privacy?

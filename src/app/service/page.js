@@ -273,14 +273,14 @@ export default function Service() {
           <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
             {/* Left Side - Text */}
             <div className="animate-fade-in-left">
-              <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-6 animate-fade-in">
-                <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
-                <span className="text-blue-700 text-sm font-medium">Chartered Accountants</span>
+              <div className="inline-flex items-center gap-2 bg-[#14598C]/10 px-4 py-2 rounded-full mb-6 animate-fade-in">
+                <div className="w-2 h-2 bg-[#14598C] rounded-full animate-pulse"></div>
+                <span className="text-[#14598C] text-sm font-medium">Chartered Accountants</span>
               </div>
               
               <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 animate-fade-in-up">
                 Your Trusted
-                <span className="block text-blue-600 mt-2">Financial Partner</span>
+                <span className="block text-[#14598C] mt-2">Financial Partner</span>
               </h1>
               
               <p className="text-xl text-gray-600 leading-relaxed mb-8 animate-fade-in-up animation-delay-200">
@@ -307,13 +307,13 @@ export default function Service() {
 
             {/* Right Side - Visual Element */}
             <div className="relative animate-fade-in-right">
-              <div className="relative bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl p-12 shadow-2xl animate-float">
+              <div className="relative bg-gradient-to-br from-[#14598C] to-[#1A6BA8] rounded-3xl p-12 shadow-2xl animate-float">
                 {/* Floating Cards */}
                 <div className="space-y-4">
                   <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all animate-slide-in-right animation-delay-200">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <FileCheck className="w-6 h-6 text-blue-600" />
+                      <div className="w-12 h-12 bg-[#14598C]/15 rounded-lg flex items-center justify-center">
+                        <FileCheck className="w-6 h-6 text-[#14598C]" />
                       </div>
                       <div>
                         <div className="text-sm text-gray-500">Compliance</div>
@@ -336,8 +336,8 @@ export default function Service() {
 
                   <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all animate-slide-in-right animation-delay-600">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                        <Target className="w-6 h-6 text-purple-600" />
+                      <div className="w-12 h-12 bg-[#14598C]/15 rounded-lg flex items-center justify-center">
+                        <Target className="w-6 h-6 text-[#14598C]\" />
                       </div>
                       <div>
                         <div className="text-sm text-gray-500">Growth</div>
@@ -348,32 +348,32 @@ export default function Service() {
                 </div>
 
                 {/* Decorative Elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-400 rounded-full opacity-20 blur-2xl animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-300 rounded-full opacity-20 blur-2xl animate-pulse animation-delay-300"></div>
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#14598C] rounded-full opacity-20 blur-2xl animate-pulse"></div>
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#14598C] rounded-full opacity-20 blur-2xl animate-pulse animation-delay-300"></div>
               </div>
             </div>
           </div>
 
           {/* Bottom Info Cards */}
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all hover:shadow-lg animate-fade-in-up animation-delay-500">
-              <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
+            <div className="group bg-gradient-to-br from-[#14598C]/10 to-white p-8 rounded-2xl border border-[#14598C]/20 hover:border-[#14598C]/40 transition-all hover:shadow-lg animate-fade-in-up animation-delay-500">
+              <div className="w-14 h-14 bg-[#14598C] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
                 <BookOpen className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Comprehensive Services</h3>
               <p className="text-gray-600 leading-relaxed">From bookkeeping to auditing, tax planning to legal compliance - we cover all your financial needs.</p>
             </div>
 
-            <div className="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all hover:shadow-lg animate-fade-in-up animation-delay-600">
-              <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
+            <div className="group bg-gradient-to-br from-[#14598C]/10 to-white p-8 rounded-2xl border border-[#14598C]/20 hover:border-[#14598C]/40 transition-all hover:shadow-lg animate-fade-in-up animation-delay-600">
+              <div className="w-14 h-14 bg-[#14598C] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
                 <Users className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Expert Team</h3>
               <p className="text-gray-600 leading-relaxed">Qualified Chartered Accountants with deep expertise across multiple industries and regulatory frameworks.</p>
             </div>
 
-            <div className="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all hover:shadow-lg animate-fade-in-up animation-delay-700">
-              <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
+            <div className="group bg-gradient-to-br from-[#14598C]/10 to-white p-8 rounded-2xl border border-[#14598C]/20 hover:border-[#14598C]/40 transition-all hover:shadow-lg animate-fade-in-up animation-delay-700">
+              <div className="w-14 h-14 bg-[#14598C] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
                 <Rocket className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Growth Focused</h3>
@@ -500,7 +500,7 @@ export default function Service() {
       </section>
 
       {/* SERVICES GRID */}
-      <section id="services" className="py-20 px-6 bg-gray-50">
+      <section id="services" className="py-20 px-6 bg-[#14598C]/5">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-center text-4xl font-light mb-4">
             OUR <span className="font-bold">SERVICES</span>
@@ -513,9 +513,9 @@ export default function Service() {
                 onClick={() =>
                   document.getElementById(s.sectionId)?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="bg-white p-8 text-center cursor-pointer hover:shadow-xl transition-all hover:-translate-y-1 rounded-lg border border-gray-100 hover:border-blue-200"
+                className="bg-white p-8 text-center cursor-pointer hover:shadow-xl transition-all hover:-translate-y-1 rounded-lg border border-gray-100 hover:border-[#14598C]/30"
               >
-                <div className="flex justify-center mb-6 text-blue-600">{s.icon}</div>
+                <div className="flex justify-center mb-6 text-[#14598C]">{s.icon}</div>
                 <h3 className="font-bold text-lg mb-4 uppercase tracking-wide">{s.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{s.shortDesc}</p>
               </div>
@@ -556,7 +556,7 @@ export default function Service() {
                   {service.features.map((feature, i) => (
                     <div key={i}>
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 text-blue-600">{feature.icon}</div>
+                        <div className="flex-shrink-0 text-[#14598C]\">{feature.icon}</div>
                         <div>
                           <h4 className="font-bold text-lg mb-2">{feature.title}</h4>
                           <p className="text-gray-700 leading-relaxed">{feature.desc}</p>
