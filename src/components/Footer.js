@@ -32,7 +32,7 @@ export default function ModernWaveFooter() {
           {/* Brand & Contact Section */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-10 w-10 rounded-lg flex items-center justify-center">
+              <div className="bg-gradient-to-r from-[#14598C] to-[#1A6BA8] h-10 w-10 rounded-lg flex items-center justify-center">
                 <div className="bg-white h-5 w-5 rounded transform rotate-45"></div>
               </div>
               <span className="text-xl font-bold text-white">
@@ -50,7 +50,7 @@ export default function ModernWaveFooter() {
                 <Mail className="text-white" size={18} />
                 <a
                   href="mailto:info@vishnusassociates.com"
-                  className="text-white hover:text-blue-400 transition text-sm"
+                  className="text-white hover:text-[#14598C] transition text-sm"
                 >
                   support@cavsa.in
                 </a>
@@ -60,7 +60,7 @@ export default function ModernWaveFooter() {
                 <Phone className="text-white" size={18} />
                 <a
                   href="tel:+919731208006"
-                  className="text-white hover:text-blue-400 transition text-sm"
+                  className="text-white hover:text-[#14598C] transition text-sm"
                 >
                   +91 9731208006
                 </a>
@@ -72,7 +72,7 @@ export default function ModernWaveFooter() {
                 <a
                   href="#"
                   key={idx}
-                  className="bg-gray-800 hover:bg-blue-500 text-white p-2 rounded-lg transition cursor-pointer"
+                  className="bg-gray-800 hover:bg-[#14598C] text-white p-2 rounded-lg transition cursor-pointer"
                 >
                   <Icon size={16} />
                 </a>
@@ -81,7 +81,7 @@ export default function ModernWaveFooter() {
           </div>
 
           {/* Services + Quick Links Card */}
-          <div className="bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-blue-500/30 transition duration-300">
+          <div className="bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-[#14598C]/30 transition duration-300">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Our Services */}
               <div>
@@ -94,7 +94,7 @@ export default function ModernWaveFooter() {
                       href="/service#bookkeeping-compliance"
                       className="flex items-center gap-3 text-gray-300 hover:text-white transition"
                     >
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
                       Bookkeeping and compliance
                     </Link>
                   </li>
@@ -104,7 +104,7 @@ export default function ModernWaveFooter() {
                       href="/service#auditing-assurance"
                       className="flex items-center gap-3 text-gray-300 hover:text-white transition"
                     >
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
                       Auditing and assurance
                     </Link>
                   </li>
@@ -114,7 +114,7 @@ export default function ModernWaveFooter() {
                       href="/service#tax-services"
                       className="flex items-center gap-3 text-gray-300 hover:text-white transition"
                     >
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
                       Tax Services
                     </Link>
                   </li>
@@ -124,7 +124,7 @@ export default function ModernWaveFooter() {
                       href="/service#legal-matters"
                       className="flex items-center gap-3 text-gray-300 hover:text-white transition"
                     >
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
                       Legal Matters
                     </Link>
                   </li>
@@ -134,7 +134,7 @@ export default function ModernWaveFooter() {
                       href="/service#startup-advisory"
                       className="flex items-center gap-3 text-gray-300 hover:text-white transition"
                     >
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
                       Startup Advisory
                     </Link>
                   </li>
@@ -144,7 +144,7 @@ export default function ModernWaveFooter() {
                       href="/service#virtual-cfo"
                       className="flex items-center gap-3 text-gray-300 hover:text-white transition"
                     >
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
                       Virtual CFO
                     </Link>
                   </li>
@@ -169,7 +169,7 @@ export default function ModernWaveFooter() {
                       key={idx}
                       className="flex items-center gap-3 text-gray-300 hover:text-white transition cursor-pointer"
                     >
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#14598C] rounded-full\"></div>
                       <Link href={item.link}>{item.name}</Link>
                     </li>
                   ))}
@@ -182,7 +182,7 @@ export default function ModernWaveFooter() {
         {/* Bottom Bar */}
         <div className="pt-8 mt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm gap-3">
           <div className="flex items-center gap-2 cursor-pointer">
-            <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-6 w-6 rounded-lg flex items-center justify-center">
+            <div className="bg-gradient-to-r from-[#14598C] to-[#1A6BA8] h-6 w-6 rounded-lg flex items-center justify-center">
               <div className="bg-white h-3 w-3 rounded transform rotate-45"></div>
             </div>
             <span className="text-white font-medium">

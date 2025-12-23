@@ -38,7 +38,7 @@ export default function AboutPage() {
   const footerBlue = "#0F1F3D";
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#14598C]/5 to-white">
       <Header />
 
       {/* HERO SECTION WITH FIX – added overlay for readability */}
@@ -97,7 +97,7 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#14598C] mb-4">
               Our Core Values
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -122,7 +122,7 @@ export default function AboutPage() {
                     className="absolute inset-0 rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center text-center [backface-visibility:hidden]"
                     style={{ background: footerBlue }}
                   >
-                    <div className="w-20 h-20 rounded-full bg-white/25 backdrop-blur-md border border-white/40 shadow-lg flex items-center justify-center mb-6">
+                  <div className="w-20 h-20 rounded-full bg-[#14598C]/25 backdrop-blur-md border border-[#14598C]/40 shadow-lg flex items-center justify-center mb-6">
                       {value.icon}
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">{value.title}</h3>
@@ -131,7 +131,7 @@ export default function AboutPage() {
 
                   {/* BACK */}
                   <div className="absolute inset-0 bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden] border border-gray-100">
-                    <h3 className="text-2xl font-bold text-blue-900 mb-4">{value.title}</h3>
+                    <h3 className="text-2xl font-bold text-[#14598C] mb-4">{value.title}</h3>
                     <p className="text-gray-600">{value.description}</p>
                   </div>
 
@@ -145,7 +145,7 @@ export default function AboutPage() {
         <motion.section className="mb-24">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#14598C] mb-6">
                 A Message from Our Founder
               </h2>
 
@@ -166,7 +166,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <p className="font-semibold text-blue-900">Vishnu S</p>
+              <p className="font-semibold text-[#14598C]">Vishnu S</p>
               <p className="text-gray-600">Founder</p>
             </div>
 
@@ -182,7 +182,7 @@ export default function AboutPage() {
         <motion.section className="mb-24">
           <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#14598C] mb-6">
                 A Message from Our General Manager
               </h2>
 
@@ -203,7 +203,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <p className="font-semibold text-blue-900">Srinivasaiah Setty</p>
+              <p className="font-semibold text-[#14598C]">Srinivasaiah Setty</p>
               <p className="text-gray-600">General Manager</p>
             </div>
 
@@ -227,7 +227,7 @@ export default function AboutPage() {
           viewport={{ once: true }}
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#14598C] mb-4">
               Our Purpose
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -239,12 +239,12 @@ export default function AboutPage() {
             
             {/* Mission */}
             <div className="bg-white rounded-2xl shadow-xl p-10 border border-gray-100 hover:shadow-2xl transition duration-300 group">
-              <div className="w-16 h-16 rounded-xl bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-105 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-16 h-16 rounded-xl bg-[#14598C]/15 flex items-center justify-center mb-6 group-hover:scale-105 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#14598C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M12 6v12" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-blue-900 mb-4">Our Mission</h3>
+              <h3 className="text-xl font-bold text-[#14598C] mb-4">Our Mission</h3>
               <p className="text-gray-700 leading-relaxed">
                 To provide comprehensive, reliable, and innovative financial
                 services that empower our clients to make informed decisions
@@ -272,12 +272,12 @@ export default function AboutPage() {
 
             {/* Vision */}
             <div className="bg-white rounded-2xl shadow-xl p-10 border border-gray-100 hover:shadow-2xl transition duration-300 group">
-              <div className="w-16 h-16 rounded-xl bg-indigo-100 flex items-center justify-center mb-6 group-hover:scale-105 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-16 h-16 rounded-xl bg-[#14598C]/15 flex items-center justify-center mb-6 group-hover:scale-105 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#14598C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6l7 12H5L12 6z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-blue-900 mb-4">Our Vision</h3>
+              <h3 className="text-xl font-bold text-[#14598C] mb-4">Our Vision</h3>
               <p className="text-gray-700 leading-relaxed">
                 By 2030, to be one of India's most trusted and preferred CA
                 firms—setting new standards in excellence, transparency,

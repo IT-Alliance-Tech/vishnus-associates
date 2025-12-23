@@ -36,15 +36,15 @@ const Toast = ({ message, type, onClose }) => {
 
    export default function ContactPage() {
   const cssVars = {
-    "--brand-blue": "#0f1724",
-    "--brand-mid": "#0F1F3D",
+    "--brand-blue": "#14598C",
+    "--brand-mid": "#14598C",
     "--brand-gold": "#c8892b",
     "--soft-cream": "#fff9f2",
     "--page-bg": "#fbfdff",
     backgroundColor: "var(--page-bg)",
   };
 
-  const primaryButtonShadow = "0 8px 30px rgba(15,31,61,0.14)";
+  const primaryButtonShadow = "0 8px 30px rgba(20, 89, 140, 0.14)";
 
   // ✅ POINTING TO API ROUTE
   const GOOGLE_SCRIPT_URL = "/api/contact";
@@ -144,7 +144,7 @@ const Toast = ({ message, type, onClose }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-xl text-blue-100 max-w-3xl mx-auto mb-10"
+              className="text-xl text-white max-w-3xl mx-auto mb-10"
             >
               We're here to help you navigate your financial journey with personalized solutions and expert guidance.
             </motion.p>
@@ -217,7 +217,7 @@ const Toast = ({ message, type, onClose }) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
-                    className="flex gap-4 p-4 rounded-xl hover:bg-blue-50/50 transition-all"
+                    className="flex gap-4 p-4 rounded-xl hover:bg-[#14598C]/5 transition-all"
                   >
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-white" style={{ background: "var(--brand-mid)" }}>
                       {item.icon}
@@ -240,7 +240,7 @@ const Toast = ({ message, type, onClose }) => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="lg:col-span-2"
           >
-            <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-lg p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-white to-[#14598C]/10 rounded-2xl shadow-lg p-8 border border-gray-100">
               <div className="mb-8">
                 <h3 className="text-2xl font-bold" style={{ color: "var(--brand-blue)" }}>
                   Send Us a Message
