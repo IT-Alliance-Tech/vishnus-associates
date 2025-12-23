@@ -21,7 +21,7 @@ export default function PremiumHeader() {
           
           {/* Logo */}
           <a href="/" className="flex items-center space-x-2">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center shadow-md">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#14598C] to-[#14598C] flex items-center justify-center shadow-md">
               <span className="text-white text-xl font-extrabold">V</span>
             </div>
             <div>
@@ -36,7 +36,7 @@ export default function PremiumHeader() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 font-medium hover:text-indigo-600 transition-colors"
+                className="text-gray-700 font-medium hover:text-[#14598C] transition-colors"
               >
                 {item.name}
               </a>
@@ -54,7 +54,7 @@ export default function PremiumHeader() {
 
             {/* Free Consultation with cursor-pointer */}
             <Link href="/free-consultation">
-              <button className="px-6 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition cursor-pointer">
+              <button className="px-6 py-2 bg-[#14598C] text-white rounded-lg shadow hover:bg-[#0F4066] transition cursor-pointer">
                 Free Consultation
               </button>
             </Link>
@@ -95,7 +95,7 @@ export default function PremiumHeader() {
 
             {/* Mobile Free Consultation with cursor-pointer */}
             <Link href="/free-consultation" onClick={() => setOpen(false)}>
-              <button className="w-full text-center py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition cursor-pointer">
+              <button className="px-6 py-2 bg-[#14598C] text-white rounded-lg shadow hover:bg-[#0F4066] transition cursor-pointer">
                 Free Consultation
               </button>
             </Link>

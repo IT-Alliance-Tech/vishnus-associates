@@ -117,10 +117,10 @@ export default function TermsAndConditionsPage() {
           {/* Heading (unchanged from last version) */}
           <div className="text-center mb-16">
           
-            <h1 className="text-4xl md:text-5xl font-bold text-blue-700 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#14598C] mb-4">
               Terms & Conditions
             </h1>
-            <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full mb-4"></div>
+            <div className="w-20 h-1 bg-[#14598C] mx-auto rounded-full mb-4"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Please read carefully the rules, guidelines, and policies before using our services.
             </p>
@@ -148,7 +148,7 @@ export default function TermsAndConditionsPage() {
                   >
                     <div className="flex items-center gap-4">
                       <div className="w-11 h-11 rounded-lg bg-blue-100 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-blue-600" />
+                        <Icon className="w-5 h-5 text-[#14598C]" />
                       </div>
 
                       <h3 className="text-lg font-semibold text-gray-900">
@@ -157,7 +157,7 @@ export default function TermsAndConditionsPage() {
                     </div>
 
                     <ChevronDown
-                      className={`w-5 h-5 text-blue-600 transition-transform duration-300 ${
+                      className={`w-5 h-5 text-[#14598C] transition-transform duration-300 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />

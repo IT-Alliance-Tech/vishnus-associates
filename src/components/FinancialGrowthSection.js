@@ -8,8 +8,8 @@ export default function FinancialGrowthSection() {
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.2) 0%, transparent 30%), 
-                            radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.2) 0%, transparent 30%)`,
+          backgroundImage: `radial-gradient(circle at 15% 50%, rgba(20, 89, 140, 0.2) 0%, transparent 30%), 
+                            radial-gradient(circle at 85% 30%, rgba(20, 89, 140, 0.2) 0%, transparent 30%)`,
         }}></div>
       </div>
 
@@ -22,13 +22,13 @@ export default function FinancialGrowthSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/20 rounded-full text-indigo-300 text-sm font-medium mb-4 border border-indigo-500/30">
-            <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#14598C]/20 rounded-full text-[#14598C] text-sm font-medium mb-4 border border-[#14598C]/30">
+            <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
             <span>FINANCIAL GROWTH PARTNERS</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Your Financial Growth <span className="text-indigo-400">Partners</span>
+            Your Financial Growth <span className="text-[#14598C]">Partners</span>
           </h2>
           
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
@@ -92,7 +92,7 @@ export default function FinancialGrowthSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <div className="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-3xl p-8 border border-indigo-500/20 h-full">
+            <div className="bg-gradient-to-br from-[#14598C]/10 to-[#14598C]/5 rounded-3xl p-8 border border-[#14598C]/20 h-full">
               <div className="flex flex-col md:flex-row gap-8">
                 <div className="md:w-2/5">
 
@@ -146,7 +146,7 @@ export default function FinancialGrowthSection() {
 
                           <span className="font-medium text-white">{service.label}</span>
                         </div>
-                        <span className="text-xs px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                        <span className="text-xs px-3 py-1 rounded-full bg-[#14598C]/20 text-[#14598C] border border-[#14598C]/30">
                           {service.tag}
                         </span>
                       </motion.div>

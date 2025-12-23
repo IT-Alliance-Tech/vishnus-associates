@@ -34,12 +34,12 @@ function useCounter(target, duration = 1500) {
 /* ================= MAIN COMPONENT ================= */
 export default function TrustExcellenceSection() {
   return (
-    <section className="relative py-24 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+    <section className="relative py-24 bg-gradient-to-br from-slate-50 to-[#14598C]/10 overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-30" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-100 rounded-full blur-3xl opacity-30" />
+        <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#14598C] via-[#14598C] to-[#14598C]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#14598C]/10 rounded-full blur-3xl opacity-30" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#14598C]/10 rounded-full blur-3xl opacity-30" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative">
@@ -50,9 +50,9 @@ export default function TrustExcellenceSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm text-indigo-600 rounded-full text-sm font-medium mb-6 border border-indigo-100"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm text-[#14598C] rounded-full text-sm font-medium mb-6 border border-[#14598C]/20"
           >
-            <div className="w-2 h-2 rounded-full bg-indigo-500" />
+            <div className="w-2 h-2 rounded-full bg-[#14598C]" />
             TRUST & EXCELLENCE
           </motion.div>
 
@@ -74,7 +74,7 @@ export default function TrustExcellenceSection() {
             className="text-lg text-slate-600 max-w-3xl mx-auto"
           >
             With a foundation of{" "}
-            <span className="font-semibold text-indigo-600">
+            <span className="font-semibold text-[#14598C]">
               integrity, accuracy, and practical thinking
             </span>
             , we deliver comprehensive CA services to businesses across India.
@@ -101,25 +101,25 @@ export default function TrustExcellenceSection() {
                   <Progress
                     label="Number of Audits Conducted"
                     value="100+"
-                    gradient="from-indigo-500 to-purple-500"
+                    gradient="from-[#14598C] to-[#14598C]"
                   />
                   <Progress
                     label="Partner-Led Engagements"
                     value="100%"
-                    gradient="from-cyan-500 to-blue-500"
+                    gradient="from-[#14598C] to-[#14598C]"
                   />
                   <Progress
                     label="Multi-Industry Expertise"
                     value="Diverse Sectors"
-                    gradient="from-emerald-500 to-teal-500"
+                    gradient="from-[#14598C] to-[#14598C]"
                   />
                 </div>
               </div>
 
               <div className="flex-1 flex items-center justify-center">
                 <div className="relative w-48 h-48">
-                  <div className="absolute inset-0 rounded-full border-8 border-indigo-200" />
-                  <div className="absolute inset-4 rounded-full border-8 border-cyan-200" />
+                  <div className="absolute inset-0 rounded-full border-8 border-[#14598C]/30" />
+                  <div className="absolute inset-4 rounded-full border-8 border-[#14598C]/20" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-slate-800">
@@ -141,7 +141,7 @@ export default function TrustExcellenceSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl p-8 text-white shadow-lg"
+            className="bg-gradient-to-br from-[#14598C] to-[#14598C] rounded-2xl p-8 text-white shadow-lg"
           >
             <h3 className="text-2xl font-bold mb-6">
               Why Clients Trust Us
@@ -155,7 +155,7 @@ export default function TrustExcellenceSection() {
           </motion.div>
         </div>
 
-        {/* ================= TIMELINE (ONLY PART MODIFIED) ================= */}
+        {/* ================= TIMELINE ================= */}
         <div className="-mt-4 pt-10">
           <h3 className="text-xl font-semibold text-center text-slate-800 mb-10">
             Our Growth Timeline
@@ -167,7 +167,7 @@ export default function TrustExcellenceSection() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2 }}
-              className="hidden md:block absolute top-6 left-0 w-full h-1 origin-left bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500"
+              className="hidden md:block absolute top-6 left-0 w-full h-1 origin-left bg-gradient-to-r from-[#14598C] via-[#14598C] to-[#14598C]"
             />
 
             {[
@@ -184,7 +184,7 @@ export default function TrustExcellenceSection() {
                   transition={{ delay: index * 0.2 }}
                   className="flex flex-col items-center text-center min-w-[160px] z-10"
                 >
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold shadow-md">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#14598C] to-[#14598C] flex items-center justify-center text-white font-bold shadow-md">
                     {item.year}
                   </div>
                   <div className="mt-4 text-sm text-slate-600 min-h-[48px] flex items-center">
@@ -194,10 +194,10 @@ export default function TrustExcellenceSection() {
 
                 {index !== 3 && (
                   <>
-                    <div className="hidden md:block mx-6 text-indigo-500">
+                    <div className="hidden md:block mx-6 text-[#14598C]">
                       <ArrowRight size={22} />
                     </div>
-                    <div className="md:hidden my-6 text-indigo-500">
+                    <div className="md:hidden my-6 text-[#14598C]">
                       <ArrowDown size={22} />
                     </div>
                   </>
@@ -217,7 +217,7 @@ function Progress({ label, value, gradient }) {
     <div>
       <div className="flex justify-between mb-2">
         <span className="font-medium text-slate-700">{label}</span>
-        <span className="font-bold text-indigo-600">{value}</span>
+        <span className="font-bold text-[#14598C]">{value}</span>
       </div>
       <div className="w-full bg-slate-200 rounded-full h-3">
         <motion.div

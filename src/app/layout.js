@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
           href="https://wa.me/919743991199"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-8 right-5 z-50"
+          className="fixed bottom-15 right-5 z-50"
         >
           <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#25D366] shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
             <FaWhatsapp className="w-6 h-6 text-white" />
