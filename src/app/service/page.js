@@ -540,12 +540,12 @@ export default function Service() {
               <div className="grid md:grid-cols-2 gap-16 items-center">
                 {/* Image */}
                 <div className={`${idx % 2 === 1 ? 'md:order-2' : ''}`}>
-                  <div className="w-full h-96 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg flex items-center justify-center text-blue-600 border border-blue-200 overflow-hidden relative">
+                  <div className="w-full aspect-[4/3] rounded-lg flex items-center justify-center overflow-hidden relative">
                     <Image 
                       src={service.imageSrc} 
                       alt={service.title}
                       fill
-                      className="object-cover rounded-lg"
+                      className="object-contain rounded-lg"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>

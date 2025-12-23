@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Clock, Users, FileCheck, Headset } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 
 /* ================= Counter Hook (UNCHANGED) ================= */
 function useCounter(target, duration = 1500) {
@@ -155,19 +155,18 @@ export default function TrustExcellenceSection() {
           </motion.div>
         </div>
 
-        {/* ================= TIMELINE (INTEGRATED, NO CARD LOOK) ================= */}
+        {/* ================= TIMELINE (ONLY PART MODIFIED) ================= */}
         <div className="-mt-4 pt-10">
           <h3 className="text-xl font-semibold text-center text-slate-800 mb-10">
             Our Growth Timeline
           </h3>
 
           <div className="relative flex flex-col md:flex-row justify-between gap-12">
-            {/* Animated Line */}
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
+              transition={{ duration: 1.2 }}
               className="hidden md:block absolute top-6 left-0 w-full h-1 origin-left bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500"
             />
 
@@ -177,22 +176,33 @@ export default function TrustExcellenceSection() {
               { year: "2023", desc: "Team of 13 (16× growth)" },
               { year: "2024", desc: "New branch at Indiranagar" },
             ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="relative flex flex-col items-center text-center min-w-[160px]"
-              >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold shadow-md z-10">
-                  {item.year}
-                </div>
+              <div key={index} className="flex items-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  className="flex flex-col items-center text-center min-w-[160px] z-10"
+                >
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold shadow-md">
+                    {item.year}
+                  </div>
+                  <div className="mt-4 text-sm text-slate-600 min-h-[48px] flex items-center">
+                    {item.desc}
+                  </div>
+                </motion.div>
 
-                <div className="mt-4 text-sm text-slate-600 min-h-[48px] flex items-center">
-                  {item.desc}
-                </div>
-              </motion.div>
+                {index !== 3 && (
+                  <>
+                    <div className="hidden md:block mx-6 text-indigo-500">
+                      <ArrowRight size={22} />
+                    </div>
+                    <div className="md:hidden my-6 text-indigo-500">
+                      <ArrowDown size={22} />
+                    </div>
+                  </>
+                )}
+              </div>
             ))}
           </div>
         </div>
