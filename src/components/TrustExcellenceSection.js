@@ -98,21 +98,9 @@ export default function TrustExcellenceSection() {
                 </h3>
 
                 <div className="space-y-6">
-                  <Progress
-                    label="Number of Audits Conducted"
-                    value="100+"
-                    gradient="from-[#14598C] to-[#14598C]"
-                  />
-                  <Progress
-                    label="Partner-Led Engagements"
-                    value="100%"
-                    gradient="from-[#14598C] to-[#14598C]"
-                  />
-                  <Progress
-                    label="Multi-Industry Expertise"
-                    value="Diverse Sectors"
-                    gradient="from-[#14598C] to-[#14598C]"
-                  />
+                  <Progress label="Number of Audits Conducted" value="100+" />
+                  <Progress label="Partner-Led Engagements" value="100%" />
+                  <Progress label="Multi-Industry Expertise" value="Diverse Sectors" />
                 </div>
               </div>
 
@@ -155,19 +143,20 @@ export default function TrustExcellenceSection() {
           </motion.div>
         </div>
 
-        {/* ================= TIMELINE ================= */}
+        {/* ================= TIMELINE (CENTER ALIGNED FIX) ================= */}
         <div className="-mt-4 pt-10">
           <h3 className="text-xl font-semibold text-center text-slate-800 mb-10">
             Our Growth Timeline
           </h3>
 
-          <div className="relative flex flex-col md:flex-row justify-between gap-12">
+          <div className="relative flex flex-col items-center md:flex-row md:justify-between gap-12">
+            {/* Desktop line */}
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2 }}
-              className="hidden md:block absolute top-6 left-0 w-full h-1 origin-left bg-gradient-to-r from-[#14598C] via-[#14598C] to-[#14598C]"
+              className="hidden md:block absolute top-6 left-0 w-full h-1 origin-left bg-gradient-to-r from-[#14598C] to-[#14598C]"
             />
 
             {[
@@ -176,7 +165,10 @@ export default function TrustExcellenceSection() {
               { year: "2023", desc: "Team of 13 (16× growth)" },
               { year: "2024", desc: "New branch at Indiranagar" },
             ].map((item, index) => (
-              <div key={index} className="flex items-center">
+              <div
+                key={index}
+                className="flex flex-col items-center md:flex-row md:items-center"
+              >
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -184,10 +176,11 @@ export default function TrustExcellenceSection() {
                   transition={{ delay: index * 0.2 }}
                   className="flex flex-col items-center text-center min-w-[160px] z-10"
                 >
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#14598C] to-[#14598C] flex items-center justify-center text-white font-bold shadow-md">
+                  <div className="w-14 h-14 rounded-full bg-[#14598C] flex items-center justify-center text-white font-bold shadow-md">
                     {item.year}
                   </div>
-                  <div className="mt-4 text-sm text-slate-600 min-h-[48px] flex items-center">
+
+                  <div className="mt-4 text-sm text-slate-600 min-h-[48px] flex items-center justify-center">
                     {item.desc}
                   </div>
                 </motion.div>
@@ -212,7 +205,7 @@ export default function TrustExcellenceSection() {
 }
 
 /* ================= HELPER COMPONENT ================= */
-function Progress({ label, value, gradient }) {
+function Progress({ label, value }) {
   return (
     <div>
       <div className="flex justify-between mb-2">
@@ -221,7 +214,7 @@ function Progress({ label, value, gradient }) {
       </div>
       <div className="w-full bg-slate-200 rounded-full h-3">
         <motion.div
-          className={`h-3 rounded-full bg-gradient-to-r ${gradient}`}
+          className="h-3 rounded-full bg-[#14598C]"
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}
           viewport={{ once: true }}

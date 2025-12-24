@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import Link from "next/link"; // ← IMPORTANT
+import Link from "next/link";
+import Image from "next/image";
+import logo from "../../public/logo2.png";
 
 export default function PremiumHeader() {
   const [open, setOpen] = useState(false);
@@ -18,17 +20,18 @@ export default function PremiumHeader() {
     <header className="w-full fixed top-0 left-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/60 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          
-          {/* Logo */}
-          <a href="/" className="flex items-center space-x-2">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#14598C] to-[#14598C] flex items-center justify-center shadow-md">
-              <span className="text-white text-xl font-extrabold">V</span>
+
+          {/* ✅ LOGO — SIZE INCREASED WITHOUT AFFECTING HEADER */}
+          <Link href="/" className="flex items-center -ml-6">
+            <div className="scale-200 origin-left">
+              <Image
+                src={logo}
+                alt="Logo"
+                className="h-16 w-[320px] object-contain"
+                priority
+              />
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-900 leading-tight">Vishnu S</h1>
-              <p className="text-xs text-gray-600 font-medium -mt-1">Associates</p>
-            </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center space-x-8">
@@ -47,14 +50,13 @@ export default function PremiumHeader() {
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="/login"
-              className="px-5 py-2 border border-gray-300 text-gray-800 rounded-lg hover:bg-gray-100 transition cursor-pointer"
+              className="px-5 py-2 border border-gray-300 text-gray-800 rounded-lg hover:bg-gray-100 transition"
             >
               Login
             </a>
 
-            {/* Free Consultation with cursor-pointer */}
             <Link href="/free-consultation">
-              <button className="px-6 py-2 bg-[#14598C] text-white rounded-lg shadow hover:bg-[#0F4066] transition cursor-pointer">
+              <button className="px-6 py-2 bg-[#14598C] text-white rounded-lg shadow hover:bg-[#0F4066] transition">
                 Free Consultation
               </button>
             </Link>
@@ -63,7 +65,7 @@ export default function PremiumHeader() {
           {/* Mobile menu button */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 bg-gray-100 rounded-lg cursor-pointer"
+            className="lg:hidden p-2 bg-gray-100 rounded-lg"
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -79,7 +81,7 @@ export default function PremiumHeader() {
                 key={item.name}
                 onClick={() => setOpen(false)}
                 href={item.href}
-                className="py-3 text-gray-800 font-medium rounded-lg hover:bg-gray-100 transition cursor-pointer"
+                className="py-3 text-gray-800 font-medium rounded-lg hover:bg-gray-100 transition"
               >
                 {item.name}
               </a>
@@ -88,14 +90,13 @@ export default function PremiumHeader() {
             <a
               href="/login"
               onClick={() => setOpen(false)}
-              className="py-3 mt-2 border border-gray-300 text-center rounded-lg hover:bg-gray-100 transition cursor-pointer"
+              className="py-3 mt-2 border border-gray-300 text-center rounded-lg hover:bg-gray-100 transition"
             >
               Login
             </a>
 
-            {/* Mobile Free Consultation with cursor-pointer */}
             <Link href="/free-consultation" onClick={() => setOpen(false)}>
-              <button className="px-6 py-2 bg-[#14598C] text-white rounded-lg shadow hover:bg-[#0F4066] transition cursor-pointer">
+              <button className="px-6 py-2 bg-[#14598C] text-white rounded-lg shadow hover:bg-[#0F4066] transition">
                 Free Consultation
               </button>
             </Link>
