@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Mail,
   Phone,
@@ -8,6 +9,7 @@ import {
   Instagram,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ModernWaveFooter() {
   return (
@@ -21,58 +23,62 @@ export default function ModernWaveFooter() {
           preserveAspectRatio="none"
         >
           <path
-            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28"
             className="fill-current text-gray-800"
-          ></path>
+          />
         </svg>
       </div>
 
       <div className="pt-20 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Brand & Contact Section */}
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <div className="bg-gradient-to-r from-[#14598C] to-[#1A6BA8] h-10 w-10 rounded-lg flex items-center justify-center">
-                <div className="bg-white h-5 w-5 rounded transform rotate-45"></div>
-              </div>
-              <span className="text-xl font-bold text-white">
-                Vishnu S & Associates
-              </span>
-            </div>
 
-            <p className="text-gray-400 text-sm">
+          {/* Brand Section */}
+          <div className="flex flex-col gap-4 items-start">
+
+            {/* Logo - Left Aligned */}
+            <Image
+              src="/logo5.png"
+              alt="Vishnu S & Associates Logo"
+              width={260}
+              height={72}
+              priority
+              className="object-contain brightness-0 invert"
+            />
+
+            {/* Text - Left Aligned */}
+            <p className="text-gray-400 text-sm max-w-md text-left">
               Expert financial solutions with 6+ years of experience serving
               clients across India. Trusted by 1000+ satisfied customers.
             </p>
 
             <div className="space-y-3">
-              <div className="flex items-center gap-3 cursor-pointer">
-                <Mail className="text-white" size={18} />
+              <div className="flex items-center gap-3">
+                <Mail size={18} />
                 <a
-                  href="mailto:info@vishnusassociates.com"
-                  className="text-white hover:text-[#14598C] transition text-sm"
+                  href="mailto:support@cavsa.in"
+                  className="hover:text-[#14598C] transition text-sm"
                 >
                   support@cavsa.in
                 </a>
               </div>
 
-              <div className="flex items-center gap-3 cursor-pointer">
-                <Phone className="text-white" size={18} />
+              <div className="flex items-center gap-3">
+                <Phone size={18} />
                 <a
                   href="tel:+919731208006"
-                  className="text-white hover:text-[#14598C] transition text-sm"
+                  className="hover:text-[#14598C] transition text-sm"
                 >
                   +91 9731208006
                 </a>
               </div>
             </div>
 
-            <div className="flex gap-3 mt-4">
+            <div className="flex gap-3 pt-2">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
                 <a
-                  href="#"
                   key={idx}
-                  className="bg-gray-800 hover:bg-[#14598C] text-white p-2 rounded-lg transition cursor-pointer"
+                  href="#"
+                  className="bg-gray-800 hover:bg-[#14598C] p-2 rounded-lg transition"
                 >
                   <Icon size={16} />
                 </a>
@@ -80,97 +86,46 @@ export default function ModernWaveFooter() {
             </div>
           </div>
 
-          {/* Services + Quick Links Card */}
-          <div className="bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-[#14598C]/30 transition duration-300">
+          {/* Services + Links */}
+          <div className="bg-gray-800 rounded-2xl p-6 shadow-xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Our Services */}
               <div>
                 <h3 className="text-xl font-bold text-white mb-4">
                   Our Services
                 </h3>
                 <ul className="space-y-2">
-                  <li className="cursor-pointer">
-                    <Link
-                      href="/service#bookkeeping-compliance"
-                      className="flex items-center gap-3 text-gray-300 hover:text-white transition"
-                    >
-                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
-                      Bookkeeping and compliance
-                    </Link>
-                  </li>
-
-                  <li className="cursor-pointer">
-                    <Link
-                      href="/service#auditing-assurance"
-                      className="flex items-center gap-3 text-gray-300 hover:text-white transition"
-                    >
-                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
-                      Auditing and assurance
-                    </Link>
-                  </li>
-
-                  <li className="cursor-pointer">
-                    <Link
-                      href="/service#tax-services"
-                      className="flex items-center gap-3 text-gray-300 hover:text-white transition"
-                    >
-                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
-                      Tax Services
-                    </Link>
-                  </li>
-
-                  <li className="cursor-pointer">
-                    <Link
-                      href="/service#legal-matters"
-                      className="flex items-center gap-3 text-gray-300 hover:text-white transition"
-                    >
-                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
-                      Legal Matters
-                    </Link>
-                  </li>
-
-                  <li className="cursor-pointer">
-                    <Link
-                      href="/service#startup-advisory"
-                      className="flex items-center gap-3 text-gray-300 hover:text-white transition"
-                    >
-                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
-                      Startup Advisory
-                    </Link>
-                  </li>
-
-                  <li className="cursor-pointer">
-                    <Link
-                      href="/service#virtual-cfo"
-                      className="flex items-center gap-3 text-gray-300 hover:text-white transition"
-                    >
-                      <div className="w-2 h-2 bg-[#14598C] rounded-full"></div>
-                      Virtual CFO
-                    </Link>
-                  </li>
+                  {[
+                    "Bookkeeping and compliance",
+                    "Auditing and assurance",
+                    "Tax Services",
+                    "Legal Matters",
+                    "Startup Advisory",
+                    "Virtual CFO",
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex gap-3">
+                      <span className="w-2 h-2 bg-[#14598C] rounded-full mt-2" />
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
 
-              {/* Quick Links */}
               <div>
                 <h3 className="text-xl font-bold text-white mb-4">
                   Quick Links
                 </h3>
                 <ul className="space-y-2">
                   {[
-                    { name: "Home", link: "/" },
-                    { name: "About Us", link: "/about" },
-                    { name: "Services", link: "/service" },
-                    { name: "Contact", link: "/contact" },
-                    { name: "Privacy Policy", link: "/privacypolicy" },
-                    { name: "Terms of Service", link: "/termsandconditions" },
+                    "Home",
+                    "About Us",
+                    "Services",
+                    "Contact",
+                    "Privacy Policy",
+                    "Terms of Service",
                   ].map((item, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-center gap-3 text-gray-300 hover:text-white transition cursor-pointer"
-                    >
-                      <div className="w-2 h-2 bg-[#14598C] rounded-full\"></div>
-                      <Link href={item.link}>{item.name}</Link>
+                    <li key={idx} className="flex gap-3">
+                      <span className="w-2 h-2 bg-[#14598C] rounded-full mt-2" />
+                      {item}
                     </li>
                   ))}
                 </ul>
@@ -180,17 +135,16 @@ export default function ModernWaveFooter() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 mt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm gap-3">
-          <div className="flex items-center gap-2 cursor-pointer">
-            <div className="bg-gradient-to-r from-[#14598C] to-[#1A6BA8] h-6 w-6 rounded-lg flex items-center justify-center">
-              <div className="bg-white h-3 w-3 rounded transform rotate-45"></div>
-            </div>
-            <span className="text-white font-medium">
-              Vishnu S & Associates
-            </span>
-          </div>
+        <div className="pt-8 mt-8 border-t border-gray-800 flex justify-between items-center text-sm">
+          <Image
+            src="/logo5.png"
+            alt="Vishnu S & Associates Logo"
+            width={180}
+            height={52}
+            className="object-contain brightness-0 invert"
+          />
 
-          <p className="text-gray-500 text-center md:text-left">
+          <p className="text-gray-500">
             © 2025 Vishnu S & Associates. All rights reserved.
           </p>
         </div>
