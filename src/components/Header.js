@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../public/logo2.png";
+
 
 export default function PremiumHeader() {
   const [open, setOpen] = useState(false);
@@ -21,16 +21,24 @@ export default function PremiumHeader() {
       <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
 
-          {/* ✅ LOGO — SIZE INCREASED WITHOUT AFFECTING HEADER */}
-          <Link href="/" className="flex items-center -ml-6">
-            <div className="scale-200 origin-left">
-              <Image
-                src={logo}
-                alt="Logo"
-                className="h-16 w-[320px] object-contain"
-                priority
-              />
-            </div>
+          {/* ✅ LOGO — BIGGER + FULL CLARITY */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo5.png"
+              alt="Vishnu S & Associates Logo"
+              width={260}              // ⬅️ increased more
+              height={80}
+              priority
+              quality={100}           // ⬅️ max clarity
+              unoptimized             // ⬅️ prevents blur
+              className="
+                w-[210px]
+                sm:w-[230px]
+                lg:w-[260px]
+                h-auto
+                object-contain
+              "
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -50,13 +58,13 @@ export default function PremiumHeader() {
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="/login"
-              className="px-5 py-2 border border-gray-300 text-gray-800 rounded-lg hover:bg-gray-100 transition"
+              className="px-5 py-2 border border-gray-300 text-gray-800 rounded-lg hover:bg-gray-100 transition cursor-pointer"
             >
               Login
             </a>
 
             <Link href="/free-consultation">
-              <button className="px-6 py-2 bg-[#14598C] text-white rounded-lg shadow hover:bg-[#0F4066] transition">
+              <button className="px-6 py-2 bg-[#14598C] text-white rounded-lg shadow hover:bg-[#0F4066] transition cursor-pointer">
                 Free Consultation
               </button>
             </Link>
@@ -65,7 +73,7 @@ export default function PremiumHeader() {
           {/* Mobile menu button */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 bg-gray-100 rounded-lg"
+            className="lg:hidden p-2 bg-gray-100 rounded-lg cursor-pointer"
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -81,7 +89,7 @@ export default function PremiumHeader() {
                 key={item.name}
                 onClick={() => setOpen(false)}
                 href={item.href}
-                className="py-3 text-gray-800 font-medium rounded-lg hover:bg-gray-100 transition"
+                className="py-3 text-gray-800 font-medium rounded-lg hover:bg-gray-100 transition cursor-pointer"
               >
                 {item.name}
               </a>
@@ -90,13 +98,13 @@ export default function PremiumHeader() {
             <a
               href="/login"
               onClick={() => setOpen(false)}
-              className="py-3 mt-2 border border-gray-300 text-center rounded-lg hover:bg-gray-100 transition"
+              className="py-3 mt-2 border border-gray-300 text-center rounded-lg hover:bg-gray-100 transition cursor-pointer"
             >
               Login
             </a>
 
             <Link href="/free-consultation" onClick={() => setOpen(false)}>
-              <button className="px-6 py-2 bg-[#14598C] text-white rounded-lg shadow hover:bg-[#0F4066] transition">
+              <button className="px-6 py-2 bg-[#14598C] text-white rounded-lg shadow hover:bg-[#0F4066] transition cursor-pointer">
                 Free Consultation
               </button>
             </Link>
