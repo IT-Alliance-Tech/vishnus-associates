@@ -3,7 +3,16 @@
 import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Mail, Phone, Smartphone, MapPin, Clock, Send, CheckCircle, XCircle } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  Smartphone,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import bannerImg from "../../../public/contact1.png";
 
@@ -74,25 +83,60 @@ export default function ContactPage() {
   };
 
   // ---------- FORM SUBMIT ----------
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+
+  //   try {
+  //     const response = await fetch(GOOGLE_SCRIPT_URL, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     const result = await response.json();
+
+  //     if (result.status === 'success') {
+  //       showToast("Details Submitted Successfully!", "success");
+
+  //       // Clear form after successful submission
+  //       setFormData({
+  //         fullName: "",
+  //         email: "",
+  //         phone: "",
+  //         service: "",
+  //         message: "",
+  //       });
+  //     } else {
+  //       showToast("Submission failed. Please try again.", "error");
+  //     }
+  //   } catch (err) {
+  //     console.error("Submission error:", err);
+  //     showToast("Network error. Please try again.", "error");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
+        headers: {
+          "Content-Type": "text/plain",
         },
         body: JSON.stringify(formData),
       });
 
       const result = await response.json();
-      
-      if (result.status === 'success') {
+
+      if (result.status === "success") {
         showToast("Details Submitted Successfully!", "success");
-        
-        // Clear form after successful submission
         setFormData({
           fullName: "",
           email: "",
@@ -113,7 +157,10 @@ export default function ContactPage() {
 
   // ---------- RENDER ----------
   return (
-    <div style={cssVars} className="w-full min-h-screen font-sans text-gray-700">
+    <div
+      style={cssVars}
+      className="w-full min-h-screen font-sans text-gray-700"
+    >
       <Header />
 
       {/* Hero Section */}
@@ -149,7 +196,8 @@ export default function ContactPage() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-xl text-white max-w-3xl mx-auto mb-10"
             >
-              We're here to help you navigate your financial journey with personalized solutions and expert guidance.
+              We're here to help you navigate your financial journey with
+              personalized solutions and expert guidance.
             </motion.p>
 
             <motion.div
@@ -166,7 +214,7 @@ export default function ContactPage() {
                 <Phone className="w-5 h-5" />
                 <span>Call Now</span>
               </a>
-   
+
               <a
                 href="mailto:support@cavsa.in"
                 className="flex items-center gap-2 bg-transparent text-white px-6 py-3 rounded-lg border border-white/30 hover:bg-white/10 transition-all font-medium"
@@ -187,11 +235,15 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--brand-blue)" }}>
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-4"
+            style={{ color: "var(--brand-blue)" }}
+          >
             We're Here to Help
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Reach out to us through any of our channels and our team will get back to you promptly
+            Reach out to us through any of our channels and our team will get
+            back to you promptly
           </p>
         </motion.div>
 
@@ -204,16 +256,39 @@ export default function ContactPage() {
             className="lg:col-span-1"
           >
             <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 sticky top-8">
-              <h3 className="text-2xl font-bold mb-6" style={{ color: "var(--brand-blue)" }}>
+              <h3
+                className="text-2xl font-bold mb-6"
+                style={{ color: "var(--brand-blue)" }}
+              >
                 Contact Information
               </h3>
 
               <div className="space-y-6">
-                {[ 
-                  { icon: <Mail className="w-5 h-5" />, title: "Email Us", content: "support@cavsa.in", description: "For general inquiries and support" },
-                  { icon: <Phone className="w-5 h-5" />, title: "Call Us", content: "+91 9731208006", description: "Mon-Fri, 10:00AM-6:00PM" },
-                  { icon: <Smartphone className="w-5 h-5" />, title: "WhatsApp", content: "+91 9743991199", description: "For quick responses" },
-                  { icon: <Clock className="w-5 h-5" />, title: "Business Hours", content: "Mon-Fri: 10:00AM-6:00PM", description: "Saturday:10:00AM-2:00PM" },
+                {[
+                  {
+                    icon: <Mail className="w-5 h-5" />,
+                    title: "Email Us",
+                    content: "support@cavsa.in",
+                    description: "For general inquiries and support",
+                  },
+                  {
+                    icon: <Phone className="w-5 h-5" />,
+                    title: "Call Us",
+                    content: "+91 9731208006",
+                    description: "Mon-Fri, 10:00AM-6:00PM",
+                  },
+                  {
+                    icon: <Smartphone className="w-5 h-5" />,
+                    title: "WhatsApp",
+                    content: "+91 9743991199",
+                    description: "For quick responses",
+                  },
+                  {
+                    icon: <Clock className="w-5 h-5" />,
+                    title: "Business Hours",
+                    content: "Mon-Fri: 10:00AM-6:00PM",
+                    description: "Saturday:10:00AM-2:00PM",
+                  },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -222,13 +297,25 @@ export default function ContactPage() {
                     transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
                     className="flex gap-4 p-4 rounded-xl hover:bg-[#14598C]/5 transition-all"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-white" style={{ background: "var(--brand-mid)" }}>
+                    <div
+                      className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-white"
+                      style={{ background: "var(--brand-mid)" }}
+                    >
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">{item.title}</h4>
-                      <p className="font-medium" style={{ color: "var(--brand-gold)" }}>{item.content}</p>
-                      <p className="text-gray-600 text-sm mt-1">{item.description}</p>
+                      <h4 className="font-semibold text-gray-900">
+                        {item.title}
+                      </h4>
+                      <p
+                        className="font-medium"
+                        style={{ color: "var(--brand-gold)" }}
+                      >
+                        {item.content}
+                      </p>
+                      <p className="text-gray-600 text-sm mt-1">
+                        {item.description}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -245,34 +332,43 @@ export default function ContactPage() {
           >
             <div className="bg-gradient-to-br from-white to-[#14598C]/10 rounded-2xl shadow-lg p-8 border border-gray-100">
               <div className="mb-8">
-                <h3 className="text-2xl font-bold" style={{ color: "var(--brand-blue)" }}>
+                <h3
+                  className="text-2xl font-bold"
+                  style={{ color: "var(--brand-blue)" }}
+                >
                   Send Us a Message
                 </h3>
-                <p className="text-gray-600 mt-2">We'll get back to you within 24 hours.</p>
+                <p className="text-gray-600 mt-2">
+                  We'll get back to you within 24 hours.
+                </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                    <input 
-                      type="text" 
-                      name="fullName" 
-                      value={formData.fullName} 
-                      onChange={handleChange} 
-                      required 
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14598C] focus:border-transparent outline-none transition-all"
                       placeholder="Enter your full name"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                    <input 
-                      type="email" 
-                      name="email" 
-                      value={formData.email} 
-                      onChange={handleChange} 
-                      required 
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14598C] focus:border-transparent outline-none transition-all"
                       placeholder="your.email@example.com"
                     />
@@ -281,23 +377,27 @@ export default function ContactPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                    <input 
-                      type="tel" 
-                      name="phone" 
-                      value={formData.phone} 
-                      onChange={handleChange} 
-                      required 
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14598C] focus:border-transparent outline-none transition-all"
                       placeholder="+91 XXXXX XXXXX"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Service Required</label>
-                    <select 
-                      name="service" 
-                      value={formData.service} 
-                      onChange={handleChange} 
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Service Required
+                    </label>
+                    <select
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14598C] focus:border-transparent outline-none transition-all"
                     >
                       <option value="">Select a service</option>
@@ -312,20 +412,28 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                  <textarea 
-                    name="message" 
-                    value={formData.message} 
-                    onChange={handleChange} 
-                    required 
-                    rows={5} 
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Message *
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14598C] focus:border-transparent outline-none transition-all resize-none"
                     placeholder="Tell us how we can help you..."
                   />
                 </div>
 
                 {/* Toast Notification above button */}
-                {toast && <Toast message={toast.message} type={toast.type} onClose={hideToast} />}
+                {toast && (
+                  <Toast
+                    message={toast.message}
+                    type={toast.type}
+                    onClose={hideToast}
+                  />
+                )}
 
                 <motion.button
                   whileHover={{ scale: 1.02 }}
@@ -333,7 +441,10 @@ export default function ContactPage() {
                   type="submit"
                   disabled={loading}
                   className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-lg font-semibold text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-                  style={{ background: "var(--brand-mid)", boxShadow: primaryButtonShadow }}
+                  style={{
+                    background: "var(--brand-mid)",
+                    boxShadow: primaryButtonShadow,
+                  }}
                 >
                   <Send className="w-5 h-5" />
                   {loading ? "Sending..." : "Send Message"}
@@ -342,15 +453,30 @@ export default function ContactPage() {
 
               {/* WHY CHOOSE US */}
               <div className="mt-12">
-                <h4 className="text-2xl font-bold mb-6" style={{ color: "var(--brand-blue)" }}>
+                <h4
+                  className="text-2xl font-bold mb-6"
+                  style={{ color: "var(--brand-blue)" }}
+                >
                   Why Choose Our Services
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {[
-                    { title: "Expert Team", desc: "Qualified CAs with 10+ years experience" },
-                    { title: "Quick Response", desc: "We respond to all inquiries within 24 hours" },
-                    { title: "Transparent Pricing", desc: "No hidden costs or surprise fees" },
-                    { title: "Pan-India Service", desc: "We serve clients across the country" },
+                    {
+                      title: "Expert Team",
+                      desc: "Qualified CAs with 10+ years experience",
+                    },
+                    {
+                      title: "Quick Response",
+                      desc: "We respond to all inquiries within 24 hours",
+                    },
+                    {
+                      title: "Transparent Pricing",
+                      desc: "No hidden costs or surprise fees",
+                    },
+                    {
+                      title: "Pan-India Service",
+                      desc: "We serve clients across the country",
+                    },
                   ].map((item, index) => (
                     <motion.div
                       key={index}
@@ -359,18 +485,22 @@ export default function ContactPage() {
                       transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
                       className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex gap-4"
                     >
-                      <div className="w-10 h-10 rounded-lg flex items-center justify-center text-white" style={{ background: "var(--brand-mid)" }}>
+                      <div
+                        className="w-10 h-10 rounded-lg flex items-center justify-center text-white"
+                        style={{ background: "var(--brand-mid)" }}
+                      >
                         <span className="font-bold text-sm">{index + 1}</span>
                       </div>
                       <div>
-                        <h5 className="font-semibold text-gray-900 mb-1">{item.title}</h5>
+                        <h5 className="font-semibold text-gray-900 mb-1">
+                          {item.title}
+                        </h5>
                         <p className="text-gray-600 text-sm">{item.desc}</p>
                       </div>
                     </motion.div>
                   ))}
                 </div>
               </div>
-
             </div>
           </motion.div>
         </div>
