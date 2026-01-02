@@ -1,13 +1,23 @@
 "use client";
 
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FaHeart, FaShieldAlt, FaRegClock, FaUsers } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import founderImg from "../../../public/founder.png";
+import founderImg from "../../../public/VishnuPhoto.png";
+import generalManagerImg from "../../../public/founder.png";
 
 export default function AboutPage() {
+  const [flippedCards, setFlippedCards] = useState([]);
+
+  const toggleCard = (index) => {
+    setFlippedCards((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
+
   const coreValues = [
     {
       icon: <FaHeart className="h-7 w-7 text-white" />,
@@ -113,9 +123,15 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group h-80 [perspective:1000px]"
+                className="h-80 [perspective:1000px] cursor-pointer"
+                onClick={() => toggleCard(index)}
               >
-                <div className="relative h-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div
+                  className={`relative h-full transition-all duration-500 [transform-style:preserve-3d] lg:group-hover:[transform:rotateY(180deg)] ${
+                    flippedCards.includes(index) ? "[transform:rotateY(180deg)]" : ""
+                  }`}
+                  style={{ transformStyle: "preserve-3d" }}
+                >
                   
                   {/* FRONT */}
                   <div
@@ -126,7 +142,7 @@ export default function AboutPage() {
                       {value.icon}
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">{value.title}</h3>
-                    <p className="text-white/80">Click to learn more</p>
+                    <p className="text-white/80">Tap to learn more</p>
                   </div>
 
                   {/* BACK */}
@@ -199,7 +215,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   As General Manager, he ensures operational discipline and
-                  supports the firm’s commitment to client-centric excellence.
+                  supports the firm's commitment to client-centric excellence.
                 </p>
               </div>
 
@@ -210,7 +226,7 @@ export default function AboutPage() {
             <div className="lg:w-1/2 flex justify-center">
               <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src={founderImg}
+                  src={generalManagerImg}
                   alt="General Manager"
                   fill
                   className="object-cover"
