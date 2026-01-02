@@ -18,7 +18,7 @@ const Toast = ({ message, type, onClose }) => {
 
   return (
     <div
-          className="flex items-center gap-3 px-6 py-4 rounded-lg shadow-lg mb-4"
+      className="flex items-center gap-3 px-6 py-4 rounded-lg shadow-lg mb-4"
       style={{
         background: type === "success" ? "#10b981" : "#ef4444",
         color: "white",
@@ -34,7 +34,7 @@ const Toast = ({ message, type, onClose }) => {
   );
 };
 
-   export default function ContactPage() {
+export default function ContactPage() {
   const cssVars = {
     "--brand-blue": "#14598C",
     "--brand-mid": "#14598C",
@@ -46,8 +46,8 @@ const Toast = ({ message, type, onClose }) => {
 
   const primaryButtonShadow = "0 8px 30px rgba(20, 89, 140, 0.14)";
 
-  // ✅ POINTING TO API ROUTE
-  const GOOGLE_SCRIPT_URL = "/api/contact";
+  const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbw5uGkaGMdXxayilwqonSfgnr6QViFyd7EQgoVlEa9zsy8OQo7ttMQjfs8orRYWKXcf/exec";
 
   // ---------- FORM STATE ----------
   const [formData, setFormData] = useState({
@@ -81,15 +81,18 @@ const Toast = ({ message, type, onClose }) => {
     try {
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-
-      if (data.status === "success") {
-          showToast("Submission successful. Please try again.", "success");
-        // Clear form immediately after successful submission
+      const result = await response.json();
+      
+      if (result.status === 'success') {
+        showToast("Details Submitted Successfully!", "success");
+        
+        // Clear form after successful submission
         setFormData({
           fullName: "",
           email: "",
@@ -99,9 +102,9 @@ const Toast = ({ message, type, onClose }) => {
         });
       } else {
         showToast("Submission failed. Please try again.", "error");
-        showToast("Details Submitted Successfully!", "success");
       }
     } catch (err) {
+      console.error("Submission error:", err);
       showToast("Network error. Please try again.", "error");
     } finally {
       setLoading(false);
@@ -156,12 +159,12 @@ const Toast = ({ message, type, onClose }) => {
               className="flex flex-wrap justify-center gap-4"
             >
               <a
-                href="tel:+91 9731208006"
+                href="tel:+919731208006"
                 className="flex items-center gap-2 bg-[var(--brand-gold)] text-white px-6 py-3 rounded-lg border border-white/20 hover:bg-[#b37725] transition-all shadow-lg font-medium"
                 style={{ boxShadow: primaryButtonShadow }}
               >
                 <Phone className="w-5 h-5" />
-                 <span>Call Now</span>
+                <span>Call Now</span>
               </a>
    
               <a
@@ -210,7 +213,7 @@ const Toast = ({ message, type, onClose }) => {
                   { icon: <Mail className="w-5 h-5" />, title: "Email Us", content: "support@cavsa.in", description: "For general inquiries and support" },
                   { icon: <Phone className="w-5 h-5" />, title: "Call Us", content: "+91 9731208006", description: "Mon-Fri, 10:00AM-6:00PM" },
                   { icon: <Smartphone className="w-5 h-5" />, title: "WhatsApp", content: "+91 9743991199", description: "For quick responses" },
-                  { icon: <Clock className="w-5 h-5" />, title: "Business Hours", content: "Mon-Fri: 10:00AM-6:00PM", description: "Saturday:10:00AM-6:00PM" },
+                  { icon: <Clock className="w-5 h-5" />, title: "Business Hours", content: "Mon-Fri: 10:00AM-6:00PM", description: "Saturday:10:00AM-2:00PM" },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -252,28 +255,57 @@ const Toast = ({ message, type, onClose }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                    <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required className="w-full px-4 py-3 border border-gray-300 rounded-lg" />
+                    <input 
+                      type="text" 
+                      name="fullName" 
+                      value={formData.fullName} 
+                      onChange={handleChange} 
+                      required 
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14598C] focus:border-transparent outline-none transition-all"
+                      placeholder="Enter your full name"
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-3 border border-gray-300 rounded-lg" />
+                    <input 
+                      type="email" 
+                      name="email" 
+                      value={formData.email} 
+                      onChange={handleChange} 
+                      required 
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14598C] focus:border-transparent outline-none transition-all"
+                      placeholder="your.email@example.com"
+                    />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full px-4 py-3 border border-gray-300 rounded-lg" />
+                    <input 
+                      type="tel" 
+                      name="phone" 
+                      value={formData.phone} 
+                      onChange={handleChange} 
+                      required 
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14598C] focus:border-transparent outline-none transition-all"
+                      placeholder="+91 XXXXX XXXXX"
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Service Required</label>
-                    <select name="service" value={formData.service} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                    <select 
+                      name="service" 
+                      value={formData.service} 
+                      onChange={handleChange} 
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14598C] focus:border-transparent outline-none transition-all"
+                    >
                       <option value="">Select a service</option>
                       <option>Bookkeeping and Compliance</option>
                       <option>Auditing and Assurance</option>
                       <option>Tax Services</option>
-                      <option>LegalMatters</option>
-                      <option>startup Advisory</option>
+                      <option>Legal Matters</option>
+                      <option>Startup Advisory</option>
                       <option>Virtual CFO</option>
                     </select>
                   </div>
@@ -281,7 +313,15 @@ const Toast = ({ message, type, onClose }) => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                  <textarea name="message" value={formData.message} onChange={handleChange} required rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg" />
+                  <textarea 
+                    name="message" 
+                    value={formData.message} 
+                    onChange={handleChange} 
+                    required 
+                    rows={5} 
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14598C] focus:border-transparent outline-none transition-all resize-none"
+                    placeholder="Tell us how we can help you..."
+                  />
                 </div>
 
                 {/* Toast Notification above button */}
@@ -292,7 +332,7 @@ const Toast = ({ message, type, onClose }) => {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-lg font-semibold text-white shadow-lg"
+                  className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-lg font-semibold text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                   style={{ background: "var(--brand-mid)", boxShadow: primaryButtonShadow }}
                 >
                   <Send className="w-5 h-5" />

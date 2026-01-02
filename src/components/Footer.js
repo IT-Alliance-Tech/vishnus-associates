@@ -3,10 +3,8 @@
 import {
   Mail,
   Phone,
-  Facebook,
   Twitter,
   Linkedin,
-  Instagram,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -35,20 +33,19 @@ export default function ModernWaveFooter() {
           {/* Brand Section */}
           <div className="flex flex-col gap-4 items-start">
 
-            {/* Logo - Left Aligned */}
+            {/* Logo */}
             <Image
-              src="/logo5.png"
-              alt="Vishnu S & Associates Logo"
-              width={260}
-              height={72}
+              src="/caps.png"
+              alt="VISHNU S & ASSOCIATES LOGO"
+              width={300}
+              height={80}
               priority
               className="object-contain brightness-0 invert"
             />
 
-            {/* Text - Left Aligned */}
             <p className="text-gray-400 text-sm max-w-md text-left">
               Expert financial solutions with 6+ years of experience serving
-              clients across India. Trusted by 1000+ satisfied customers.
+              clients across India. Trusted by 950+ satisfied customers.
             </p>
 
             <div className="space-y-3">
@@ -74,7 +71,7 @@ export default function ModernWaveFooter() {
             </div>
 
             <div className="flex gap-3 pt-2">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
+              {[Twitter, Linkedin].map((Icon, idx) => (
                 <a
                   key={idx}
                   href="#"
@@ -134,18 +131,10 @@ export default function ModernWaveFooter() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 mt-8 border-t border-gray-800 flex justify-between items-center text-sm">
-          <Image
-            src="/logo5.png"
-            alt="Vishnu S & Associates Logo"
-            width={180}
-            height={52}
-            className="object-contain brightness-0 invert"
-          />
-
-          <p className="text-gray-500">
-            © 2025 Vishnu S & Associates. All rights reserved.
+        {/* Bottom Bar (CENTER ALIGNED) */}
+        <div className="pt-8 mt-8 border-t border-gray-800 flex justify-center items-center text-sm">
+          <p className="text-gray-500 text-center">
+            © 2025 VISHNU S & ASSOCIATES. All rights reserved.
           </p>
         </div>
       </div>

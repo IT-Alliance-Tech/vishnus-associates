@@ -114,7 +114,7 @@ export default function TrustExcellenceSection() {
                         Trusted
                       </div>
                       <div className="text-lg font-medium text-slate-600">
-                        Since 2018
+                        Since 2020
                       </div>
                     </div>
                   </div>
@@ -135,7 +135,7 @@ export default function TrustExcellenceSection() {
               Why Clients Trust Us
             </h3>
             <ul className="space-y-4 text-sm leading-relaxed">
-              <li>• Rigorous audit methodologies aligned with ICAI standards</li>
+              <li>• Rigorous audit methodologies aligned with system-driven techniques</li>
               <li>• Dedicated partner-level involvement in every engagement</li>
               <li>• Transparent reporting with actionable insights</li>
               <li>• Strong focus on compliance and accuracy</li>
