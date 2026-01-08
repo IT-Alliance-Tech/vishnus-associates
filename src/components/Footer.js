@@ -3,8 +3,6 @@
 import {
   Mail,
   Phone,
-  Twitter,
-  Linkedin,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -32,8 +30,6 @@ export default function ModernWaveFooter() {
 
           {/* Brand Section */}
           <div className="flex flex-col gap-4 items-start">
-
-            {/* Logo */}
             <Image
               src="/caps.png"
               alt="VISHNU S & ASSOCIATES LOGO"
@@ -69,70 +65,72 @@ export default function ModernWaveFooter() {
                 </a>
               </div>
             </div>
-
-            <div className="flex gap-3 pt-2">
-              {[Twitter, Linkedin].map((Icon, idx) => (
-                <a
-                  key={idx}
-                  href="#"
-                  className="bg-gray-800 hover:bg-[#14598C] p-2 rounded-lg transition"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Services + Links */}
           <div className="bg-gray-800 rounded-2xl p-6 shadow-xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+              {/* Services */}
               <div>
                 <h3 className="text-xl font-bold text-white mb-4">
                   Our Services
                 </h3>
                 <ul className="space-y-2">
                   {[
-                    "Bookkeeping and compliance",
-                    "Auditing and assurance",
-                    "Tax Services",
-                    "Legal Matters",
-                    "Startup Advisory",
-                    "Virtual CFO",
+                    { label: "Bookkeeping and compliance", href: "/service#bookkeeping-compliance" },
+                    { label: "Auditing and assurance", href: "/service#auditing-assurance" },
+                    { label: "Tax Services", href: "/service#tax-services" },
+                    { label: "Legal Matters", href: "/service#legal-matters" },
+                    { label: "Startup Advisory", href: "/service#startup-advisory" },
+                    { label: "Virtual CFO", href: "/service#virtual-cfo" },
                   ].map((item, idx) => (
-                    <li key={idx} className="flex gap-3">
-                      <span className="w-2 h-2 bg-[#14598C] rounded-full mt-2" />
-                      {item}
+                    <li key={idx}>
+                      <Link
+                        href={item.href}
+                        className="flex gap-3 items-start hover:text-[#14598C] transition cursor-pointer"
+                      >
+                        <span className="w-2 h-2 bg-[#14598C] rounded-full mt-2" />
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
 
+              {/* Quick Links */}
               <div>
                 <h3 className="text-xl font-bold text-white mb-4">
                   Quick Links
                 </h3>
                 <ul className="space-y-2">
                   {[
-                    "Home",
-                    "About Us",
-                    "Services",
-                    "Contact",
-                    "Privacy Policy",
-                    "Terms of Service",
+                    { label: "Home", href: "/" },
+                    { label: "About Us", href: "/about" },
+                    { label: "Services", href: "/service" },
+                    { label: "Contact", href: "/contact" },
+                    { label: "Privacy Policy", href: "/privacypolicy" },
+                    { label: "Terms of Service", href: "/termsandconditions" },
                   ].map((item, idx) => (
-                    <li key={idx} className="flex gap-3">
-                      <span className="w-2 h-2 bg-[#14598C] rounded-full mt-2" />
-                      {item}
+                    <li key={idx}>
+                      <Link
+                        href={item.href}
+                        className="flex gap-3 items-start hover:text-[#14598C] transition cursor-pointer"
+                      >
+                        <span className="w-2 h-2 bg-[#14598C] rounded-full mt-2" />
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
+
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar (CENTER ALIGNED) */}
-        <div className="pt-8 mt-8 border-t border-gray-800 flex justify-center items-center text-sm">
+        {/* Bottom Bar */}
+        <div className="pt-8 mt-8 border-t border-gray-800 flex justify-center text-sm">
           <p className="text-gray-500 text-center">
             © 2025 VISHNU S & ASSOCIATES. All rights reserved.
           </p>
