@@ -180,7 +180,7 @@ const FreeConsultation = () => {
                 <div className="rounded-2xl overflow-hidden border border-gray-100">
                   <div
                     className="calendly-inline-widget"
-                    data-url="https://calendly.com/gireeshma-italliancetech/30min"
+                    data-url="https://calendly.com/ca-vishnugs/30min"
                     style={{ minWidth: "320px", height: "650px" }}
                   ></div>
                 </div>
@@ -209,7 +209,7 @@ const FreeConsultation = () => {
           </div>
         </motion.div>
       </div>
-            </div>
+    </div>
   );
 };
 
