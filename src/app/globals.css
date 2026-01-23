@@ -104,3 +104,77 @@ h6 {
 .section-heading {
   font-size: 1.2rem !important;
 }
+
+/* ------------------------------------------------------ */
+/* ↓↓↓ Dark Mode Support for Components ↓↓↓ */
+/* ------------------------------------------------------ */
+
+/* HeroBanner - Light mode text colors in dark mode */
+@media (prefers-color-scheme: dark) {
+  /* Hero banner section text colors */
+  .text-slate-900 {
+    color: #f1f5f9;
+  }
+
+  .text-slate-600 {
+    color: #cbd5e1;
+  }
+
+  /* CTA/Banner section background and text */
+  .bg-white {
+    background-color: #1a1a1a;
+  }
+
+  .text-gray-900 {
+    color: #f1f5f9;
+  }
+
+  .text-gray-600 {
+    color: #cbd5e1;
+  }
+
+  .text-gray-500 {
+    color: #9ca3af;
+  }
+
+  .bg-gray-200 {
+    background-color: #374151;
+  }
+
+  /* Light gradient backgrounds */
+  .bg-gradient-to-br.from-blue-50 {
+    background: linear-gradient(to bottom right, #0f172a, #0a0a0a);
+  }
+
+  .bg-gradient-to-br.from-\[\#14598c\]\/10 {
+    background: linear-gradient(to bottom right, rgba(20, 89, 140, 0.2), rgba(20, 89, 140, 0.3));
+  }
+
+  /* Light color backgrounds that need dark mode adjustment */
+  .bg-blue-50,
+  .bg-amber-50,
+  .bg-emerald-50,
+  .bg-violet-50 {
+    background-color: #1f2937;
+  }
+
+  /* Light border colors */
+  .border-blue-100,
+  .border-gray-200 {
+    border-color: #374151;
+  }
+
+  /* Light shadow backgrounds */
+  .bg-\[\#14598c\]\/10 {
+    background-color: rgba(20, 89, 140, 0.2);
+  }
+
+  .bg-\[\#14598c\]\/5 {
+    background-color: rgba(20, 89, 140, 0.1);
+  }
+
+  /* Subtle pattern background */
+  .bg-\[radial-gradient\(\#dbeafe_1px\,transparent_1px\)\] {
+    background: radial-gradient(#374151 1px, transparent 1px);
+  }
+}
