@@ -26,7 +26,7 @@ export default function PremiumHeader() {
             <Image
               src="/caps.png"
               alt="Vishnu S & Associates Logo"
-              width={300}          // ⬅️ slightly increased
+              width={300}
               height={90}
               priority
               quality={100}
@@ -57,7 +57,7 @@ export default function PremiumHeader() {
           {/* DESKTOP ACTIONS */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="/login"
+              href="https://login.vishnusandassociates.in/me/login"
               className="px-5 py-2.5 border border-gray-300 text-gray-800 rounded-lg hover:bg-gray-100 transition"
             >
               Client Login
@@ -96,7 +96,7 @@ export default function PremiumHeader() {
             ))}
 
             <a
-              href="/login"
+              href="https://login.vishnusandassociates.in/me/login"
               onClick={() => setOpen(false)}
               className="py-3 mt-2 border border-gray-300 text-center rounded-lg hover:bg-gray-100 transition"
             >
